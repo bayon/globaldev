@@ -1,5 +1,5 @@
 <?php
- define('SITE_ROOT','GlobalDev/apps/projectX');
+ define('SITE_ROOT','github_globaldev/globaldev/GlobalDev/apps/projectX');
  //require_once('../../global_configs.php');
 /*============================================================*/
 /*-----	AUTOMATED CONFIGS	 ---------------------------------*/

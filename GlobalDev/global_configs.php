@@ -1,6 +1,6 @@
 <?php
 define('GLOBAL_DIR', realpath(dirname(__FILE__)));
-define('GLOBAL_ROOT', 'GlobalDev');
+define('GLOBAL_ROOT', 'github_globaldev/globaldev/GlobalDev');
 /*============================================================*/
 /*-----	AUTOMATED CONFIGS	 ---------------------------------*/
 /*============================================================*/

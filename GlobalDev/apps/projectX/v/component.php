@@ -45,6 +45,7 @@ include_once ('/HEADS/custom_confirm_head.php');
 		<option>jqgrid_cc</option>
 		<option>searchable jq grid</option>
 		<option>jq scheduler</option>
+		
 	</select>
 	";
 
@@ -93,6 +94,7 @@ include_once ('/HEADS/custom_confirm_head.php');
 			include_once (GLOBAL_DIR . '/global_components/email_html.php');
 
 		case 'calendar' :
+			
 			include_once ('/HEADS/default_head.php');
 			include_once (GLOBAL_DIR . '/global_components/calendar.php');
 			break;
@@ -110,6 +112,7 @@ include_once ('/HEADS/custom_confirm_head.php');
 			include_once ('/HEADS/default_head.php');
 			include_once (GLOBAL_DIR . '/global_components/jq_scheduler/index.php');
 			break;
+		
 		default :
 			//include_once ('/HEADS/custom_confirm_head.php');
 			//include_once (GLOBAL_DIR . '/global_components/actionList.php');

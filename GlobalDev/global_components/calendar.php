@@ -1,3 +1,15 @@
+<!-- remember to include:: include_once ('/HEADS/datepicker_head.php'); -->
+<div>
+	<div>date picker:</div>
+	<input id="datepick" size="30" />
+	<button onClick="getDateSelected()">verify</button>
+	<script type="text/javascript">
+		new datepickr('datepick');
+		function getDateSelected(){
+			alert('date selected:'+document.getElementById('datepick').value);
+		}
+	</script>
+</div>
 <?php
 
 class Calendar {
@@ -7,7 +19,7 @@ class Calendar {
 	public $year;
 	public $calendar_width;
 
-	public function __construct($month = null, $year = null, $calendar_width = 500) {
+	public function __construct($month = null, $year = null, $calendar_width = 350) {
 		$this -> month = $month;
 		$this -> year = $year;
 		$this -> calendar_width = $calendar_width;
@@ -79,11 +91,12 @@ CAL;
 		 
 		$html .=">$day_num";
 		 //need an array of appts to loop through sorted by appt time of course.
-		$appts = array("day"=>14,"note"=>"Pets to Vet","anchor"=>"http://www.forteworks.com?appt=foo");
-		if($day_num==$appts['day']){
-			$html .= "<br><a style='font-size:10px;' href='".$appts['anchor']."'>".$appts['note']."</a>";
-			
-		}
+		 $sql = "SELECT id, title, year, month, day, note, anchor FROM appointments WHERE day = ".$day_num."";
+		
+		$appt = getAppointmentByDay($day_num);
+		
+			$html .= "<br><a style='font-size:10px;' href='".$appt->anchor."'>".$appt->note."</a>";
+		
 		
 		$html .="</div></div>";
 		
@@ -153,7 +166,9 @@ CAL;
 </style>
 <div>
 	<!-- NOTE !!!: Because this is a class, I believe it LINGERS around after the page has moved on.... -->
-	<?php $calendar = new Calendar(7, 2014); ?>
-<?= //$calendar -> render(); ?>
+	<?php $calendar = new Calendar(8, 2014); ?>
+<?= $calendar -> render(); ?>
+
+ 
 </div>
  

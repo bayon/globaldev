@@ -12,6 +12,7 @@ body {
 	background-color: black;
 	background-image: url('../global_img/zeroBackground_50.png');
 	color: green;
+	font-family:helvetica,arial,sans-serif;
 }
 .main_gradient {
 	background: -webkit-linear-gradient(#444, #111); /* For Safari 5.1 to 6.0 */

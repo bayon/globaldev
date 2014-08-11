@@ -30,8 +30,8 @@
 		<p>Global Application Development</p>
 	</div>
 	<div class="global_enterprise_div">
-		<a href ="http://localhost/GlobalDev/apps/projectX/index.php">Project X</a>
-		<a href ="http://localhost/GlobalDev/apps/projectY/index.php">Project Y</a>
+		<a href ="http://localhost/github_globaldev/globaldev/GlobalDev/apps/projectX/index.php">Project X</a>
+		<a href ="http://localhost/github_globaldev/globaldev/GlobalDev/apps/projectY/index.php">Project Y</a>
 
 	</div>
 
