@@ -1,0 +1,6 @@
+[10-Jul-2014 21:12:39 Europe/Berlin] PHP Notice:  Undefined variable: data in C:\xampp\htdocs\GlobalDev\apps\projectX\m\User.php on line 74
+[10-Jul-2014 21:12:39 Europe/Berlin] PHP Notice:  Undefined variable: data in C:\xampp\htdocs\GlobalDev\apps\projectX\m\User.php on line 74
+[10-Jul-2014 21:12:39 Europe/Berlin] PHP Notice:  Undefined variable: data in C:\xampp\htdocs\GlobalDev\apps\projectX\m\User.php on line 74
+[10-Jul-2014 21:15:12 Europe/Berlin] PHP Notice:  Undefined variable: data in C:\xampp\htdocs\GlobalDev\apps\projectX\m\User.php on line 74
+[10-Jul-2014 21:15:12 Europe/Berlin] PHP Notice:  Undefined variable: data in C:\xampp\htdocs\GlobalDev\apps\projectX\m\User.php on line 74
+[10-Jul-2014 21:15:12 Europe/Berlin] PHP Notice:  Undefined variable: data in C:\xampp\htdocs\GlobalDev\apps\projectX\m\User.php on line 74
