@@ -13,7 +13,7 @@ echo(navigation());
 //JQ UI EXAMPLES:
 //include_once('examples/accordion.php');
 //include_once('examples/slider.php');
-//include_once('examples/sortable.php');
+include_once('examples/sortable.php');
 //include_once('examples/dragNDrop.php');
 //include_once('examples/toggle.php');
 //include_once('examples/selectable.php');

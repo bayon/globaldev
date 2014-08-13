@@ -59,6 +59,7 @@ function createAnchorTableWith_Data_HeaderTextAndFieldsArray($data,$headers,$con
 	return $html;
 
 }
+
 //Controller and Model code
 $db = "training";
 $table = "task";
@@ -79,5 +80,6 @@ $previousSearchCriteria = "&id=" . $_GET['id'] . "&os=" . $_GET['os'] . "&title=
 
 $anchorTable = createAnchorTableWith_Data_HeaderTextAndFieldsArray($data,$headers,$controller,$previousSearchCriteria);
 echo($anchorTable);
+
  
 ?>

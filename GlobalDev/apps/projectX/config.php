@@ -14,5 +14,5 @@ define('DOMAIN', $domain);
 echo "<script>var BASE_PATH='" . BASE_PATH . "';</script>";
 echo "<script>var BASE_URL='" . BASE_URL . "';</script>";
 
-include_once("constants.php");
+
 ?>

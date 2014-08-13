@@ -1,7 +1,6 @@
 <?php
 include_once ("../config.php");
-include_once ("../m/model_includes.php");
-
+include_once('../app_lib/app_lib_includes.php');
 //echo("<br>".__FILE__);
 //echo("<pre>");print_r($_POST);echo("</pre>");
 switch ($_POST['method']) {
@@ -61,7 +60,7 @@ switch ($_POST['method']) {
 			$sql = "SELECT * FROM test.contacts ORDER BY " . $_POST['column'] . " " . $_POST['direc'] . " ";
 			//echo($sql);
 			$result = mysql_query($sql);
-			echo(mysql_error());
+			//echo(mysql_error());
 			while ($myrow = mysql_fetch_array($result)) {
 				$agentid = $myrow["ContactID"];
 				$agentname = $myrow["ContactFullName"];

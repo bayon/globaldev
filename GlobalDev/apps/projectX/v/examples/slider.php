@@ -9,4 +9,4 @@
   </script>
  
  
-<div class="jq_slider"></div>
+<div class="container jq_slider"></div>

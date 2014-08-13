@@ -46,8 +46,8 @@ class User {
 }
 
 function getUserWithId($id) {
-	$dbh = connectPDO();
-	$sql = "SELECT * FROM `GlobalDev`.`user` 
+	$dbh = appConnectPDO();
+	$sql = "SELECT * FROM `globaldev`.`user` 
  WHERE user_id = $id;";
 	foreach ($dbh->query($sql) as $row) {
 		$data[] = $row;
@@ -58,8 +58,8 @@ function getUserWithId($id) {
 }
 
 function login($user) {
-	$dbh = connectPDO();
-	$sql = "SELECT * FROM `GlobalDev`.`user` 
+	$dbh = appConnectPDO();
+	$sql = "SELECT * FROM `globaldev`.`user` 
  WHERE username = '" . $user -> username . "'  AND password = '" . $user -> password . "'";
 
 	foreach ($dbh->query($sql) as $row) {
@@ -77,15 +77,15 @@ function login($user) {
 }
 
 function signin($user) {
-	$dbh = connectPDO();
-	$sql = "INSERT INTO `GlobalDev`.`user` (user_id,username,password) VALUES ('NULL','" . $user -> username . "','" . $user -> password . "')";
+	$dbh = appConnectPDO();
+	$sql = "INSERT INTO `globaldev`.`user` (user_id,username,password) VALUES ('NULL','" . $user -> username . "','" . $user -> password . "')";
 	$dbh -> query($sql);
 	$dbh = null;
 }
 
 function getAllUsers() {
-	$dbh = connectPDO();
-	$sql = "SELECT * FROM `GlobalDev`.`user` ;";
+	$dbh = appConnectPDO();
+	$sql = "SELECT * FROM `globaldev`.`user` ;";
 	foreach ($dbh->query($sql) as $row) {
 		$data[] = $row;
 	}
@@ -94,8 +94,8 @@ function getAllUsers() {
 }
 
 function searchUsersForKeyword($keyword) {
-	$dbh = connectPDO();
-	$sql = "SELECT * FROM GlobalDev.user WHERE 
+	$dbh = appConnectPDO();
+	$sql = "SELECT * FROM globaldev.user WHERE 
 	(`username` LIKE  '%" . $keyword . "%'  ) 
 	OR
 	(`password` LIKE  '%" . $keyword . "%'   )
@@ -108,17 +108,17 @@ function searchUsersForKeyword($keyword) {
 }
 
 function updateUserWithId($id) {
-	$dbh = connectPDO();
+	$dbh = appConnectPDO();
 	$username = sanitize($_POST['username']);
 	$password = sanitize($_POST['password']);
-	$sql = "UPDATE `GlobalDev`.`user` set `username` = '$username', `password` = '$password' WHERE `user_id` = $id ;";
+	$sql = "UPDATE `globaldev`.`user` set `username` = '$username', `password` = '$password' WHERE `user_id` = $id ;";
 	$dbh -> query($sql);
 	$dbh = null;
 }
 
 function deleteUserWithId($user_id) {
-	$dbh = connectPDO();
-	$sql = "DELETE FROM  `GlobalDev`.`user`  WHERE `user_id` = $user_id ;"; // function connectPDO
+	$dbh = appConnectPDO();
+	$sql = "DELETE FROM  `globaldev`.`user`  WHERE `user_id` = $user_id ;"; // function appConnectPDO
 	$dbh -> query($sql);
 	$dbh = null;
 }

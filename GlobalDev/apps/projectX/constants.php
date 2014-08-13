@@ -4,4 +4,10 @@
 
 define('TITLE','Project X');
 define('ROOT_DIR','projectX');
+
+define('HOSTNAME','localhost');
+define('USERNAME','root');
+define('PASSWORD','');
+
+
 ?>

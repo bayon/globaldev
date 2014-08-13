@@ -68,56 +68,6 @@ function corruptionWarning() {
 	return $warning;
 }
 
-function searchDB_TABLE_KeyValueArray_OrderByField($db, $table, $keyValueArray, $orderByField) {
-	$sql = "SELECT * from " . $db . "." . $table . " 
-	WHERE 1=1";
-	foreach ($keyValueArray as $k => $v) {
-		$sql .= " AND " . $k . " LIKE '%" . $v . "%'";
-	}
-	$sql .= " ORDER BY " . $orderByField . " ; ";
-	$data = getDataFromSQL($sql);
-	return $data;
-}
-
-function sortBasicDB_TABLE_SortByField($db, $table, $sortByField) {
-	$sql = "SELECT * from " . $db . "." . $table . " 
-	WHERE 1=1";
-	$sql .= " ORDER BY " . $sortByField . " ; ";
-	$data = getDataFromSQL($sql);
-	return $data;
-}
-
-function sortDB_TABLE_KeyValueArray_SortByField($db, $table, $keyValueArray, $sortByField) {
-	$sql = "SELECT * from " . $db . "." . $table . " 
-	WHERE 1=1";
-	foreach ($keyValueArray as $k => $v) {
-		$sql .= " AND " . $k . " LIKE '%" . $v . "%'";
-	}
-	$sql .= " ORDER BY " . $sortByField . " ; ";
-	$data = getDataFromSQL($sql);
-	return $data;
-}
-
-function getDataFromSQL($sql) {
-	if (!$sql) {
-		return array();
-	}
-
-	$host = "localhost";
-	$user = "root";
-	$pword = "";
-	mysql_connect($host, $user, $pword);
-	echo(mysql_error());
-	$array = null;
-	$result = mysql_query($sql) or die(mysql_error() . '<br>' . $sql);
-	if (mysql_num_rows($result) > 0) {
-		while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
-			$data[] = $row;
-		}
-	}
-	return $data;
-}
-
 function anchorTo_File_Action_LinkText_Icon($file, $action, $anchorText, $icon) {
 	$anchor = " <a href='/" . $file . "?" . $action . "'>
                   <img src='/images/" . $icon . "' alt='" . $anchorText . "' border='0'>

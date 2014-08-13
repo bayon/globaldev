@@ -4,8 +4,10 @@ include_once ("m/model_includes.php");
 if(!isset($_SESSION['home'])) {
 	$_SESSION['home']="";
 }
-//print_r($_POST);
+
 if (  isset($_GET['navigation'])) {
+	//echo("<br>GET:");
+	//print_r($_GET);
 	switch ($_GET['navigation']) {
 		case 'home' :
 			include_once ('c/home.php');
@@ -43,6 +45,8 @@ if (  isset($_GET['navigation'])) {
 
 if (isset($_POST['controller'])) {
 	//echo("<br>MAIN CONTROLLER POST</br>");
+	//echo("<br>POST:");
+	//print_r($_POST);
 	switch ($_POST['controller']) {
 		case 'login' :
 			include_once ('c/login.php');

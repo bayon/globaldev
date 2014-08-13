@@ -5,7 +5,7 @@
   </script>
  
  
-<div class="jq_accordion">
+<div class="container jq_accordion">
   <h3>Section 1</h3>
   <div>
     <p>
