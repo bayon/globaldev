@@ -1,6 +1,6 @@
 <?php
 
-include_once ('/HEADS/custom_confirm_head.php');
+include_once ('HEADS/custom_confirm_head.php');
 ?>
 
 <?php echo(navigation()); ?>
@@ -22,7 +22,6 @@ include_once ('/HEADS/custom_confirm_head.php');
 
 	<?php //include_once (GLOBAL_DIR . '/global_components/contactForm.php'); ?>
 	<?php //include_once(GLOBAL_DIR.'/global_components/mail_html.php'); ?>
-	
 
 	<?php
 
@@ -42,13 +41,16 @@ include_once ('/HEADS/custom_confirm_head.php');
 		<option>api</option>
 		<option>email html</option>
 		<option>calendar</option>
+		 
+	</select>
+	";
+/*
+ * REQUIRES PURCHASE OF JQSUITE:
 		<option>jqgrid_cc</option>
 		<option>searchable jq grid</option>
 		<option>jq scheduler</option>
-		
-	</select>
-	";
-
+ * */
+ 
 	$gridMatrix[1][0] = "";
 	$submitButton = new SubmitButton("component.php", "method", "selectComponent");
 	$gridMatrix[1][1] = $submitButton -> make();
@@ -61,66 +63,67 @@ include_once ('/HEADS/custom_confirm_head.php');
 
 	switch ($_POST['selected_component']) {
 		case 'map' :
-			include_once ('/HEADS/geocode_head.php');
-			include_once (GLOBAL_DIR . '/global_components/map.php');
+			include_once ('HEADS/geocode_head.php');
+			include_once (GLOBAL_DIR . '/glib/global_components/map.php');
 			break;
 		case 'datepicker' :
-			include_once ('/HEADS/datepicker_head.php');
-			include_once (GLOBAL_DIR . '/global_components/datepicker.php');
+			include_once ('HEADS/datepicker_head.php');
+			include_once (GLOBAL_DIR . '/glib/global_components/datepicker.php');
 			break;
 		case 'attachments' :
-			include_once (GLOBAL_DIR . '/global_components/attachments.php');
+			include_once (GLOBAL_DIR . '/glib/global_components/attachments.php');
 			break;
 		case 'actionList' :
-			include_once ('/HEADS/custom_confirm_head.php');
-			include_once (GLOBAL_DIR . '/global_components/actionList.php');
+			include_once ('HEADS/custom_confirm_head.php');
+			include_once (GLOBAL_DIR . '/glib/global_components/actionList.php');
 			break;
 		case 'anchorTable' :
-			include_once (GLOBAL_DIR . '/global_components/anchor_table.php');
+			include_once (GLOBAL_DIR . '/glib/global_components/anchor_table.php');
 			break;
 		case 'graph' :
-			include_once ('/HEADS/graph_head.php');
-			include_once (GLOBAL_DIR . '/global_components/graph.php');
+			include_once ('HEADS/graph_head.php');
+			include_once (GLOBAL_DIR . '/glib/global_components/graph.php');
 			break;
 		case 'ajax' :
-			include_once ('/HEADS/default_head.php');
-			include_once (GLOBAL_DIR . '/global_components/ajax_examples.php');
+			include_once ('HEADS/default_head.php');
+			include_once (GLOBAL_DIR . '/glib/global_components/ajax_examples.php');
 		case 'api' :
-			include_once ('/HEADS/default_head.php');
-			include_once (GLOBAL_DIR . '/global_components/api.php');
+			include_once ('HEADS/default_head.php');
+			include_once (GLOBAL_DIR . '/glib/global_components/api.php');
 
 		case 'email html' :
-			include_once ('/HEADS/default_head.php');
-			include_once (GLOBAL_DIR . '/global_components/email_html.php');
+			include_once ('HEADS/default_head.php');
+			include_once (GLOBAL_DIR . '/glib/global_components/email_html.php');
 
 		case 'calendar' :
-			
-			include_once ('/HEADS/default_head.php');
-			include_once (GLOBAL_DIR . '/global_components/calendar.php');
+			include_once ('HEADS/default_head.php');
+			include_once (GLOBAL_DIR . '/glib/global_components/calendar.php');
 			break;
+
+		
+			/*
 		case 'jqgrid_cc' :
-			include_once ('/HEADS/jq_suite_head.php');
+			include_once ('HEADS/jq_suite_head.php');
 			include_once (GLOBAL_DIR . '/global_components/jqgrid_cc.php');
 			break;
 		case 'searchable jq grid' :
-		
-			include_once ('/HEADS/jq_suite_head.php');
+			include_once ('HEADS/jq_suite_head.php');
 			include_once (GLOBAL_DIR . '/global_components/jq_searchable_grid/default.php');
 			break;
-			
+
 		case 'jq scheduler' :
-			include_once ('/HEADS/default_head.php');
+			include_once ('HEADS/default_head.php');
 			include_once (GLOBAL_DIR . '/global_components/jq_scheduler/index.php');
 			break;
-		
+		 */
 		default :
-			//include_once ('/HEADS/custom_confirm_head.php');
+			//include_once ('HEADS/custom_confirm_head.php');
 			//include_once (GLOBAL_DIR . '/global_components/actionList.php');
 			//echo("<div>POST:<pre>");print_r($_POST);echo("</pre></div>");
 			//echo("<div>GET:<pre>");print_r($_GET); echo("</pre></div>");
 			if ($_POST['method'] == 'search') {
-				include_once ('/HEADS/custom_confirm_head.php');
-				include_once (GLOBAL_DIR . '/global_components/actionList.php');
+				include_once ('HEADS/custom_confirm_head.php');
+				include_once (GLOBAL_DIR . '/glib/global_components/actionList.php');
 			}
 			break;
 	}

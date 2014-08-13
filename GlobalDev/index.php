@@ -3,7 +3,7 @@
 
 	<style>
 		html {
-			/*<CENTERING> */
+			/*<CENTERING>     */
 			text-align: center;
 			width: 100%;
 			/*</CENTERING> */
@@ -14,7 +14,7 @@
 			margin: 0;
 			/*</CENTERING> */
 			background-color: black;
-			background-image: url('global_img/zeroBackground_50.png');
+			background-image: url('glib/global_img/zeroBackground_50.png');
 			color: green;
 		}
 		.global_enterprise_div {

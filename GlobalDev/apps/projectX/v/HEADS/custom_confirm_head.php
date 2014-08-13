@@ -2,10 +2,10 @@
 include_once ("REQUIRED_HEAD.php");
 ?>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel='stylesheet' type='text/css' href='../../global_css/custom_confirm.css'>
-<script type="text/javascript" src="../../global_js/custom_confirm.js"></script>
+<link rel='stylesheet' type='text/css' href='../../glib/global_css/custom_confirm.css'>
+<script type="text/javascript" src="../../glib/global_js/custom_confirm.js"></script>
 <?php
-include_once("../../global_v/custom_confirm_view.php");
+include_once("../../glib/global_v/custom_confirm_view.php");
 
 
 /*----	REQUIRED UI COMPONENTS AND Javascript FUNCTION

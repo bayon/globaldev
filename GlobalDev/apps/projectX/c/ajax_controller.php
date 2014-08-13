@@ -1,6 +1,6 @@
 <?php
 include_once ("../config.php");
-include_once("../m/model_includes.php");
+include_once ("../m/model_includes.php");
 
 //echo("<br>".__FILE__);
 //echo("<pre>");print_r($_POST);echo("</pre>");
@@ -35,24 +35,52 @@ switch ($_POST['method']) {
 		");
 		break;
 	case 'ajaxSelectToTable' :
-	
 		$user_id = $_POST['option'];
 		$user = getUserWithId($user_id);
-		
+
 		echo("
 		<table border=1>
 			<tr><th>Id</th><th>Username</th><th>Password</th></tr>
-			<tr><td>" . $user->user_id . "</td><td>" . $user->username . "</td><td>" . $user->password . "</td></tr>
+			<tr><td>" . $user -> user_id . "</td><td>" . $user -> username . "</td><td>" . $user -> password . "</td></tr>
 		</table>
 		");
-		
+
 		break;
-	
+
 	case 'get_users' :
 		echo("<br>Hit the function...");
-	
+
 		break;
-	
+
+	case 'ajaxSortableTable' :
+		//get data and formulate table data here
+		 
+
+		$textout = "";
+		if (isset($_POST)) {
+			$sql = "SELECT * FROM test.contacts ORDER BY " . $_POST['column'] . " " . $_POST['direc'] . " ";
+			//echo($sql);
+			$result = mysql_query($sql);
+			echo(mysql_error());
+			while ($myrow = mysql_fetch_array($result)) {
+				$agentid = $myrow["ContactID"];
+				$agentname = $myrow["ContactFullName"];
+				$agentsalut = $myrow["ContactSalutation"];
+				$agentinttel = $myrow["ContactTel"];
+				$textout .= "<tr>
+		<td class='ast_width_20pct' >" . $agentid . "</td>
+		<td  class='ast_width_20pct'>" . $agentname . "</td>
+		<td  class='ast_width_20pct'>" . $agentsalut . "</td>
+		<td  class='ast_width_20pct'>" . $agentinttel . "</td>
+		</tr>";
+			}
+		} else {
+			$textout = "";
+		}
+		echo "<table cellspacing=\"0\" cellpadding=\"0\" width=\"100%\"  >" . $textout . "</table>";
+
+		break;
+
 	default :
 		echo("<br>" . __FILE__);
 		echo("<pre>");

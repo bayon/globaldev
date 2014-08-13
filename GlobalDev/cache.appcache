@@ -1,63 +1,63 @@
 CACHE MANIFEST
-# 2014-02-21  
-#version 4.0
+# 2014-08-13  
+#version 5.3.1
 
-global_api/api_1.php
+glib/global_api/api_1.php
 
-global_lib/UIObjects/ContainerObjects/containerObjects.css
-global_lib/UIObjects/InputObjects/inputObjects.css
-global_lib/UIObjects/LabelObjects/labelObjects.css
+glib/global_lib/UIObjects/ContainerObjects/containerObjects.css
+glib/global_lib/UIObjects/InputObjects/inputObjects.css
+glib/global_lib/UIObjects/LabelObjects/labelObjects.css
 
-global_css/theme1/theme.css
-global_css/theme2/theme.css
-global_css/theme3/theme.css
-global_css/component.css
-global_css/custom_confirm.css
-global_css/index.css
-global_css/datepickr.css
+glib/global_css/theme1/theme.css
+glib/global_css/theme2/theme.css
+glib/global_css/theme3/theme.css
+glib/global_css/component.css
+glib/global_css/custom_confirm.css
+glib/global_css/index.css
+glib/global_css/datepickr.css
 
-global_js/ajax_navigation.js
-global_js/custom_confirm.js
-global_js/datepickr.js
-global_js/datepickr.min.js
-global_js/global.js
-global_js/latest_jquery.js
-global_js/rwd.js
+glib/global_js/ajax_navigation.js
+glib/global_js/custom_confirm.js
+glib/global_js/datepickr.js
+glib/global_js/datepickr.min.js
+glib/global_js/global.js
+glib/global_js/latest_jquery.js
+glib/global_js/rwd.js
 
-global_js/flot/excanvas.js
-global_js/flot/excanvas.min.js
-global_js/flot/jquery.flot.js
-global_js/flot/jquery.flot.min.js
-global_js/flot/jquery.js
-global_js/flot/jquery.colorhelpers.min.js
-global_js/flot/jquery.flot.crosshair.min.js
-global_js/flot/jquery.flot.fillbetween.min.js
-global_js/flot/jquery.flot.image.min.js
-global_js/flot/jquery.flot.navigate.min.js
-global_js/flot/jquery.flot.pie.min.js
-global_js/flot/jquery.flot.resize.min.js
-global_js/flot/jquery.flot.selection.min.js
-global_js/flot/jquery.flot.stack.min.js
-global_js/flot/jquery.flot.symbol.min.js
-global_js/flot/jquery.flot.threshold.min.js
+glib/global_js/flot/excanvas.js
+glib/global_js/flot/excanvas.min.js
+glib/global_js/flot/jquery.flot.js
+glib/global_js/flot/jquery.flot.min.js
+glib/global_js/flot/jquery.js
+glib/global_js/flot/jquery.colorhelpers.min.js
+glib/global_js/flot/jquery.flot.crosshair.min.js
+glib/global_js/flot/jquery.flot.fillbetween.min.js
+glib/global_js/flot/jquery.flot.image.min.js
+glib/global_js/flot/jquery.flot.navigate.min.js
+glib/global_js/flot/jquery.flot.pie.min.js
+glib/global_js/flot/jquery.flot.resize.min.js
+glib/global_js/flot/jquery.flot.selection.min.js
+glib/global_js/flot/jquery.flot.stack.min.js
+glib/global_js/flot/jquery.flot.symbol.min.js
+glib/global_js/flot/jquery.flot.threshold.min.js
 
-global_img/black_25.png
-global_img/black_50.png
-global_img/black_85.png
-global_img/transparentWhite10x10.png
-global_img/zeroBackground_50.png
-global_img/zeroBackground.png
+glib/global_img/black_25.png
+glib/global_img/black_50.png
+glib/global_img/black_85.png
+glib/global_img/transparentWhite10x10.png
+glib/global_img/zeroBackground_50.png
+glib/global_img/zeroBackground.png
 
-global_jq_suite/js/jquery.js
-global_jq_suite/js/jquery-ui-custom.min.js
-global_jq_suite/themes/dark_custom/jquery-ui.css
-global_jq_suite/js/jquery.jqScheduler.min.js 
-global_jq_suite/js/jquery.jqGrid.min.js 
-global_jq_suite/js/i18n/grid.locale-en.js 
+glib/global_jq_suite/js/jquery.js
+glib/global_jq_suite/js/jquery-ui-custom.min.js
+glib/global_jq_suite/themes/dark_custom/jquery-ui.css
+glib/global_jq_suite/js/jquery.jqScheduler.min.js 
+glib/global_jq_suite/js/jquery.jqGrid.min.js 
+glib/global_jq_suite/js/i18n/grid.locale-en.js 
 
-global_jq_suite/themes/jquery.ui.tooltip.css
-global_jq_suite/themes/ui.jqscheduler.css
-global_jq_suite/themes/ui.jqgrid.css
+glib/global_jq_suite/themes/jquery.ui.tooltip.css
+glib/global_jq_suite/themes/ui.jqscheduler.css
+glib/global_jq_suite/themes/ui.jqgrid.css
 
 NETWORK:
 http://localhost/GlobalDev/global_api/api_1.php
