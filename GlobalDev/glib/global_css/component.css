@@ -1,0 +1,163 @@
+.component_container {
+	margin-top: 10px;
+	width: 100%;
+	float: left;
+}
+.component_title {
+	color: white;
+	font-family: arial;
+	font-size: 14px;
+}
+/*------- ANCHOR TABLE */
+.anchorTable_table_container {
+	margin-top: 10px;
+	float: left;
+	width: 100%;
+	color: #fff;
+}
+.anchorTable_table_container a {
+	text-decoration: none;
+}
+.anchorTable_table_container  table {
+	width: 100%;
+	border: 1px solid black;
+	background-image: url('../global_img/transparentWhite10x10.png');
+}
+.anchorTable_table_container table td, th {
+	font-size: 13px;
+	font-family: arial;
+	border: solid 1px black;
+	height: 30px;
+}
+.anchorTable_table_container table th {
+	background-image: url('../global_img/black_50.png');
+	text-align: center;
+}
+.anchorTable_table_container table td {
+	background-color: clear;
+	text-align: left;
+	padding-left: 10px;
+}
+.anchorTable_table_container  tr {
+	background: none;
+}
+.anchorTable_table_container  tr:hover {
+	background-image: url('../global_img/black_50.png');
+}
+.anchorTable_id_button {
+	border: none;
+	background: none;
+	width: 100%;
+}
+
+/*------------------------ACTION LIST */
+.actionList_container {
+	margin-top: 10px;
+	font-family: arial;
+	font-size: 13px;
+	color: #FFF;
+}
+
+.actionList_container table {
+	width: 100%;
+	border: 1px solid black;
+	background-image: url('../global_img/transparentWhite10x10.png');
+}
+
+.actionList_container .actionList_title {
+
+}
+.actionList_container table td, th {
+	font-size: 13px;
+	border: solid 1px black;
+}
+.actionList_container table th {
+	background-image: url('../global_img/black_50.png');
+	text-align: center;
+	height: 40px;
+}
+.actionList_container table td {
+	background-color: clear;
+	text-align: left;
+	padding-left: 10px;
+	height: 30px;
+}
+.actionList_container  tr {
+	background: none;
+}
+.actionList_container  tr:hover {
+	background-image: url('../global_img/black_50.png');
+}
+.actionList_container textarea {
+	background: none;
+	/*background-image: url('../global_img/black_50.png');*/
+
+	height: auto;
+	width: 98%;
+	border: none;
+	padding: 8px;
+}
+.actionList_container input {
+	width: 75px;
+	min-width: 75px;
+}
+/*-----		ATTACHMENTS */
+.attachmentsContainer .file_submit_button {
+	width: 75px;
+	min-width: 75px;
+}
+
+
+/*-----		FLOT GRAPH */
+.flot_graph_container{
+	width:98%;height:300px;background-color:black;
+}
+
+
+
+/*------------------DESKTOP----------------*/
+
+@media screen and (max-width: 5000px) {
+}
+
+/*------------------TABLET----------------*/
+@media screen and (max-width: 1024px) {
+}
+
+/*------------------iPhone----------------*/
+@media screen and (max-width: 480px) {
+	/*------- ANCHOR TABLE */
+	.anchorTable_table_container .inputText{
+		 font-size:11px;
+	}
+	.anchorTable_table_container {
+		margin-top: 2px;
+	}
+	.anchorTable_table_container a {
+		font-size:11px;
+	}
+	.anchorTable_table_container  table {
+	}
+	.anchorTable_table_container table td, th {
+		font-size: 11px;
+		height: 20px;
+	}
+	.anchorTable_table_container table th {
+	}
+	.anchorTable_table_container table td {
+		padding-left: 1px;
+	}
+	.anchorTable_table_container  tr {
+		background: none;
+	}
+	.anchorTable_table_container  tr:hover {
+	}
+	.anchorTable_id_button {
+		width: 100%;
+	}
+	
+/*-----		FLOT GRAPH */
+.flot_graph_container{
+	 height:200px; 
+}
+}
