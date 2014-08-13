@@ -1,5 +1,5 @@
 <?php
-include_once ('/HEADS/default_head.php');
+include_once ('HEADS/default_head.php');
 ?>
 <?php 
 		echo(navigation());
@@ -43,6 +43,8 @@ include_once ('/HEADS/default_head.php');
 				<li>~graphing: flot graphs from feedback-1.2 </li>
 				<li>~jqgrid</li>
 				<li>~jqscheduler</li>
+				<li>~ajaxSortableTable</li>
+				<li>cc to ajaxtable</li>
 			</ul>
 		<li>rwd</li>
 		<li>google analytics</li>
@@ -65,5 +67,5 @@ https://github.com/paypal/merchant-sdk-php/blob/master/README.md
 </div>
  
 <?php
-include_once ('/includes/html_foot.php');
+include_once ('HEADS/html_foot.php');
 ?>

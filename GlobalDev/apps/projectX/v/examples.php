@@ -1,5 +1,5 @@
 <?php
-include_once ('/HEADS/default_head.php');
+include_once ('HEADS/default_head.php');
 ?>
 <?php
 echo(navigation());
@@ -34,5 +34,5 @@ include_once('examples/sortable.php');
 </div>
 
 <?php
-include_once ('/includes/html_foot.php');
+include_once ('HEADS/html_foot.php');
 ?>

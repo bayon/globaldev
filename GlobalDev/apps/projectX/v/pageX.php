@@ -1,6 +1,6 @@
 <?php
-include_once ('/HEADS/default_head.php');
-include_once ('/HEADS/custom_confirm_head.php');
+include_once ('HEADS/default_head.php');
+include_once ('HEADS/custom_confirm_head.php');
 ?>
 <?php echo(navigation()); ?>
 <div id='content'>
@@ -37,5 +37,5 @@ include_once ('/HEADS/custom_confirm_head.php');
 	
 </div>
 <?php
-include_once ('/HEADS/html_foot.php');
+include_once ('HEADS/html_foot.php');
 ?>

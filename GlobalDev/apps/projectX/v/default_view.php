@@ -1,5 +1,5 @@
 <?php
-include_once ('v/HEADS/default_head.php');
+include_once ('HEADS/default_head.php');
 ?>
 
 <?php //echo(navigation()); ?>
@@ -31,5 +31,5 @@ include_once ('v/HEADS/default_head.php');
 </div>
 
 <?php
-include_once ('v/HEADS/html_foot.php');
+include_once ('HEADS/html_foot.php');
 ?>
