@@ -2,18 +2,26 @@
 include_once ('../../global_includes.php');
 include_once ('constants.php');
 include_once ("m/model_includes.php");
-if(!isset($_SESSION['home'])) {
-	$_SESSION['home']="";
-}
 /*
-if(globalUtilityCheck()){
-	//echo("<br>Global Utilities are ON.");
-}else{
-	//echo("<br>Global Utilities are OFF!!!.");
-}
+ * CURIOUS : left over from back button fix attemp involving posted request.
+ if(!isset($_SESSION['home'])) {
+ $_SESSION['home']="";
+ }
  * */
-if (  isset($_GET['navigation'])) {
-	//echo("<br>GET:");
+/*
+ * override_css isset
+ if(globalUtilityCheck()){
+ //echo("<br>Global Utilities are ON.");
+ }else{
+ //echo("<br>Global Utilities are OFF!!!.");
+ }
+ * */
+//echo("<pre>SESSION:");print_r($_SESSION);echo("</pre>");
+//echo("<pre>POST:");print_r($_POST);echo("</pre>");
+//echo("<pre>GET:");print_r($_GET);echo("</pre>");
+
+if (isset($_GET['navigation'])) {
+	//echo("<br>GET isset:");
 	//print_r($_GET);
 	switch ($_GET['navigation']) {
 		case 'home' :
@@ -28,27 +36,43 @@ if (  isset($_GET['navigation'])) {
 		case 'examples' :
 			include_once ('c/examples.php');
 			break;
-		
+
 		default :
 			include_once ('c/default.php');
 			break;
 	}
-}else{
+} else {
+	//echo("<br>GET NOT isset:");
 	if (!isset($_POST['controller']) AND !isset($_GET['controller'])) {
-		// CUSTOM CSS OVERRIDE	
-		if(isset($_POST['override_css'])){
-			include_once ('c/home.php');
-			include_once('css/custom_css_overrides.php');
-			 
-		}else{
+		// CUSTOM CSS OVERRIDE
+
+		if (isset($_POST['override_css'])) {
+			//echo("<br>override_css isset:");
 			
+			switch ($_POST['override_css']) {
+				case 'theme1' :
+					$_SESSION['custom_theme'] = "theme1";
+					break;
+				case 'theme2' :
+					$_SESSION['custom_theme'] = "theme2";
+					break;
+				case 'theme3' :
+					$_SESSION['custom_theme'] = "theme3";
+					break;
+
+				default :
+					$_SESSION['custom_theme'] = "theme1";
+					break;
+			}
+			//include_once ('css/custom_css_overrides.php');
+			include_once ('c/home.php');
+		} else {
+			//echo("<br>override_css NOT isset:");
 			include_once ('c/default.php');
 		}
-		
+
 	}
 }
-
-
 
 if (isset($_POST['controller'])) {
 	//echo("<br>MAIN CONTROLLER POST</br>");
@@ -79,7 +103,6 @@ if (isset($_POST['controller'])) {
 			echo("<BR>CONTROLLER: DEFAULT METHOD");
 			print_r($_POST);
 			break;
-		
 
 		default :
 			//print_r($_POST);
@@ -90,28 +113,30 @@ if (isset($_POST['controller'])) {
 	if (isset($_GET)) {
 		//echo("<br>GET</br>");
 		// echo("CONTROLLER:<pre>");print_r($_GET);echo("</pre>");
-		//AUTOMATIC FOR ALL GET 
-		include_once ('c/' . $_GET['controller']);
-		
+		//AUTOMATIC FOR ALL GET
+		if (isset($_GET['controller'])) {
+			include_once ('c/' . $_GET['controller']);
+		}
+
 		/*
 		 * CUSTOMIZABLE GET REQUESTS IF NECESSARY
-		switch ($_GET['controller']) {
-			case 'component.php' :
-				include_once ('c/' . $_GET['controller']);
-				break;
-			case 'pageX.php' :
-				include_once ('c/' . $_GET['controller']);
-				break;
-			default :
-				//echo("<BR>MAIN CONTROLLER DEFAULT VIEW INCLUDE AFTER GET !!!</br>");
-				//include_once ('c/default.php');
-				break;
-		}
-		 * 
+		 switch ($_GET['controller']) {
+		 case 'component.php' :
+		 include_once ('c/' . $_GET['controller']);
+		 break;
+		 case 'pageX.php' :
+		 include_once ('c/' . $_GET['controller']);
+		 break;
+		 default :
+		 //echo("<BR>MAIN CONTROLLER DEFAULT VIEW INCLUDE AFTER GET !!!</br>");
+		 //include_once ('c/default.php');
+		 break;
+		 }
+		 *
 		 */
 
 	}
-	
-}
 
+}
+//include_once(GLOBAL_DIR."/glib/global_lib/code_report/code_report.php");
 ?>

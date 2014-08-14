@@ -2,7 +2,7 @@
 
 function createAnchorTableWith_Data_HeaderTextAndFieldsArray($data,$headers,$controller,$previousSearchCriteria) {
 	 
-	$html .= "<div class='anchorTable_table_container'><table border=0 cellpadding=0 cellspacing=0  width=100% >";
+	$html = "<div class='anchorTable_table_container'><table border=0 cellpadding=0 cellspacing=0  width=100% >";
 	$html .= "<tr>";
 	foreach ($headers as $header) {
 		$html .= "<th><a href='" . $_SERVER['PHP_SELF'] . "?controller=".$controller."&method=sort&sortField=" . $header['field'] . "" . $previousSearchCriteria . "'>" . $header['text'] . "</a></th>";
@@ -76,7 +76,12 @@ if (!isset($_GET['sortField'])) {
  //preparation 
 $headers = array( array("text" => "Id", "field" => "id"), array("text" => "os", "field" => "os"), array("text" => "title", "field" => "title"), array("text" => "description", "field" => "description"));
 $controller="pageX.php";
-$previousSearchCriteria = "&id=" . $_GET['id'] . "&os=" . $_GET['os'] . "&title=" . $_GET['title'] . "";
+if(isset($_GET['id'])){
+	$previousSearchCriteria = "&id=" . $_GET['id'] . "&os=" . $_GET['os'] . "&title=" . $_GET['title'] . "";
+	
+}else{
+	$previousSearchCriteria = "";
+}
 
 $anchorTable = createAnchorTableWith_Data_HeaderTextAndFieldsArray($data,$headers,$controller,$previousSearchCriteria);
 echo($anchorTable);

@@ -1,10 +1,11 @@
 <!-- remember to include:: include_once ('/HEADS/datepicker_head.php'); -->
+<?php 
+//NEEDED THIS WHEN LEAVING THE APP TO COME HERE BECAUSE I WAS LOSING SESSION!!!!!
+session_start();
+?>
 <style>
 	.schedulerLabel{
-		
 		width:100%;
-		 
-		 
 		float:left;
 	}
 	.scheduler{
@@ -17,6 +18,9 @@
 	<div>
 		Schedule Appointment:
 	</div>
+	<form name="schedulerForm" method="get" action=<?=$_SERVER['PHP_SELF'];?>>
+		<input type="hidden"  name="controller" value="component.php"/>
+		<input type="hidden"  name="method" value="addAppointment"/>
 	<div>
 		<label class='schedulerLabel' >title:</label>
 		<input id='title' type='text' name='title' />
@@ -33,7 +37,7 @@
 	</div>
 	<div>
 		<label class='schedulerLabel' >date:</label>
-		<input id="datepick" size="30" />
+		<input id="datepick" name="date" size="30" />
 		
 	</div>
 	<div>
@@ -41,17 +45,21 @@
 			set
 		</button>
 	</div>
-	
+	</form>
 	<script type="text/javascript">
 		new datepickr('datepick');
 		function getDateSelected(){
+			/*
 			//alert('date selected:'+document.getElementById('datepick').value);
+			//something about this process, disturbs the app's session and user object.
 			window.location = "http://localhost/github_globaldev/globaldev/GlobalDev/apps/projectx/controller.php?controller=component.php&method=addAppointment&date="+
 			document.getElementById('datepick').value+
 			"&title="+document.getElementById('title').value+
 			 "&note="+document.getElementById('note').value+
 			 "&anchor="+document.getElementById('anchor').value+""
 			;
+			*/
+			document.schedulerForm.submit();
 		}
 	</script>
 </div>

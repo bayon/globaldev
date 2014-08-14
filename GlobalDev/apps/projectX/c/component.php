@@ -1,7 +1,9 @@
 <?php
 // ACTION LIST CONTROLLER CODE
 //include_once ('../../../global_includes.php');
+//echo("<pre>SESSION:");print_r($_SESSION);echo("</pre>");
 if (isset($_GET)) {
+	//echo("<br>COMPONENT CONTROLLER GET isset</br>");
 	if (isset($_GET['method'])) {
 		switch($_GET['method']) {
 			case 'addAppointment' :
@@ -9,7 +11,7 @@ if (isset($_GET)) {
 				$dateIntArray = handleDatepickerResponse($dateArray);
 				$appointment = new Appointment($_GET['title'], $dateIntArray[0], $dateIntArray[1], $dateIntArray[2], $_GET['note'], $_GET['anchor']);
 				insertAppointment($appointment);
-
+				include_once('v/component.php');
 				break;
 
 			default :
@@ -46,7 +48,7 @@ if (isset($_GET)) {
 			//include_once ('v/component.php');
 			break;
 	}
-}
+} 
 function handleDatepickerResponse($dateArray) {
 	//in: array ('August', '20th,', '2014' );
 	//out: integer array ( year, month, day)
@@ -105,5 +107,8 @@ function handleDatepickerResponse($dateArray) {
 
 //echo("<br>DEFAULT COMPONENT VIEW INCLUDE</br>");
 // END action list controller code  Global Utilities are
-include_once ('v/component.php');
+ 
+//include_once(GLOBAL_DIR."/glib/global_lib/code_report/code_report.php");
+
+include_once('v/component.php');
 ?>

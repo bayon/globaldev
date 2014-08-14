@@ -1,8 +1,13 @@
 <?php
 include_once ("../constants.php");
 include_once ("../config.php");
-include_once('../app_lib/app_lib_includes.php');
-include_once("../m/User.php");
+//include_once('../app_lib/app_lib_includes.php');
+//The following call to include model_includes FAILS with error.
+//include_once("../m/model_includes.php");
+//without it : ? :
+
+
+
 //echo("<br>".__FILE__);
 //echo("<pre>");print_r($_POST);echo("</pre>");
 switch ($_POST['method']) {

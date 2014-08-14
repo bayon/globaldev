@@ -12,35 +12,42 @@ function navigation() {
 	</div>
 	";
 	$html .= "</form></div>";
-	
+
 	return ($html);
-	
+
 }
-function customCSSMenu(){
+
+function customCSSMenu() {
 	$html = "<div   ><form method='post' action='$_SERVER[PHP_SELF]' >";
-	 
-	 
-	switch ($_SESSION['custom_theme']) {
-		case 'theme1':
-			$theme1_selected =" selected ";
-			break;
-		case 'theme2':
-			$theme2_selected =" selected ";
-			break;
-		case 'theme3':
-			$theme3_selected =" selected ";
-			break;
-		default:
-			
-			break;
+	$theme1_selected = " selected ";
+	$theme2_selected = " ";
+	$theme3_selected = " ";
+	if (isset($_SESSION['custom_theme'])) {
+		switch ($_SESSION['custom_theme']) {
+			case 'theme1' :
+				$theme1_selected = " selected ";
+				break;
+			case 'theme2' :
+				$theme2_selected = " selected ";
+				break;
+			case 'theme3' :
+				$theme3_selected = " selected ";
+				break;
+			default :
+				$theme1_selected = " selected ";
+				$theme2_selected = " ";
+				$theme3_selected = " ";
+
+				break;
+		}
 	}
-	
+
 	$html .= "
 	<div class='customCSSMenu' >
 	<select name='override_css'>
-		<option ".$theme1_selected.">theme1</option>
-		<option ".$theme2_selected.">theme2</option>
-		<option ".$theme3_selected.">theme3</option>
+		<option " . $theme1_selected . ">theme1</option>
+		<option " . $theme2_selected . ">theme2</option>
+		<option " . $theme3_selected . ">theme3</option>
 		 
 	</select>
 	<input type='submit' class='nav_buttons' name='submit' value='custom css'/>
@@ -48,14 +55,15 @@ function customCSSMenu(){
 	";
 	$html .= "</form></div>";
 	return ($html);
-	
+
 }
-function createHeader(){
-			$html = "<div id='site_header ' class='main_gradient'>";
-			$html .= "<div id='site_logo' >@</div>";
-			$html .= "<div id='site_name'>X-Comp@ny</div>";
-			$html .= "</div>";
-			
+
+function createHeader() {
+	$html = "<div id='site_header ' class='main_gradient'>";
+	$html .= "<div id='site_logo' >@</div>";
+	$html .= "<div id='site_name'>X-Comp@ny</div>";
+	$html .= "</div>";
+
 	return $html;
 }
 ?>

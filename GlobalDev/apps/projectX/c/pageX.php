@@ -2,10 +2,12 @@
 // ACTION LIST CONTROLLER CODE
  
 
-if (isset($_POST)) {
-	$searchKey = sanitize($_POST['search_key']);
+if (isset($_POST['method'])) {
+	
+	
 	switch ($_POST['method']) {
 		case 'search' :
+			$searchKey = sanitize($_POST['search_key']);
 			$data = searchToolboxForKeyword($searchKey);
 			break;
 		case 'edit' :

@@ -1,6 +1,6 @@
 <?php
-	
-	switch ($_POST['method']) {
+	if(isset($_POST['method'])){
+		switch ($_POST['method']) {
 		case 'foo':
 		
 			break;
@@ -9,6 +9,8 @@
 			
 			break;
 	}
+	}
+	
 	
 	include_once ('v/examples.php');
 ?>
