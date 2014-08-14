@@ -1,12 +1,57 @@
 <!-- remember to include:: include_once ('/HEADS/datepicker_head.php'); -->
-<div>
-	<div>date picker:</div>
-	<input id="datepick" size="30" />
-	<button onClick="getDateSelected()">verify</button>
+<style>
+	.schedulerLabel{
+		
+		width:100%;
+		 
+		 
+		float:left;
+	}
+	.scheduler{
+		width:500px;
+		min-width:125px;
+		 border:solid 1px black;
+	}
+</style>
+<div class='container scheduler' style='margin-bottom:30px;'>
+	<div>
+		Schedule Appointment:
+	</div>
+	<div>
+		<label class='schedulerLabel' >title:</label>
+		<input id='title' type='text' name='title' />
+	</div>
+	<div>
+		<label class='schedulerLabel' >note:</label>
+		<textarea id='note'   name='note' ></textarea>
+
+	</div>
+	<div>
+		<label class='schedulerLabel' >anchor:</label>
+		<input id='anchor' type='text' name='anchor' />
+
+	</div>
+	<div>
+		<label class='schedulerLabel' >date:</label>
+		<input id="datepick" size="30" />
+		
+	</div>
+	<div>
+		<button style='width:100%;' onClick="getDateSelected()">
+			set
+		</button>
+	</div>
+	
 	<script type="text/javascript">
 		new datepickr('datepick');
 		function getDateSelected(){
-			alert('date selected:'+document.getElementById('datepick').value);
+			//alert('date selected:'+document.getElementById('datepick').value);
+			window.location = "http://localhost/github_globaldev/globaldev/GlobalDev/apps/projectx/controller.php?controller=component.php&method=addAppointment&date="+
+			document.getElementById('datepick').value+
+			"&title="+document.getElementById('title').value+
+			 "&note="+document.getElementById('note').value+
+			 "&anchor="+document.getElementById('anchor').value+""
+			;
 		}
 	</script>
 </div>
@@ -19,7 +64,7 @@ class Calendar {
 	public $year;
 	public $calendar_width;
 
-	public function __construct($month = null, $year = null, $calendar_width = 350) {
+	public function __construct($month = null, $year = null, $calendar_width = 500) {
 		$this -> month = $month;
 		$this -> year = $year;
 		$this -> calendar_width = $calendar_width;
@@ -95,7 +140,7 @@ CAL;
 		
 		$appt = getAppointmentByDay($day_num);
 		
-			$html .= "<br><a style='font-size:10px;' href='".$appt->anchor."'>".$appt->note."</a>";
+			$html .= "<br><a style='font-size:10px;' href='".$appt->anchor."'  title='".$appt->note."'    >".$appt->title."</a>";
 		
 		
 		$html .="</div></div>";
@@ -166,7 +211,11 @@ CAL;
 </style>
 <div>
 	<!-- NOTE !!!: Because this is a class, I believe it LINGERS around after the page has moved on.... -->
-	<?php $calendar = new Calendar(8, 2014); ?>
+	
+	<?php 
+	//get month as number date('n')
+	
+	$calendar = new Calendar(date('n'), date('Y')); ?>
 <?= $calendar -> render(); ?>
 
  

@@ -47,7 +47,7 @@ include_once ('HEADS/default_head.php');
 <div class='todoList'>
 	<p>To Do:</p>
 		<ul>
-			<li>App Specific Databases</li>
+			
 			<li>calendar and datepicker AS scheduler</li>
 			<li>solve the web transfer issues</li>
 				<ul>
@@ -67,6 +67,7 @@ include_once ('HEADS/default_head.php');
 	
 	<p>Done:</p>
 	<ul>
+		<li>App Specific Databases</li>
 		<li>web efficiency methods</li>
 			<ul>~app cache ( done at the global level)</ul>
 		<li>global components: </li>

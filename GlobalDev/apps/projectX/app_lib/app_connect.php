@@ -1,5 +1,5 @@
 <?php
-
+//include_once('./../constants.php');
 function appConnectPDO() {
 	//echo('appConnectPDO:'.HOSTNAME);
 	$hostname = HOST_DB;

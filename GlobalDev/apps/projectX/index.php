@@ -8,6 +8,8 @@ if(!isset($_SESSION['home'])) {
 
 // display errors
 ini_set('display_errors', 0);
+//parse errors only
+error_reporting(E_PARSE); 
 
 include_once("constants.php");
 include_once ('config.php');

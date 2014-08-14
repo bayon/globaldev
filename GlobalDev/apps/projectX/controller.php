@@ -1,10 +1,17 @@
 <?php
 include_once ('../../global_includes.php');
+include_once ('constants.php');
 include_once ("m/model_includes.php");
 if(!isset($_SESSION['home'])) {
 	$_SESSION['home']="";
 }
-
+/*
+if(globalUtilityCheck()){
+	//echo("<br>Global Utilities are ON.");
+}else{
+	//echo("<br>Global Utilities are OFF!!!.");
+}
+ * */
 if (  isset($_GET['navigation'])) {
 	//echo("<br>GET:");
 	//print_r($_GET);

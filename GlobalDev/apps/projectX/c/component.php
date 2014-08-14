@@ -1,8 +1,25 @@
 <?php
 // ACTION LIST CONTROLLER CODE
-$searchKey = sanitize($_POST['search_key']);
-if (isset($_POST)) {
+//include_once ('../../../global_includes.php');
+if (isset($_GET)) {
+	if (isset($_GET['method'])) {
+		switch($_GET['method']) {
+			case 'addAppointment' :
+				$dateArray = explode(" ", $_GET['date']);
+				$dateIntArray = handleDatepickerResponse($dateArray);
+				$appointment = new Appointment($_GET['title'], $dateIntArray[0], $dateIntArray[1], $dateIntArray[2], $_GET['note'], $_GET['anchor']);
+				insertAppointment($appointment);
+
+				break;
+
+			default :
+				break;
+		}
+	}
+
+} else if (isset($_POST)) {
 	//echo("<br>COMPONENT CONTROLLER POST</br>");
+	$searchKey = sanitize($_POST['search_key']);
 	switch ($_POST['method']) {
 		case 'search' :
 			$data = searchUsersForKeyword($searchKey);
@@ -29,12 +46,64 @@ if (isset($_POST)) {
 			//include_once ('v/component.php');
 			break;
 	}
-}  
-if(isset($_GET)){
-		 
-		// echo("COMPONENT CONTROLLER:<pre>");print_r($_GET);echo("</pre>");
-	} 
+}
+function handleDatepickerResponse($dateArray) {
+	//in: array ('August', '20th,', '2014' );
+	//out: integer array ( year, month, day)
+	$monthString = strtolower($dateArray[0]);
+	$arrayOfMonths = array('january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december');
+	switch ($monthString) {
+		case $arrayOfMonths[0] :
+			$monthInt = 1;
+			break;
+		case $arrayOfMonths[1] :
+			$monthInt = 2;
+			break;
+		case $arrayOfMonths[2] :
+			$monthInt = 3;
+			break;
+		case $arrayOfMonths[3] :
+			$monthInt = 4;
+			break;
+		case $arrayOfMonths[4] :
+			$monthInt = 5;
+			break;
+		case $arrayOfMonths[5] :
+			$monthInt = 6;
+			break;
+		case $arrayOfMonths[6] :
+			$monthInt = 7;
+			break;
+		case $arrayOfMonths[7] :
+			$monthInt = 8;
+			break;
+		case $arrayOfMonths[8] :
+			$monthInt = 9;
+			break;
+		case $arrayOfMonths[9] :
+			$monthInt = 10;
+			break;
+		case $arrayOfMonths[10] :
+			$monthInt = 11;
+			break;
+		case $arrayOfMonths[11] :
+			$monthInt = 12;
+			break;
+
+		default :
+			$monthInt = 13;
+			break;
+	}
+	$dayString = $dateArray[1];
+	$yearString = $dateArray[2];
+	$dayInt = 0 + $dayString;
+	$yearInt = 0 + $yearString;
+
+	$intArray = array($yearInt, $monthInt, $dayInt);
+	return $intArray;
+}
+
 //echo("<br>DEFAULT COMPONENT VIEW INCLUDE</br>");
-// END action list controller code
+// END action list controller code  Global Utilities are
 include_once ('v/component.php');
 ?>

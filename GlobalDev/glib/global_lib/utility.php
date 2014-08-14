@@ -1,5 +1,7 @@
 <?php
-
+function globalUtilityCheck(){
+	return true;
+}
 function sanitize($data) {
 	$data = mysql_real_escape_string($data);
 	$data = htmlspecialchars($data);

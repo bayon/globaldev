@@ -93,6 +93,7 @@ include_once ('HEADS/custom_confirm_head.php');
 
 		case 'calendar' :
 			include_once ('HEADS/default_head.php');
+			include_once ('HEADS/datepicker_head.php');
 			include_once (GLOBAL_DIR . '/glib/global_components/calendar.php');
 			break;
 
