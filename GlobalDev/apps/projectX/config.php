@@ -11,8 +11,11 @@ define('BASE_URL', 'http://' . $hostname . '');
 define('HOSTNAME', $hostname);
 define('DOMAIN', $domain);
 //JAVASCRIPT CONFIGS
-echo "<script>var BASE_PATH='" . BASE_PATH . "';</script>";
-echo "<script>var BASE_URL='" . BASE_URL . "';</script>";
+echo "<script>
+var BASE_PATH='" . BASE_PATH . "';
+var BASE_URL='" . BASE_URL . "';
+</script>";
+ 
 
 
 ?>

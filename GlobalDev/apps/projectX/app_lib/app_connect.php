@@ -2,11 +2,12 @@
 
 function appConnectPDO() {
 	//echo('appConnectPDO:'.HOSTNAME);
-	$hostname = HOSTNAME;
+	$hostname = HOST_DB;
 	$username = USERNAME;
 	$password = PASSWORD;
+	$db = APP_DB;
 	try {
-		$dbh = new PDO("mysql:host=$hostname;dbname=globaldev", $username, $password);
+		$dbh = new PDO("mysql:host=$hostname;dbname=$db", $username, $password);
 	} catch(PDOException $e) {
 		echo $e -> getMessage();
 	}
@@ -14,7 +15,7 @@ function appConnectPDO() {
 	// TO CLOSE USE: //$dbh = null;
 }
 function appConnectPDO_db($db) {
-	$hostname = HOSTNAME;
+	$hostname = HOST_DB;
 	$username = USERNAME;
 	$password = PASSWORD;
 	try {

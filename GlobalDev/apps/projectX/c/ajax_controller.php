@@ -1,6 +1,8 @@
 <?php
+include_once ("../constants.php");
 include_once ("../config.php");
 include_once('../app_lib/app_lib_includes.php');
+include_once("../m/User.php");
 //echo("<br>".__FILE__);
 //echo("<pre>");print_r($_POST);echo("</pre>");
 switch ($_POST['method']) {
@@ -53,12 +55,13 @@ switch ($_POST['method']) {
 
 	case 'ajaxSortableTable' :
 		//get data and formulate table data here
-		 
-
+		// appConnectPDO();
+		//echo("<br>constants: APP_DB=".APP_DB." : HOST_DB=".HOST_DB."");
 		$textout = "";
 		if (isset($_POST)) {
-			$sql = "SELECT * FROM test.contacts ORDER BY " . $_POST['column'] . " " . $_POST['direc'] . " ";
-			//echo($sql);
+			mysql_connect(HOST_DB,USERNAME,PASSWORD);
+			$sql = "SELECT * FROM ".APP_DB.".contacts ORDER BY " . $_POST['column'] . " " . $_POST['direc'] . " ";
+			 
 			$result = mysql_query($sql);
 			//echo(mysql_error());
 			while ($myrow = mysql_fetch_array($result)) {

@@ -46,7 +46,7 @@ class Toolbox {
 }
 
 function getToolboxWithId($id) {
-	$dbh = connectPDO();
+	$dbh = connectPDO_db('training');
 	$sql = "SELECT * FROM `training`.`task` 
  WHERE id = $id;";
 	foreach ($dbh->query($sql) as $row) {
@@ -58,14 +58,14 @@ function getToolboxWithId($id) {
 }
 
 function createToolbox($toolbox) {
-	$dbh = connectPDO();
+	$dbh = connectPDO_db('training');
 	$sql = "INSERT INTO `training`.`task` (id,os,title) VALUES ('NULL','" . $toolbox -> os . "','" . $toolbox -> title . "')";
 	$dbh -> query($sql);
 	$dbh = null;
 }
 
 function getAllToolbox() {
-	$dbh = connectPDO();
+	$dbh = connectPDO_db('training');
 	$sql = "SELECT * FROM `training`.`task` ;";
 	foreach ($dbh->query($sql) as $row) {
 		$data[] = $row;
@@ -91,7 +91,7 @@ function searchToolboxForKeyword($keyword) {
 }
 
 function updateToolboxWithId($id) {
-	$dbh = connectPDO();
+	$dbh = connectPDO_db("training");
 	$os = sanitize($_POST['os']);
 	$title = sanitize($_POST['title']);
 	$sql = "UPDATE `training`.`task` set `os` = '$os', `title` = '$title' WHERE `id` = $id ;";
@@ -100,7 +100,7 @@ function updateToolboxWithId($id) {
 }
 
 function deleteToolboxWithId($id) {
-	$dbh = connectPDO();
+	$dbh = connectPDO_db("training");
 	$sql = "DELETE FROM  `training`.`task`  WHERE `id` = $id ;";
 	// function connectPDO
 	$dbh -> query($sql);

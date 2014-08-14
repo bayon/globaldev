@@ -5,6 +5,19 @@ include_once ('HEADS/default_head.php');
 		echo(navigation());
 		echo(customCSSMenu());
 ?>
+<style>
+	.todoList{
+		text-align:left;float:left;margin-left:5%;overflow-y:scroll;max-height:250px;border:solid 1px black;
+		background-color:#111111;
+		color:green;
+	}
+	.todoList p{
+		color:white;
+	}
+	.todoList a{
+		color:orange;
+	}
+</style>
 <div id='content'>
 	<p>
 		home view
@@ -13,7 +26,8 @@ include_once ('HEADS/default_head.php');
 <div>
 	<?php
 		//echo("<br>ACTUAL SESSION: <pre>");print_r($_SESSION);echo("</pre>");
-		if($user){
+		if(1 ==2){
+			if($user){
 			echo("<br>user_id:".$user->user_id);
 			echo("<br>username:".$user->username);
 			echo("<br>user_password:".$user->password);
@@ -25,28 +39,52 @@ include_once ('HEADS/default_head.php');
 			echo("<br>user_password:".$user->password);
 			$_SESSION['user']=serialize($user);
 		}
+		}
+		
 	?>
 </div>
 
-<div style='text-align:left;float:left;margin-left:20%;'>
+<div class='todoList'>
+	<p>To Do:</p>
+		<ul>
+			<li>App Specific Databases</li>
+			<li>calendar and datepicker AS scheduler</li>
+			<li>solve the web transfer issues</li>
+				<ul>
+					<li>sanitize()</li>
+					<li>db connections</li>
+					<li>db and table names as constants</li>
+				</ul>
+			<li>Global Components: </li>
+			<ul>
+				<li>cc to ajaxtable</li>
+				<li>phone call links</li>
+				<li>contact form with email/HTML formating.</li>
+				<li>cc to ajaxtable</li>
+			</ul>
+			<li>RWD</li>
+		</ul>
+	
+	<p>Done:</p>
 	<ul>
 		<li>web efficiency methods</li>
 			<ul>~app cache ( done at the global level)</ul>
-		<li>global components: templates </li>
+		<li>global components: </li>
 			<ul>
 				<li>~map</li>
 				<li>~attachments</li>
 				<li>~date picker</li>
 				<li>~actionList</li>
-				<li>phone call links</li>
-				<li>contact form with email/HTML formating.</li>
 				<li>~graphing: flot graphs from feedback-1.2 </li>
 				<li>~jqgrid</li>
 				<li>~jqscheduler</li>
 				<li>~ajaxSortableTable</li>
-				<li>cc to ajaxtable</li>
+				 
 			</ul>
-		<li>rwd</li>
+	</li>
+</ul>
+		<p>App Specific Considerations:</p> 
+	<ul>
 		<li>google analytics</li>
 			<ul><a href='https://www.google.com/analytics/web/?hl=en#home/a48383737w79853781p82669518/' target='_blank'>google analytics</a></ul>
 		<li>PayPal integration</li>

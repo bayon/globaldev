@@ -35,7 +35,7 @@ function getDataFromSQL($sql) {
 		return array();
 	}
 
-	$host = HOSTNAME;
+	$host = HOST_DB;
 	$user = USERNAME;
 	$pword = PASSWORD;
 	mysql_connect($host, $user, $pword);

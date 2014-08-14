@@ -38,7 +38,6 @@ include_once ('HEADS/custom_confirm_head.php');
 		<option>anchorTable</option>
 		<option>graph</option>
 		<option>ajax</option>
-		<option>api</option>
 		<option>email html</option>
 		<option>calendar</option>
 		 
@@ -87,9 +86,6 @@ include_once ('HEADS/custom_confirm_head.php');
 		case 'ajax' :
 			include_once ('HEADS/default_head.php');
 			include_once (GLOBAL_DIR . '/glib/global_components/ajax_examples.php');
-		case 'api' :
-			include_once ('HEADS/default_head.php');
-			include_once (GLOBAL_DIR . '/glib/global_components/api.php');
 
 		case 'email html' :
 			include_once ('HEADS/default_head.php');

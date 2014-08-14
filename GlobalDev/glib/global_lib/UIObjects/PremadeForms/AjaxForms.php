@@ -137,7 +137,7 @@ class ajaxAPICall {
 			var secret =secretElement.value;
 			var method = methodElement.value;
 			datastring="controller=../../global_api/api_1.php&method="+method+"&secret="+secret+"";
-			controller="../' . $this -> ROOT_DIR . '/../../global_api/api_1.php";
+			controller="../' . $this -> ROOT_DIR . '/../../glib/global_api/api_1.php";
 			receiverId="apiResults";
 			 postAjaxForm(datastring, controller, receiverId);
 			 alert("foo");

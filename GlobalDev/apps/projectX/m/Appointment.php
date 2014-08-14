@@ -20,8 +20,8 @@ class Appointment{
 	
 }
 function getAppointmentByDay($day) {
-	$dbh = connectPDO();
-	$sql = "SELECT * FROM GlobalDev.appointments 
+	$dbh = appConnectPDO();
+	$sql = "SELECT * FROM ".APP_DB.".appointments 
  WHERE day = $day;";
 	foreach ($dbh->query($sql) as $row) {
 		$data[] = $row;
