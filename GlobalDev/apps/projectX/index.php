@@ -10,7 +10,7 @@ if(!isset($_SESSION['home'])) {
  */
 
 // display errors
-ini_set('display_errors', 0);
+ini_set('display_errors', 1);
 //parse errors only
 error_reporting(E_PARSE); 
 

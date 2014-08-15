@@ -6,7 +6,7 @@
 	?>
 	<style>
 		html {
-			/*<CENTERING>     */
+			/*<CENTERING>     localhost*/
 			text-align: center;
 			width: 100%;
 			/*</CENTERING> */
@@ -53,9 +53,12 @@
 			Global Application Development
 		</p>
 	</div>
+	<?php
+	$domain = "172.16.162.61";
+	?>
 	<div class="global_enterprise_div">
-		<a href ="http://localhost/github_globaldev/globaldev/GlobalDev/apps/projectX/index.php">Project X</a>
-		<a href ="http://localhost/github_globaldev/globaldev/GlobalDev/apps/projectY/index.php">Project Y</a>
+		<a href ="http://<?=$domain;?>/github_globaldev/globaldev/GlobalDev/apps/projectX/index.php">Project X</a>
+		<a href ="http://<?=$domain;?>/github_globaldev/globaldev/GlobalDev/apps/projectY/index.php">Project Y</a>
 
 	</div>
 
