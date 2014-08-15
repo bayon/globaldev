@@ -1,6 +1,7 @@
 <!-- remember to include:: include_once ('/HEADS/datepicker_head.php'); -->
 <?php 
 //NEEDED THIS WHEN LEAVING THE APP TO COME HERE BECAUSE I WAS LOSING SESSION!!!!!
+
 session_start();
 ?>
 <style>
@@ -37,7 +38,7 @@ session_start();
 	</div>
 	<div>
 		<label class='schedulerLabel' >date:</label>
-		<input id="datepick" name="date" size="30" />
+		<input id="datepickScheduler" name="date" size="30" />
 		
 	</div>
 	<div>
@@ -46,14 +47,19 @@ session_start();
 		</button>
 	</div>
 	</form>
+	  <script>
+  $(function() {
+    $( "#datepickScheduler" ).datepicker();
+  });
+  </script>
 	<script type="text/javascript">
-		new datepickr('datepick');
+		//new datepickr('datepickScheduler');
 		function getDateSelected(){
 			/*
-			//alert('date selected:'+document.getElementById('datepick').value);
+			//alert('date selected:'+document.getElementById('datepickScheduler').value);
 			//something about this process, disturbs the app's session and user object.
 			window.location = "http://localhost/github_globaldev/globaldev/GlobalDev/apps/projectx/controller.php?controller=component.php&method=addAppointment&date="+
-			document.getElementById('datepick').value+
+			document.getElementById('datepickScheduler').value+
 			"&title="+document.getElementById('title').value+
 			 "&note="+document.getElementById('note').value+
 			 "&anchor="+document.getElementById('anchor').value+""

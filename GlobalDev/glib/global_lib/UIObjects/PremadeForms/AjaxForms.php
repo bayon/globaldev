@@ -119,7 +119,7 @@ class ajaxAPICall {
 	 <input type="submit" name ="method" value="get_users"/>
 	 </form>
 	 */
-	function make($data) {
+	function make() {
 		$ajaxForm = '
 <div>
 	<lable > ajax API call</label> <br>
@@ -171,7 +171,7 @@ class ajaxAPICall {
 		$this -> ROOT_DIR = $ROOT_DIR;
 	}
 
-	function make($data) {
+	function make() {
 		$ajaxSortableTable = ' <div>';
 		 //column headers here
 		 $ajaxSortableTable .='

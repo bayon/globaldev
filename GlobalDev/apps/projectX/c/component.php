@@ -7,7 +7,8 @@ if (isset($_GET)) {
 	if (isset($_GET['method'])) {
 		switch($_GET['method']) {
 			case 'addAppointment' :
-				$dateArray = explode(" ", $_GET['date']);
+				//$dateArray = explode(" ", $_GET['date']);// for datepickR
+				$dateArray = explode("/", $_GET['date']);//for jquery datepicker 
 				$dateIntArray = handleDatepickerResponse($dateArray);
 				$appointment = new Appointment($_GET['title'], $dateIntArray[0], $dateIntArray[1], $dateIntArray[2], $_GET['note'], $_GET['anchor']);
 				insertAppointment($appointment);
