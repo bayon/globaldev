@@ -88,7 +88,34 @@ switch ($_POST['method']) {
 		echo "<table cellspacing=\"0\" cellpadding=\"0\" width=\"100%\"  >" . $textout . "</table>";
 
 		break;
+		
+case 'ajaxSortableCCMathTable' :
+		 
+		$textout = "";
+		if (isset($_POST)) {
+			mysql_connect(HOST_DB,USERNAME,PASSWORD);
+			$sql = "SELECT * FROM ".APP_DB.".contacts ORDER BY " . $_POST['column'] . " " . $_POST['direc'] . " ";
+			 //echo("<br>sql:".$sql);
+			$result = mysql_query($sql);
+			//echo(mysql_error());
+			while ($myrow = mysql_fetch_array($result)) {
+				$agentid = $myrow["ContactID"];
+				$agentname = $myrow["ContactFullName"];
+				$agentsalut = $myrow["ContactSalutation"];
+				$agentinttel = $myrow["ContactTel"];
+				$textout .= "<tr>
+		<td class='ast_width_20pct' >" . $agentid . "</td>
+		<td  class='ast_width_20pct'>" . $agentname . "</td>
+		<td  class='ast_width_20pct'>" . $agentsalut . "</td>
+		<td  class='ast_width_20pct'>" . $agentinttel . "</td>
+		</tr>";
+			}
+		} else {
+			$textout = "";
+		}
+		echo "<table cellspacing=\"0\" cellpadding=\"0\" width=\"100%\"  >" . $textout . "</table>";
 
+		break;
 	default :
 		echo("<br>" . __FILE__);
 		echo("<pre>");

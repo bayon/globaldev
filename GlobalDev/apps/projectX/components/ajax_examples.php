@@ -23,8 +23,16 @@ $apiResults = $ajaxAPICall->make();
 $ajax_gridMatrix[3][0] = $apiResults;
 
 */
+$controller="ajax_controller";
+$callBackFunction = "ajaxSortableCCMathTable";
+$kvArrayOfHeaderFields = array(
+		array('title'=>'ID' 	,'fieldName'=>'ContactID'			,'id_up'=>'up1'	,'id_down'=>'down1'),
+		array('title'=>'Name' 	,'fieldName'=>'ContactFullName'		,'id_up'=>'up2'	,'id_down'=>'down2'),
+		array('title'=>'Salut' 	,'fieldName'=>'ContactSalutation'	,'id_up'=>'up3'	,'id_down'=>'down3'),
+		array('title'=>'Tel' 	,'fieldName'=>'ContactTel'			,'id_up'=>'up4'	,'id_down'=>'down4')
+		);
 $ajaxSortableTable = new ajaxSortableCCMathTable(ROOT_DIR);
-$ajaxSortableTableResults = $ajaxSortableTable->make();
+$ajaxSortableTableResults = $ajaxSortableTable->make($controller,$callBackFunction,$kvArrayOfHeaderFields);
 $ajax_gridMatrix[0][0] = $ajaxSortableTableResults;
 
 $columnWidthPercentsArray = array(90);

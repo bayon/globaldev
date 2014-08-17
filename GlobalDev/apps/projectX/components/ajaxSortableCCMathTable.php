@@ -7,38 +7,33 @@
 		$this -> ROOT_DIR = $ROOT_DIR;
 	}
 
-	function make() {
+	function make($controller,$callBackFunction,$kvArrayOfHeaderFields) {
 		$ajaxSortableTable = ' <div>';
+		
+		//"ContactID","ContactFullName","ContactSalutation","ContactTel"
 		 //column headers here
 		 $ajaxSortableTable .='
 		 
 <table cellspacing="0" cellpadding="0"  width=100%  border=1 class="ajaxSortableTable">
-	<tr>
-		<th  class="ast_width_20pct">
-		<img id="up1" src="'.GLOBAL_URL.'/glib/global_img/arrowUp1.png" onClick = "getagents(\'ContactID\',\'\');clearimgs();setupimg(\'up1\');">
-		Contact ID
-		<img id="down1" src="'.GLOBAL_URL.'/glib/global_img/arrowDown1.png" onClick = "getagents(\'ContactID\',\'desc\');clearimgs();setdownimg(\'down1\');">
-		</th>
+	<tr>';
+	
+	// ???  HEADERS 2 and 4 are buggy !!!
+	
+	foreach($kvArrayOfHeaderFields as $fieldHeader){
+		//echo("<hr><pre>");print_r($fieldHeader); echo("</pre>"); makes NO sense!
+		 $ajaxSortableTable .='<th  class="ast_width_20pct">
+		<img id="'.$fieldHeader['id_up'].'" src="'.GLOBAL_URL.'/glib/global_img/arrowUp1.png" onClick = "getagents(\''.$fieldHeader['fieldName'].'\',\'\');clearimgs();setupimg(\''.$fieldHeader['id_up'].'\');">
+		'.$fieldHeader['title'].'
+		<img id="'.$fieldHeader['id_down'].'" src="'.GLOBAL_URL.'/glib/global_img/arrowDown1.png" onClick = "getagents(\'ContactID\',\'desc\');clearimgs();setdownimg(\''.$fieldHeader['id_down'].'\');">
+		</th>';
 		
-		<th  class="ast_width_20pct">
-		<img id="up2" src="'.GLOBAL_URL.'/glib/global_img/arrowUp1.png" onClick = "getagents(\'ContactFullName\',\'\');clearimgs();setupimg(\'up2\');">
-		Contact Name
-		<img id="down2" src="'.GLOBAL_URL.'/glib/global_img/arrowDown1.png" onClick = "getagents(\'ContactFullName\',\'desc\');clearimgs();setdownimg(\'down2\');">
-		</th>
+		$fieldHeader =null;
+	}
+	
 		
-		<th  class="ast_width_20pct">
-		<img id="up3" src="'.GLOBAL_URL.'/glib/global_img/arrowUp1.png" onClick = "getagents(\'ContactSalutation\',\'\');clearimgs();setupimg(\'up3\');">
-		Salut
-		<img id="down3" src="'.GLOBAL_URL.'/glib/global_img/arrowDown1.png" onClick = "getagents(\'ContactSalutation\',\'desc\');clearimgs();setdownimg(\'down3\');">
-		</th>
+		 
 		
-		<th class="ast_width_20pct" >
-		<img id="up4" src="'.GLOBAL_URL.'/glib/global_img/arrowUp1.png" onClick = "getagents(\'ContactTel\',\'\');clearimgs();setupimg(\'up4\');">
-		Telephone
-		<img id="down4" src="'.GLOBAL_URL.'/glib/global_img/arrowDown1.png" onClick = "getagents(\'ContactTel\',\'desc\');clearimgs();setdownimg(\'down4\');">
-		</th>
-		
-	</tr>
+	 $ajaxSortableTable .='</tr>
 </table>
 <div id="hiddenDIV" style="visibility:hidden; background-color:white;  "></div>	
 		 ';
@@ -81,8 +76,9 @@
 			<script>
 			function getagents(column, direc) {
 				 
-				datastring="controller=ajax_controller&method=ajaxSortableTable&column="+column+"&direc="+direc+"";
-				controller="../' . $this -> ROOT_DIR . '/c/ajax_controller.php";
+				datastring="controller='.$controller.'&method='.$callBackFunction.'&column="+column+"&direc="+direc+"";
+				//alert(datastring);sending correct data for 2 and 4, yes!
+				controller="../' . $this -> ROOT_DIR . '/c/'.$controller.'.php";
 				receiverId="ajaxSortableTableResults";
 				console.log(datastring);
 				console.log(controller);
