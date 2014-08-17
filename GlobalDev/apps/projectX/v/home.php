@@ -67,8 +67,9 @@ include_once ('HEADS/default_head.php');
 	
 	<p>Done:</p>
 	<ul>
+		
 		<li>db connections</li>
-					<li>db and table names as constants</li>
+		<li>db and table names as constants</li>
 		<li>calendar and datepicker AS scheduler</li>
 		<li>App Specific Databases</li>
 		<li>web efficiency methods</li>
