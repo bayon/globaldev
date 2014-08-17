@@ -113,7 +113,7 @@ case 'ajaxSortableCCMathTable' :
 		} else {
 			$textout = "";
 		}
-		echo "<table cellspacing=\"0\" cellpadding=\"0\" width=\"100%\"  >" . $textout . "</table>";
+		echo "<table cellspacing=\"0\" cellpadding=\"0\" width=\"100%\" class=\"ajaxSortableTable\" >" . $textout . "</table>";
 
 		break;
 	default :

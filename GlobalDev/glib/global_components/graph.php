@@ -4,8 +4,8 @@
 	if ($environment != 'remote') {
 		$host = "localhost";
 		$user = "root";
-		$pword = "";
-		$db = "globaldev";
+		$pword = "root";
+		$db = "projectx";
 		$table = "simple_feedback";
 	} else {
 		$host = "mysql";
@@ -20,6 +20,7 @@ mysql_connect($host, $user, $pword);
 echo(mysql_error());
 $sqlSlider = "SELECT answer_4 FROM " . $db . ".simple_feedback ";
 $resSlider = mysql_query($sqlSlider);
+echo(mysql_error());
 while ($rowSlider = mysql_fetch_assoc($resSlider)) {
 	$a_data[] = $rowSlider;
 }

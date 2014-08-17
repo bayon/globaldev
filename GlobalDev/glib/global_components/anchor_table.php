@@ -60,13 +60,13 @@ function createAnchorTableWith_Data_HeaderTextAndFieldsArray($data,$headers,$con
 
 }
 //Controller and Model code
-$db = "globaldev";
+$db = "projectx";
 $table = "license";
 if (!isset($_GET['sortField'])) {
 	$sql = "SELECT * FROM " . $db . ".".$table." ";
 	$data = getDataFromSQL($sql) ;
 } else {
-	$db = "globaldev";
+	$db = "projectx";
 	$table = "license";
 	$keyValueArray = array('license_key'=>$_GET['licenseKey'],'host_name'=>$_GET['hostName'],'exp_date'=>$_GET['expirationDate']);
 	$sortByField =$_GET['sortField'];

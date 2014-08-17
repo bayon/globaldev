@@ -1,15 +1,43 @@
 body {
-	background-color: #CCC;
+	background-color: #f7f1dc;
 	background-image: url('../../global_img/zeroBackground_50.png');
 	color: #000;
 }
+.main_gradient {
+	background: -webkit-linear-gradient(white, #ccc); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(white, #ccc); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(white, #ccc); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(white, #ccc); /* Standard syntax */
+}
 .nav_container {
-	background-image: url('../../global_img/zeroBackground_50.png');
+	max-height: 30px;
+	/*background-image: url('../../global_img/black_25.png');*/
 }
 
 .nav_buttons {
-	color: #FFF;
-	background-image: url('../../global_img/black_25.png') !important;
+	height: 30px;
+	max-height: 30px;
+	padding: 5px;
+	border: none;
+	border-left: 1px solid #eee;
+}
+#site_header {
+	min-height: 200px;
+	max-height: 200px;
+	border: solid 1px yellow;
+}
+#site_logo {
+	float: left;
+	font-size: 42;
+	color: #ccc;
+	margin-left: 5%;
+}
+#site_name {
+	font-size: 42;
+	color: #ccc;
+}
+.gridMatrixContainer {
+	background-color: none;
 }
 input {
 	border: none;
@@ -57,37 +85,36 @@ a {
 	border: solid 1px #FFF;
 }
 .anchorTable_table_container table th {
-	background-image: url('../../global_img/transparentWhite10x10.png');
+	background-image: url('../../global_img/blue1.png');
 }
 .anchorTable_table_container  tr:hover {
-	background-image: url('../../global_img/transparentWhite10x10.png');
+	background-image: url('../../global_img/white_75.png');
 }
 
 /*------------------------ACTION LIST */
 .actionList_container {
-	
+
 	color: #000;
 }
 
 .actionList_container table {
-	
+
 	border: 1px solid #FFF;
 	background-image: url('../../global_img/black_50.png');
 }
 
 .actionList_container .actionList_title {
-	 
+
 }
 .actionList_container table td, th {
 	border: solid 1px #FFF;
-	
 }
 .actionList_container table th {
-	background-image: url('../../global_img/transparentWhite10x10.png');
-	color:#FFF;
+	background-image: url('../../global_img/blue1.png');
+	color: #FFF;
 }
 .actionList_container table td {
-	color:#FFF;
+	color: #FFF;
 }
 .actionList_container  tr {
 	background: none;
@@ -98,38 +125,25 @@ a {
 .actionList_container textarea {
 	background: none;
 	/*background-image: url('../global_img/black_50.png');*/
-	color:#FFF;
-	 
-
+	color: #FFF;
 }
-.actionList_container input{
+.actionList_container input {
 	background-image: url('../../global_img/black_50.png');
-	color:#FFF;
-	
-}
-/*------------------DESKTOP----------------*/
-
-@media screen and (max-width: 5000px) {
+	color: #FFF;
 }
 
-/*------------------TABLET----------------*/
-@media screen and (max-width: 1024px) {
-}
 
-/*------------------iPhone----------------*/
-@media screen and (max-width: 480px) {
-	#content {
-		margin-left: 2%;
-		margin-right: 2%;
-	}
-	.nav_buttons {
-		min-width: 75px;
-		width: 75px;
-		max-width: 80px;
-		font-size: 11px;
-	}
-	.nav_container {
-		height: 60px;
-		max-height: 60px;
-	}
+/*------------------------AJAX SORTABLE TABLE */
+/*--- ajaxSortableTable ----*/
+.ajaxSortableTable{
+	background-image: url('../../global_img/white_25.png');
+}
+.ajaxSortableTable th{
+	background-image: url('../../global_img/blue1.png');
+}
+.ajaxSortableTable tr{
+	background:none;
+}
+.ajaxSortableTable  tr:hover {
+	background-image: url('../../global_img/white_25.png');
 }

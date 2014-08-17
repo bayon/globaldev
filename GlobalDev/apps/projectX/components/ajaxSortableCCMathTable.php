@@ -13,7 +13,7 @@
 		//"ContactID","ContactFullName","ContactSalutation","ContactTel"
 		 //column headers here
 		 $ajaxSortableTable .='
-		 
+		 <div class="ajaxSortableTable_container">
 <table cellspacing="0" cellpadding="0"  width=100%  border=1 class="ajaxSortableTable">
 	<tr>';
 	
@@ -87,6 +87,7 @@
 			}
 			</script>
 			
+		</div>
 		</div>
 		 
 		';
