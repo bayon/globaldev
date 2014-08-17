@@ -1,5 +1,6 @@
 <?php session_start(); ?>
 <!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01//EN' 'http://www.w3.org/TR/html4/strict.dtd'>
+<!-- local dev initially has no equivalent on github, and should be thought of as my little macs dev repo.-->
 <html manifest='cache.appcache'>
 	<?php
 	include_once ('global_head.php');
