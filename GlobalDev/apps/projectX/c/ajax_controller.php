@@ -62,11 +62,12 @@ switch ($_POST['method']) {
 		//get data and formulate table data here
 		// appConnectPDO();
 		//echo("<br>constants: APP_DB=".APP_DB." : HOST_DB=".HOST_DB."");
+		//echo("<br>".APP_DB.'-'.HOST_DB.'-'.USERNAME.'-'.PASSWORD.'</br>');
 		$textout = "";
 		if (isset($_POST)) {
 			mysql_connect(HOST_DB,USERNAME,PASSWORD);
 			$sql = "SELECT * FROM ".APP_DB.".contacts ORDER BY " . $_POST['column'] . " " . $_POST['direc'] . " ";
-			 
+			 //echo("<br>sql:".$sql);
 			$result = mysql_query($sql);
 			//echo(mysql_error());
 			while ($myrow = mysql_fetch_array($result)) {
