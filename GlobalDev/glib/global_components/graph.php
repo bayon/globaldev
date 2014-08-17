@@ -1,10 +1,19 @@
 <?php
 //config.php
-$host = "localhost";
-$user = "root";
-$pword = "";
-$db = "globaldev";
-$table = "simple_feedback";
+ $environment = 'local';
+	if ($environment != 'remote') {
+		$host = "localhost";
+		$user = "root";
+		$pword = "";
+		$db = "globaldev";
+		$table = "simple_feedback";
+	} else {
+		$host = "mysql";
+		$user = "bayonforte";
+		$pword = "ph0rt3w0rk$";
+		$db = "globaldev";
+		$table = "simple_feedback";
+	}
 ?>
 <?php
 mysql_connect($host, $user, $pword);

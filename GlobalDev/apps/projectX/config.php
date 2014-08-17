@@ -6,6 +6,7 @@
 /*============================================================*/
 define('BASE_PATH', realpath(dirname(__FILE__)));
 $domain = $_SERVER['HTTP_HOST'];
+$domain = "172.16.162.61/";
 $hostname = $domain . "/" . SITE_ROOT . "/";
 define('BASE_URL', 'http://' . $hostname . '');
 define('HOSTNAME', $hostname);
