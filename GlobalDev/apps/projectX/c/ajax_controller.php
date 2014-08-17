@@ -92,22 +92,22 @@ switch ($_POST['method']) {
 case 'ajaxSortableCCMathTable' :
 		 
 		$textout = "";
+	$db = "cc";
+	$table = "cc_math";
 		if (isset($_POST)) {
 			mysql_connect(HOST_DB,USERNAME,PASSWORD);
-			$sql = "SELECT * FROM ".APP_DB.".contacts ORDER BY " . $_POST['column'] . " " . $_POST['direc'] . " ";
+			$sql = "SELECT * FROM ".$db.".".$table." ORDER BY " . $_POST['column'] . " " . $_POST['direc'] . " ";
 			 //echo("<br>sql:".$sql);
 			$result = mysql_query($sql);
 			//echo(mysql_error());
 			while ($myrow = mysql_fetch_array($result)) {
-				$agentid = $myrow["ContactID"];
-				$agentname = $myrow["ContactFullName"];
-				$agentsalut = $myrow["ContactSalutation"];
-				$agentinttel = $myrow["ContactTel"];
+				$code = $myrow["code"];
+				$statement = $myrow["statement"];
+				
 				$textout .= "<tr>
-		<td class='ast_width_20pct' >" . $agentid . "</td>
-		<td  class='ast_width_20pct'>" . $agentname . "</td>
-		<td  class='ast_width_20pct'>" . $agentsalut . "</td>
-		<td  class='ast_width_20pct'>" . $agentinttel . "</td>
+		<td class='ast_width_20pct' >" . $code . "</td>
+		<td  class='ast_width_20pct'>" . $statement . "</td>
+		
 		</tr>";
 			}
 		} else {
