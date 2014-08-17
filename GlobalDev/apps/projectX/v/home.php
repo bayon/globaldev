@@ -48,25 +48,28 @@ include_once ('HEADS/default_head.php');
 	<p>To Do:</p>
 		<ul>
 			
-			<li>calendar and datepicker AS scheduler</li>
+			
 			<li>solve the web transfer issues</li>
 				<ul>
 					<li>sanitize()</li>
-					<li>db connections</li>
-					<li>db and table names as constants</li>
+					<li>pull components to local level, where reasonable.</li>
+					
 				</ul>
 			<li>Global Components: </li>
 			<ul>
 				<li>cc to ajaxtable</li>
 				<li>phone call links</li>
 				<li>contact form with email/HTML formating.</li>
-				<li>cc to ajaxtable</li>
+				
 			</ul>
 			<li>RWD</li>
 		</ul>
 	
 	<p>Done:</p>
 	<ul>
+		<li>db connections</li>
+					<li>db and table names as constants</li>
+		<li>calendar and datepicker AS scheduler</li>
 		<li>App Specific Databases</li>
 		<li>web efficiency methods</li>
 			<ul>~app cache ( done at the global level)</ul>

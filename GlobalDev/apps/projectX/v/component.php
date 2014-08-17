@@ -85,8 +85,9 @@ include_once ('HEADS/custom_confirm_head.php');
 				break;
 			case 'ajax' :
 				include_once ('HEADS/default_head.php');
-				include_once (GLOBAL_DIR . '/glib/global_components/ajax_examples.php');
-
+				//include_once (GLOBAL_DIR . '/glib/global_components/ajax_examples.php');
+				include_once ('./components/ajax_examples.php');
+				
 			case 'email html' :
 				include_once ('HEADS/default_head.php');
 				include_once (GLOBAL_DIR . '/glib/global_components/email_html.php');
