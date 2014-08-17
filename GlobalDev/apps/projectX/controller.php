@@ -5,7 +5,7 @@ include_once ("m/model_includes.php");
 /*
  * CURIOUS : left over from back button fix attemp involving posted request.
  if(!isset($_SESSION['home'])) {
- $_SESSION['home']="";
+ $_SESSION['home']=""; 
  }
  * */
 /*

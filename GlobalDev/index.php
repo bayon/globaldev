@@ -6,6 +6,7 @@ create code in localdev, then hard reset the master to local dev, then push up.
 
 <html manifest='cache.appcache'>
 	<?php
+	include_once('global_includes.php');
 	include_once ('global_head.php');
 	?>
 	<style>
@@ -59,10 +60,11 @@ create code in localdev, then hard reset the master to local dev, then push up.
 	</div>
 	<?php
 	$domain = "172.16.162.61";
+	echo("<br>GLOBAL URL:".GLOBAL_URL);
+	//GLOBAL URL:http://localhost:8888/github_globaldev/globaldev/GlobalDev
 	?>
 	<div class="global_enterprise_div">
-		<a href ="http://<?=$domain;?>/github_globaldev/globaldev/GlobalDev/apps/projectX/index.php">Project X</a>
-		<a href ="http://<?=$domain;?>/github_globaldev/globaldev/GlobalDev/apps/projectY/index.php">Project Y</a>
+		<a href =<?=GLOBAL_URL;?>/apps/projectX/index.php>Project X</a>
 
 	</div>
 
