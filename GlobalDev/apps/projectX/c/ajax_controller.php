@@ -6,8 +6,6 @@ include_once ("../config.php");
 //include_once("../m/model_includes.php");
 //without it : ? :
 
-
-
 //echo("<br>".__FILE__);
 //echo("<pre>");print_r($_POST);echo("</pre>");
 switch ($_POST['method']) {
@@ -65,9 +63,9 @@ switch ($_POST['method']) {
 		//echo("<br>".APP_DB.'-'.HOST_DB.'-'.USERNAME.'-'.PASSWORD.'</br>');
 		$textout = "";
 		if (isset($_POST)) {
-			mysql_connect(HOST_DB,USERNAME,PASSWORD);
-			$sql = "SELECT * FROM ".APP_DB.".contacts ORDER BY " . $_POST['column'] . " " . $_POST['direc'] . " ";
-			 //echo("<br>sql:".$sql);
+			mysql_connect(HOST_DB, USERNAME, PASSWORD);
+			$sql = "SELECT * FROM " . APP_DB . ".contacts ORDER BY " . $_POST['column'] . " " . $_POST['direc'] . " ";
+			//echo("<br>sql:".$sql);
 			$result = mysql_query($sql);
 			//echo(mysql_error());
 			while ($myrow = mysql_fetch_array($result)) {
@@ -88,32 +86,61 @@ switch ($_POST['method']) {
 		echo "<table cellspacing=\"0\" cellpadding=\"0\" width=\"100%\"  >" . $textout . "</table>";
 
 		break;
-		
-case 'ajaxSortableCCMathTable' :
-		 
-		$textout = "";
-	$db = "cc";
-	$table = "cc_math";
-		if (isset($_POST)) {
-			mysql_connect(HOST_DB,USERNAME,PASSWORD);
-			$sql = "SELECT * FROM ".$db.".".$table." ORDER BY " . $_POST['column'] . " " . $_POST['direc'] . " ";
-			 //echo("<br>sql:".$sql);
-			$result = mysql_query($sql);
-			//echo(mysql_error());
-			while ($myrow = mysql_fetch_array($result)) {
-				$code = $myrow["code"];
-				$statement = $myrow["statement"];
-				
-				$textout .= "<tr>
+
+	case 'ajaxSortableCCMathTable' :
+		if ($_POST['searchKey'] != "") {
+			//SEARCH BY KEYWORD 
+			$textout = "";
+			$db = "cc";
+			$table = "cc_math";
+			if (isset($_POST)) {
+				mysql_connect(HOST_DB, USERNAME, PASSWORD);
+				$sql = "SELECT * FROM " . $db . "." . $table . "  WHERE 1=1 AND code like '%".$_POST['searchKey']."%' OR statement like '%".$_POST['searchKey']."%'ORDER BY " . $_POST['column'] . " " . $_POST['direc'] . " ";
+				//echo("<br>sql:".$sql);
+				$result = mysql_query($sql);
+				//echo(mysql_error());
+				while ($myrow = mysql_fetch_array($result)) {
+					$code = $myrow["code"];
+					$statement = $myrow["statement"];
+
+					$textout .= "<tr>
 		<td class='ast_width_20pct' >" . $code . "</td>
 		<td  class='ast_width_20pct'>" . $statement . "</td>
 		
 		</tr>";
+				}
+			} else {
+				$textout = "";
 			}
+			echo "<table cellspacing=\"0\" cellpadding=\"0\" width=\"100%\" class=\"ajaxSortableTable\" >" . $textout . "</table>";
+
 		} else {
+		//REGULAR SORT
 			$textout = "";
+			$db = "cc";
+			$table = "cc_math";
+			if (isset($_POST)) {
+				mysql_connect(HOST_DB, USERNAME, PASSWORD);
+				$sql = "SELECT * FROM " . $db . "." . $table . " ORDER BY " . $_POST['column'] . " " . $_POST['direc'] . " ";
+				//echo("<br>sql:".$sql);
+				$result = mysql_query($sql);
+				//echo(mysql_error());
+				while ($myrow = mysql_fetch_array($result)) {
+					$code = $myrow["code"];
+					$statement = $myrow["statement"];
+
+					$textout .= "<tr>
+		<td class='ast_width_20pct' >" . $code . "</td>
+		<td  class='ast_width_20pct'>" . $statement . "</td>
+		
+		</tr>";
+				}
+			} else {
+				$textout = "";
+			}
+			echo "<table cellspacing=\"0\" cellpadding=\"0\" width=\"100%\" class=\"ajaxSortableTable\" >" . $textout . "</table>";
+
 		}
-		echo "<table cellspacing=\"0\" cellpadding=\"0\" width=\"100%\" class=\"ajaxSortableTable\" >" . $textout . "</table>";
 
 		break;
 	default :

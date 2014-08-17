@@ -53,6 +53,7 @@ include_once ('HEADS/default_head.php');
 				<ul>
 					<li>make ajax sortable , searchable as well</li>
 					<li>figure out the calendar slash ajax bleed over issue</li>
+					<li>make the calendar navigable by month/year</li>
 					<li>sanitize()</li>
 					<li>pull components to local level, where reasonable.</li>
 					
