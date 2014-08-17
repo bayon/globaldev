@@ -1,6 +1,8 @@
 <?php session_start(); ?>
 <!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01//EN' 'http://www.w3.org/TR/html4/strict.dtd'>
-<!-- git must be understood before more work gets lost.-->
+<!-- git must be understood before more work gets lost.
+create code in localdev, then hard reset the master to local dev, then push up.
+-->
 
 <html manifest='cache.appcache'>
 	<?php
