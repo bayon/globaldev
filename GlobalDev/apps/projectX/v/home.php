@@ -68,7 +68,11 @@ include_once ('HEADS/default_head.php');
 	
 	<p>Done:</p>
 	<ul>
+<<<<<<< HEAD
 		<li>cc to ajaxtable</li>
+=======
+		
+>>>>>>> f68b70fab9d09e9d1fe25ee77212367dc618e4b2
 		<li>db connections</li>
 		<li>db and table names as constants</li>
 		<li>calendar and datepicker AS scheduler</li>
