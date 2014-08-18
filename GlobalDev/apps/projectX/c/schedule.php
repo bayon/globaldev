@@ -6,7 +6,7 @@
 include_once (GLOBAL_DIR . '/glib/global_components/calendar.php');
 
 if (isset($_GET)) {
-	echo("<br> CONTROLLER GET isset</br>");
+	//echo("<br> CONTROLLER GET isset</br>");
 	if (isset($_GET['method'])) {
 		switch($_GET['method']) {
 			case 'addAppointment' :
@@ -23,9 +23,19 @@ if (isset($_GET)) {
 				break;
 			case 'changeMonth' :
 				if($_GET['direction'] == 'fwd'){
-					$calendar = new Calendar($_GET['month']+1, date('Y'),500); 
+					if($_GET['month'] != 12){
+						$calendar = new Calendar($_GET['month']+1, $_GET['year'],500); 
+					}else{
+						$calendar = new Calendar(1, $_GET['year']+1,500);
+					}
+					
 				}else{
-					$calendar = new Calendar($_GET['month']-1, date('Y'),500); 
+					
+					if($_GET['month'] != 1){
+						$calendar = new Calendar($_GET['month']-1, $_GET['year'],500); 
+					}else{
+						$calendar = new Calendar(12, $_GET['year']-1,500); 
+					}
 				}
 				include_once('v/schedule.php');
 				break;

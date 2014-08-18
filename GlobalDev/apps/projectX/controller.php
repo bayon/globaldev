@@ -49,7 +49,22 @@ if (isset($_GET['navigation'])) {
 			include_once ('c/default.php');
 			break;
 	}
-} else {
+} 
+else if (isset($_GET['subnavigation'])) {
+	//echo("<br>GET isset:");
+	//print_r($_GET);
+	switch ($_GET['subnavigation']) {
+		
+		case 'sub1' :
+		
+		break;
+		
+		default :
+			break;
+	}
+}
+
+else {
 	//echo("<br>GET NOT isset:");
 	if (!isset($_POST['controller']) AND !isset($_GET['controller'])) {
 		// CUSTOM CSS OVERRIDE

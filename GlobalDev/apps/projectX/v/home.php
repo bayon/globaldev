@@ -35,8 +35,8 @@ include_once ('HEADS/default_head.php');
 <div class='todoList'>
 	<p>To Do:</p>
 		<ul>
-			<li>sub navigation</li>
-			<li>cal event link should go to editable appointment form</li>
+			
+			<li>separate form for managing appointments</li>
 			<li>tweak the calendar control panel</li>
 			<li>pull or push dates to another calendar</li>
 			<li>pull components to local level, where reasonable.</li>
@@ -51,6 +51,8 @@ include_once ('HEADS/default_head.php');
 	
 	<p>Done:</p>
 	<ul>
+		<li>calendar max month issue</li>
+		<li>sub navigation</li>
 		<li>make the calendar navigable by month/year</li>
 		<li>make schedular appointment portion it's own class with custom redirect controller.</li>
 		<li>hp warnings for ajaxTable</li>

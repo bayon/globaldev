@@ -1,6 +1,6 @@
 <?php
 //echo("<br>".__FILE__);
-if (isset($_POST)) {
+if (isset($_POST['method'])) {
 	switch ($_POST['method']) {
 		case 'uploadFile' :
 			//echo("<br>post method case: uploadFile");

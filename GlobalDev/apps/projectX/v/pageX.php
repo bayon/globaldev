@@ -3,10 +3,12 @@ include_once ('HEADS/default_head.php');
 include_once ('HEADS/custom_confirm_head.php');
 ?>
 <?php echo(navigation()); ?>
+<?php echo(subnavigation("pageX.php")); ?>
 <div id='content'>
 	<div class='page_title'>
 		Page X
 	</div>
+	
 	<?php
 	if(1==2){
 		$user = unserialize($_SESSION['user']);

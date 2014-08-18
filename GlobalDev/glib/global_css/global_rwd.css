@@ -1,15 +1,38 @@
 
 /*------------------DESKTOP----------------*/
 
-@media screen and (max-width: 5000px) {
+@media screen and (max-width: 1024px) {
 }
 
 /*------------------TABLET----------------*/
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 960px) {
 	#site_header {
 		height: 200px;
 		max-height: 200px;
 		border:solid purple 2px ;
+	}
+	.nav_buttons {
+		min-width: 55px;
+		width: 55px;
+		max-width: 55px;
+		font-size: 11px;
+		padding:1px;
+	}
+	.nav_container {
+		height: 30px;
+		max-height: 30px;
+	}
+	.subnav_buttons {
+		min-width: 55px;
+		width: 55px;
+		max-width: 55px;
+		font-size: 11px;
+		padding:1px;
+	}
+	.subnav_container {
+		margin-top:0px;
+		height: 30px;
+		max-height: 30px;
 	}
 }
 
@@ -40,6 +63,18 @@
 		padding:1px;
 	}
 	.nav_container {
+		height: 30px;
+		max-height: 30px;
+	}
+	.subnav_buttons {
+		min-width: 55px;
+		width: 55px;
+		max-width: 55px;
+		font-size: 11px;
+		padding:1px;
+	}
+	.subnav_container {
+		margin-top:30px;
 		height: 30px;
 		max-height: 30px;
 	}
