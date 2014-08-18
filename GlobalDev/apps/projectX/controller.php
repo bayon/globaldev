@@ -36,7 +36,12 @@ if (isset($_GET['navigation'])) {
 		case 'examples' :
 			include_once ('c/examples.php');
 			break;
-
+		case 'schedule' :
+			include_once ('c/schedule.php');
+			break;
+		case 'ajaxTable' :
+			include_once ('c/ajaxTable.php');
+			break;
 		default :
 			include_once ('c/default.php');
 			break;

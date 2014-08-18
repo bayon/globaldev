@@ -1,13 +1,13 @@
 <?php
 include_once ("../constants.php");
 include_once ("../config.php");
-//include_once('../app_lib/app_lib_includes.php');
-//The following call to include model_includes FAILS with error.
-//include_once("../m/model_includes.php");
-//without it : ? :
+// Try to funnel all ajax request through this main ajax controller.
+//because: they all need to include the constants and configs above.
+
 
 //echo("<br>".__FILE__);
 //echo("<pre>");print_r($_POST);echo("</pre>");
+//echo("<pre>");print_r($_GET);echo("</pre>");
 switch ($_POST['method']) {
 	case 'PremadeAjaxFormMethodCall' :
 		//echo("<br>ROOT_DIR: ".ROOT_DIR."</br>");
@@ -88,59 +88,7 @@ switch ($_POST['method']) {
 		break;
 
 	case 'ajaxSortableCCMathTable' :
-		if ($_POST['searchKey'] != "") {
-			//SEARCH BY KEYWORD 
-			$textout = "";
-			$db = "cc";
-			$table = "cc_math";
-			if (isset($_POST)) {
-				mysql_connect(HOST_DB, USERNAME, PASSWORD);
-				$sql = "SELECT * FROM " . $db . "." . $table . "  WHERE 1=1 AND code like '%".$_POST['searchKey']."%' OR statement like '%".$_POST['searchKey']."%'ORDER BY " . $_POST['column'] . " " . $_POST['direc'] . " ";
-				//echo("<br>sql:".$sql);
-				$result = mysql_query($sql);
-				//echo(mysql_error());
-				while ($myrow = mysql_fetch_array($result)) {
-					$code = $myrow["code"];
-					$statement = $myrow["statement"];
-
-					$textout .= "<tr>
-		<td class='ast_width_20pct' >" . $code . "</td>
-		<td  class='ast_width_20pct'>" . $statement . "</td>
-		
-		</tr>";
-				}
-			} else {
-				$textout = "";
-			}
-			echo "<table cellspacing=\"0\" cellpadding=\"0\" width=\"100%\" class=\"ajaxSortableTable\" >" . $textout . "</table>";
-
-		} else {
-		//REGULAR SORT
-			$textout = "";
-			$db = "cc";
-			$table = "cc_math";
-			if (isset($_POST)) {
-				mysql_connect(HOST_DB, USERNAME, PASSWORD);
-				$sql = "SELECT * FROM " . $db . "." . $table . " ORDER BY " . $_POST['column'] . " " . $_POST['direc'] . " ";
-				//echo("<br>sql:".$sql);
-				$result = mysql_query($sql);
-				//echo(mysql_error());
-				while ($myrow = mysql_fetch_array($result)) {
-					$code = $myrow["code"];
-					$statement = $myrow["statement"];
-
-					$textout .= "<tr>
-		<td class='ast_width_20pct' >" . $code . "</td>
-		<td  class='ast_width_20pct'>" . $statement . "</td>
-		
-		</tr>";
-				}
-			} else {
-				$textout = "";
-			}
-			echo "<table cellspacing=\"0\" cellpadding=\"0\" width=\"100%\" class=\"ajaxSortableTable\" >" . $textout . "</table>";
-
-		}
+		 include_once("ajaxTable.php");
 
 		break;
 	default :

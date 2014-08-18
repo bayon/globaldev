@@ -47,33 +47,25 @@ include_once ('HEADS/default_head.php');
 <div class='todoList'>
 	<p>To Do:</p>
 		<ul>
+			<li>figure out the calendar slash ajax bleed over issue</li>
+			<li>make the calendar navigable by month/year</li>
 			
-			<li>tweak theme 3 to include new transparencies.</li>
-			<li>solve the web transfer issues</li>
-				<ul>
-					<li>make ajax sortable , searchable as well</li>
-					<li>figure out the calendar slash ajax bleed over issue</li>
-					<li>make the calendar navigable by month/year</li>
-					<li>sanitize()</li>
-					<li>pull components to local level, where reasonable.</li>
-					
-				</ul>
+			<li>pull components to local level, where reasonable.</li>
 			<li>Global Components: </li>
 			<ul>
 				<li>phone call links</li>
 				<li>contact form with email/HTML formating.</li>
-				
 			</ul>
 			<li>RWD</li>
+			<li>solve the web transfer issues</li>
 		</ul>
 	
 	<p>Done:</p>
 	<ul>
-<<<<<<< HEAD
+		<li>sanitize()</li>
+		<li>make ajax sortable , searchable as well</li>
+<li>tweak theme 3 to include new transparencies.</li>
 		<li>cc to ajaxtable</li>
-=======
-		
->>>>>>> f68b70fab9d09e9d1fe25ee77212367dc618e4b2
 		<li>db connections</li>
 		<li>db and table names as constants</li>
 		<li>calendar and datepicker AS scheduler</li>

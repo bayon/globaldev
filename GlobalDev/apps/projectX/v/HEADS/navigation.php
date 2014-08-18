@@ -9,6 +9,8 @@ function navigation() {
 	<input id='nav2'  type='submit' class='nav_buttons main_gradient' name='navigation' value='pageX'/>
 	<input id='nav3'  type='submit' class='nav_buttons main_gradient' name='navigation' value='examples' />
 	<input id='nav4'  type='submit' class='nav_buttons main_gradient' name='navigation' value='components'/>
+	<input id='nav5'  type='submit' class='nav_buttons main_gradient' name='navigation' value='schedule'/>
+	<input id='nav6'  type='submit' class='nav_buttons main_gradient' name='navigation' value='ajaxTable'/>
 	</div>
 	";
 	$html .= "</form></div>";

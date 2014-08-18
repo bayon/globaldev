@@ -1,5 +1,4 @@
 <?php
-
 include_once ('HEADS/custom_confirm_head.php');
 ?>
 
@@ -32,23 +31,26 @@ include_once ('HEADS/custom_confirm_head.php');
 	$gridMatrix[0][1] = "
 	<select name='selected_component'>
 		<option>map</option>
-		<option>datepicker</option>
 		<option>attachments</option>
 		<option>actionList</option>
 		<option>anchorTable</option>
 		<option>graph</option>
-		<option>ajax</option>
 		<option>email html</option>
-		<option>calendar</option>
-		 
 	</select>
 	";
+	/*<option>ajax</option>
+	 * <option>calendar</option>
+	 * */
+	
 	/*
 	 * REQUIRES PURCHASE OF JQSUITE:
 	 <option>jqgrid_cc</option>
 	 <option>searchable jq grid</option>
 	 <option>jq scheduler</option>
 	 * */
+	 /*
+	  * issues: <option>datepicker</option>
+	  * */
 
 	$gridMatrix[1][0] = "";
 	$submitButton = new SubmitButton("component.php", "method", "selectComponent");
