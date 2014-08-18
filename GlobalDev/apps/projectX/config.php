@@ -5,7 +5,7 @@
 if (GLOBAL_ENVIRONMENT == "littleMac") {
 	define('SITE_ROOT', 'forteworks/globaldev/GlobalDev/apps/projectX');
 } else {
-	define('SITE_ROOT', 'github_globaldev/globaldev/GlobalDev/apps/projectX');
+	define('SITE_ROOT', 'gdev/globaldev/GlobalDev/apps/projectX');
 }
 
 /*============================================================*/

@@ -8,7 +8,7 @@ if (GLOBAL_ENVIRONMENT == "littleMac") {
 	$table = "Task";
 } else {
 	$db = "training";
-	$table = "Task";
+	$table = "task";
 }
 //Controller and Model code
 

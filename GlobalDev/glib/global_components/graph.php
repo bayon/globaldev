@@ -1,13 +1,21 @@
 <?php
 //config.php
- $environment = 'local';
-	if ($environment != 'remote') {
+ $environment = 'hp';
+	if ($environment == 'local') {
 		$host = "localhost";
 		$user = "root";
 		$pword = "root";
 		$db = "projectx";
 		$table = "simple_feedback";
-	} else {
+	} 
+	if ($environment == 'hp') {
+		$host = "localhost";
+		$user = "root";
+		$pword = "";
+		$db = "projectx";
+		$table = "simple_feedback";
+	} 
+	if ($environment == 'remote') {
 		$host = "mysql";
 		$user = "bayonforte";
 		$pword = "ph0rt3w0rk$";

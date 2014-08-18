@@ -1,8 +1,8 @@
 <?php
 define('GLOBAL_DIR', realpath(dirname(__FILE__)));
-$devLocation = "littleMac";
+$devLocation = "NOTlittleMac";//littleMac
 if($devLocation != "littleMac"){
-	define('GLOBAL_ROOT', 'github_globaldev/globaldev/GlobalDev');
+	define('GLOBAL_ROOT', 'gdev/globaldev/GlobalDev');
 	define('GLOBAL_ENVIRONMENT',"other");
 }else{
 	define('GLOBAL_ROOT', 'forteworks/globaldev/GlobalDev');
