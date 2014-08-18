@@ -12,7 +12,7 @@ if (isset($_GET)) {
 			case 'addAppointment' :
 				//$dateArray = explode(" ", $_GET['date']);// for datepickR
 				$dateArray = explode("/", $_GET['date']);//for jquery datepicker 
-				$dateIntArray = handleDatepickerResponse($dateArray);
+				//$dateIntArray = handleDatepickerResponse($dateArray);
 				
 				//$appointment = new Appointment($_GET['title'], $dateIntArray[0], $dateIntArray[1], $dateIntArray[2], $_GET['note'], $_GET['anchor']);
 				$appointment = new Appointment($_GET['title'], $dateArray[2], $dateArray[0], $dateArray[1], $_GET['note'], $_GET['anchor']);
@@ -23,9 +23,9 @@ if (isset($_GET)) {
 				break;
 			case 'changeMonth' :
 				if($_GET['direction'] == 'fwd'){
-					$calendar = new Calendar($_GET['month']+1, date('Y')); 
+					$calendar = new Calendar($_GET['month']+1, date('Y'),500); 
 				}else{
-					$calendar = new Calendar($_GET['month']-1, date('Y')); 
+					$calendar = new Calendar($_GET['month']-1, date('Y'),500); 
 				}
 				include_once('v/schedule.php');
 				break;
@@ -35,7 +35,7 @@ if (isset($_GET)) {
 		}
 	}else{
 		
-		$calendar = new Calendar(date('n'), date('Y')); 	
+		$calendar = new Calendar(date('n'), date('Y'),500); 	
 		include_once('v/schedule.php');
 	}
 
@@ -58,7 +58,7 @@ if (isset($_GET)) {
 
 //include_once('v/schdeule.php');
 
-
+/*
 function handleDatepickerResponse($dateArray) {
 	//in: integer array //OLD array ('August', '20th,', '2014' );
 	//out: integer array ( year, month, day)
@@ -119,7 +119,7 @@ function handleDatepickerResponse($dateArray) {
 	return $dateArray;
 }
 
-
+*/
  
 
 ?>

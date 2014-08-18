@@ -127,16 +127,18 @@
 		 text here, (color, font-size, etc), rather than it's layout.
 		 */
 		#day_runner {
-			font-weight: bold;
+			font-weight: regular;
+			color:#CCC;
 		}
 
 		/*
 		 This controls the appearance of the month name at the top of the calendar
 		 */
 		#month_name {
-			color: green;
-			font-size: 24px;
-			font-weight: bold;
+			 
+			font-size: 20px;
+			font-weight: regular;
+			color:#CCC;
 		}
 
 		/*
@@ -146,7 +148,8 @@
 		 */
 		.date_box {
 			height: 90px;
-			border: 1px solid black;
+			border: 1px solid #CCC;
+			background-image: url('../global_img/white_75.png');
 		}
 
 		/*
@@ -163,7 +166,8 @@
 		 a date, but used to fill out the calendar square.
 		 */
 		.empty_date {
-			background-color: gray;
+			background:none;
+			background-image: url('../global_img/black_50.png');
 		}
 .calendarControlPanel{
 	width:100%;
@@ -172,10 +176,17 @@
 }
 .calendarControlPanel .back{
 	float:left;
+	color:#ccc;
+	background:none;
+	background-image: url('../global_img/white_50.png');
+	
 	
 }
 .calendarControlPanel .fwd{
 	float:right;
+	color:#ccc;
+	background:none;
+	background-image: url('../global_img/white_50.png');
 	
 }
 /*------------------DESKTOP----------------*/

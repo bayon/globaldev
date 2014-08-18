@@ -4,9 +4,9 @@ include_once ('HEADS/default_head.php');
 ?>
 <?php echo(navigation()); ?>
 <div id='content'>
-	<p>
+	<div class='page_title'>
 		Ajax Table
-	</p>
+	</div>
 	<?php
 	
 	include_once ('./components/ajax_tableHelper_ccMath.php');

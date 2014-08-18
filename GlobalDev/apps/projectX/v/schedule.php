@@ -4,21 +4,20 @@ include_once ('HEADS/datepicker_head.php');
 ?>
 <?php echo(navigation()); ?>
 <div id='content'>
-	<p>
+	<div class='page_title'>
 		Schedule
-	</p>
+	</div>
 	<?php
 	include_once (GLOBAL_DIR . '/glib/global_components/schedule_maker.php');
 	$scheduler = new Schedule_Maker("schedule.php");
-	echo($scheduler -> make());
-	?>
-
 	
-	<div>
+	//echo("<script> var screenWidth = window.screen.width; alert('screen width:'+ screenWidth); </script>");
+	?>
+	<div style='width:500px;text-align:center;margin-left:25%;'>
+		<?php echo($scheduler -> make()); ?>
 		<!-- NOTE !!!: Because this is a class, I believe it LINGERS around after the page has moved on.... -->
-
 		<?php
-		$calendarControlPanel = "<div class=' container calendarControlPanel' ><form method='get' action='".$_SERVER['PHP_SELF']."' >";
+		$calendarControlPanel = "<div class=' container calendarControlPanel' style='width:500px; ' ><form method='get' action='".$_SERVER['PHP_SELF']."' >";
 		$calendarControlPanel .= "<input type='hidden' name='year' value='".$calendar->getYear()."'/>";
 		$calendarControlPanel .= "<input type='hidden' name='month' value='".$calendar->getMonth()."'/>";
 		$calendarControlPanel .= "<input type='hidden' name='controller' value='schedule.php'/>";
@@ -33,9 +32,6 @@ include_once ('HEADS/datepicker_head.php');
 		//get month as number date('n')
 		 ?>
 		<?= $calendar -> render(); ?>
-		
-		
-		
 	</div>
 </div>
 

@@ -4,9 +4,9 @@ include_once ('HEADS/custom_confirm_head.php');
 
 <?php echo(navigation()); ?>
 <div id='content'>
-	<p>
-		COMPONENT
-	</p>
+	<div class='page_title'>
+		Component
+	</div>
 	<?php $user = unserialize($_SESSION['user']);
 		$viewUserData = true;
 		if ($viewUserData) {

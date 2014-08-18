@@ -22,7 +22,7 @@ function navigation() {
 }
 
 function customCSSMenu() {
-	$html = "<div   ><form method='post' action='$_SERVER[PHP_SELF]' >";
+	$html = "<div  class=''  style='margin-top:50px;text-align:center;width:100%;'><form method='post' action='$_SERVER[PHP_SELF]' >";
 	$theme1_selected = " selected ";
 	$theme2_selected = " ";
 	$theme3_selected = " ";

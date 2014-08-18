@@ -5,10 +5,9 @@ include_once ('HEADS/default_head.php');
 <?php //echo(navigation()); ?>
 
 <div id='content'>
-	<p>
-		<?=TITLE
-		?>
-	</p>
+	<div class='page_title'>
+		<?=TITLE;?>
+	</div>
 <?php
 
 

@@ -5,9 +5,9 @@ include_once ('HEADS/default_head.php');
 echo(navigation());
 ?>
 <div id='content'>
-	<p>
-		jquery ui examples
-	</p>
+	<div class='page_title'>
+		jQuery Examples
+	</div>
 	
 <?php 
 //JQ UI EXAMPLES:

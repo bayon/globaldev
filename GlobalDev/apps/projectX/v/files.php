@@ -4,9 +4,9 @@ include_once ('HEADS/default_head.php');
 ?>
 <?php echo(navigation()); ?>
 <div id='content'>
-	<p>
+	<div class='page_title'>
 		Files and Attachments
-	</p>
+	</div>
 	<?php
 	include_once (GLOBAL_DIR . '/glib/global_components/attachments.php');
 	?>

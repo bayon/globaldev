@@ -5,23 +5,11 @@ include_once ('HEADS/default_head.php');
 		echo(navigation());
 		echo(customCSSMenu());
 ?>
-<style>
-	.todoList{
-		text-align:left;float:left;margin-left:5%;overflow-y:scroll;max-height:250px;border:solid 1px black;
-		background-color:#111111;
-		color:green;
-	}
-	.todoList p{
-		color:white;
-	}
-	.todoList a{
-		color:orange;
-	}
-</style>
+ 
 <div id='content'>
-	<p>
-		home view
-	</p>
+	<div class='page_title'>
+		Home
+	</div>
 </div>
 <div>
 	<?php
@@ -47,7 +35,8 @@ include_once ('HEADS/default_head.php');
 <div class='todoList'>
 	<p>To Do:</p>
 		<ul>
-			
+			<li>sub navigation</li>
+			<li>cal event link should go to editable appointment form</li>
 			<li>tweak the calendar control panel</li>
 			<li>pull or push dates to another calendar</li>
 			<li>pull components to local level, where reasonable.</li>

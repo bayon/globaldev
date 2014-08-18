@@ -19,9 +19,9 @@
 	}
 	// using the file upload class
 	function upload_form() {
-		echo("<br>fn: upload_form()");
-		$fileUpload = new FileUpload($_SERVER[PHP_SELF], "uploadFile", "../uploads/", "10000000");
-		$html .= $fileUpload -> make();
+		 
+		$fileUpload = new FileUpload($_SERVER['PHP_SELF'], "uploadFile", "../uploads/", "10000000");
+		$html = $fileUpload -> make();
 		$html .= "</form>";
 		return $html;
 	}
@@ -29,7 +29,7 @@
 	// USE CASE SCENARIO:
 	$procedure_id = 999;
 	//the form
-	$table .= "<form id='uploadFileForm' enctype='multipart/form-data' action='$_SERVER[PHP_SELF]' method='POST' >";
+	$table .= "<form id='uploadFileForm' enctype='multipart/form-data' action='".$_SERVER['PHP_SELF']."' method='POST' >";
 	$table .= "<input type='hidden' name='controller' value='files.php' />"; //was component.php controller
 	$table .= "<input type='hidden' name='procedure_id' value='$procedure_id' />";
 	$table .= upload_form();
