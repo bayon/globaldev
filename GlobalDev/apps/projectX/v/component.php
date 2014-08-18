@@ -31,14 +31,15 @@ include_once ('HEADS/custom_confirm_head.php');
 	$gridMatrix[0][1] = "
 	<select name='selected_component'>
 		<option>map</option>
-		<option>attachments</option>
 		<option>actionList</option>
 		<option>anchorTable</option>
 		<option>graph</option>
-		<option>email html</option>
+		
 	</select>
 	";
-	/*<option>ajax</option>
+	/*<option>email html</option>
+	 * <option>attachments</option>
+	 * <option>ajax</option>
 	 * <option>calendar</option>
 	 * */
 	
@@ -91,8 +92,8 @@ include_once ('HEADS/custom_confirm_head.php');
 				include_once ('./components/ajax_examples.php');
 				
 			case 'email html' :
-				include_once ('HEADS/default_head.php');
-				include_once (GLOBAL_DIR . '/glib/global_components/email_html.php');
+				//include_once ('HEADS/default_head.php');
+				//include_once (GLOBAL_DIR . '/glib/global_components/email_html.php');
 
 			case 'calendar' :
 				include_once ('HEADS/default_head.php');

@@ -42,6 +42,9 @@ if (isset($_GET['navigation'])) {
 		case 'ajaxTable' :
 			include_once ('c/ajaxTable.php');
 			break;
+		case 'files' :
+			include_once ('c/files.php');
+			break;
 		default :
 			include_once ('c/default.php');
 			break;
@@ -102,6 +105,9 @@ if (isset($_POST['controller'])) {
 
 		case 'component.php' :
 			include_once ('c/component.php');
+			break;
+		case 'files.php' :
+			include_once ('c/files.php');
 			break;
 		case 'Default Method' :
 			include_once ('c/examples.php');

@@ -59,7 +59,7 @@ create code in localdev, then hard reset the master to local dev, then push up.
 		</p>
 	</div>
 	<?php
-	$domain = "172.16.162.61";
+	//$domain = "172.16.162.61"; // SUBSTITUTE FOR MOBILE TESTING ON HP
 	echo("<br>GLOBAL URL:".GLOBAL_URL);
 	//GLOBAL URL:http://localhost:8888/github_globaldev/globaldev/GlobalDev
 	?>

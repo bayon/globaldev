@@ -3,11 +3,12 @@
 		Attachments:
 	</div>
 	<?php
+	//echo("<br>".__FILE__);
 	// the form action handler
 	if (isset($_POST['method'])) {
 		switch ($_POST['method']) {
 			case 'uploadFile' :
-				echo("<br>uploading file...???");
+				//echo("<br>uploading file...???");
 				//upload file condition can not be delegated to a separate controller...
 				$fileUploadHandler = new FileUpload($_SERVER[PHP_SELF], "uploadFile", "uploads/", "10000000");
 				$fileUploadHandler -> handleUpload();
@@ -18,6 +19,7 @@
 	}
 	// using the file upload class
 	function upload_form() {
+		echo("<br>fn: upload_form()");
 		$fileUpload = new FileUpload($_SERVER[PHP_SELF], "uploadFile", "../uploads/", "10000000");
 		$html .= $fileUpload -> make();
 		$html .= "</form>";
@@ -28,15 +30,17 @@
 	$procedure_id = 999;
 	//the form
 	$table .= "<form id='uploadFileForm' enctype='multipart/form-data' action='$_SERVER[PHP_SELF]' method='POST' >";
-	$table .= "<input type='hidden' name='controller' value='component.php' />";
+	$table .= "<input type='hidden' name='controller' value='files.php' />"; //was component.php controller
 	$table .= "<input type='hidden' name='procedure_id' value='$procedure_id' />";
 	$table .= upload_form();
 	echo($table);
 	echo("</form>");
 	function open_attachment_viewer($id) {
+		//echo("<br>fn: open_attachment_viewer()");
 		//ASSUMING: The attachment was saved in mysql db with an id.
 		$attachment = get_attachment_for_id($id);
 		$link = '<a href="' . BASE_URL . 'uploads/' . $attachment . '" target="_blank">content of the anchor</a>';
+		
 		return $link;
 	}
 

@@ -18,6 +18,7 @@ class FileUpload {
 		$this->max_file_size = $max_file_size;
 	}
 	public function make() {
+		//echo("<br>FileObject fn: make()");
 		$input = "
 		<div class = 'attachmentsContainer'>
 		<input type='hidden' name='page' value='".$this->codePage."'  />
@@ -29,7 +30,13 @@ class FileUpload {
 		return $input;
 	}
 	public function handleUpload() {
-		$target_path = $this->target_path . basename($_FILES['uploadedfile']['name']);
+		//echo("<br>FileObject fn: handleUpload()");
+		$target_path = GLOBAL_DIR."/apps/projectX/".$this->target_path . basename($_FILES['uploadedfile']['name']);
+		move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path);
+		$html .= "<span>" . basename($_FILES['uploadedfile']['name']) . "</br> uploaded successfully</span>";
+		/* Code : no longer relevant at this location.
+		//echo("<br>debug: target_path:".$target_path);
+		//echo("<br>debug: :".$_FILES['uploadedfile']['tmp_name']);
 		if (move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path)) {
 			$html .= "<span> SUCCESS: " . basename($_FILES['uploadedfile']['name']) . " uploaded!</span>";
 		} else {
@@ -39,6 +46,10 @@ class FileUpload {
 			<p>Target Path: $target_path</p>";
 			 
 		}
+		 * 
+		 */
+		 
+		 
 		echo($html);
 	}
 }

@@ -47,9 +47,9 @@ include_once ('HEADS/default_head.php');
 <div class='todoList'>
 	<p>To Do:</p>
 		<ul>
-			<li>figure out the calendar slash ajax bleed over issue</li>
+			<li>hp warnings for ajaxTable</li>
 			<li>make the calendar navigable by month/year</li>
-			
+			<li>make schedular appointment portion it's own class with custom redirect controller.</li>
 			<li>pull components to local level, where reasonable.</li>
 			<li>Global Components: </li>
 			<ul>
@@ -62,6 +62,7 @@ include_once ('HEADS/default_head.php');
 	
 	<p>Done:</p>
 	<ul>
+		<li>figure out the calendar slash ajax bleed over issue</li>
 		<li>sanitize()</li>
 		<li>make ajax sortable , searchable as well</li>
 <li>tweak theme 3 to include new transparencies.</li>

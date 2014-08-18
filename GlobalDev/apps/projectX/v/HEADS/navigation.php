@@ -11,6 +11,8 @@ function navigation() {
 	<input id='nav4'  type='submit' class='nav_buttons main_gradient' name='navigation' value='components'/>
 	<input id='nav5'  type='submit' class='nav_buttons main_gradient' name='navigation' value='schedule'/>
 	<input id='nav6'  type='submit' class='nav_buttons main_gradient' name='navigation' value='ajaxTable'/>
+	<input id='nav7'  type='submit' class='nav_buttons main_gradient' name='navigation' value='files'/>
+	
 	</div>
 	";
 	$html .= "</form></div>";

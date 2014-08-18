@@ -1,6 +1,6 @@
 <?php
 
-//require_once('../../global_configs.php');
+//require_once('./../../global_configs.php');
 
 if (GLOBAL_ENVIRONMENT == "littleMac") {
 	define('SITE_ROOT', 'forteworks/globaldev/GlobalDev/apps/projectX');
