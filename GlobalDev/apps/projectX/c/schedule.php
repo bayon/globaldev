@@ -3,29 +3,44 @@
 //echo("<br>".__FILE__."</br>");
 //echo("<pre>SESSION:");print_r($_SESSION);echo("</pre>");
 //echo("<pre>GET:");print_r($_GET);echo("</pre>");
+include_once (GLOBAL_DIR . '/glib/global_components/calendar.php');
+
 if (isset($_GET)) {
-	//echo("<br> CONTROLLER GET isset</br>");
+	echo("<br> CONTROLLER GET isset</br>");
 	if (isset($_GET['method'])) {
 		switch($_GET['method']) {
 			case 'addAppointment' :
 				//$dateArray = explode(" ", $_GET['date']);// for datepickR
 				$dateArray = explode("/", $_GET['date']);//for jquery datepicker 
 				$dateIntArray = handleDatepickerResponse($dateArray);
-				$appointment = new Appointment($_GET['title'], $dateIntArray[0], $dateIntArray[1], $dateIntArray[2], $_GET['note'], $_GET['anchor']);
+				
+				//$appointment = new Appointment($_GET['title'], $dateIntArray[0], $dateIntArray[1], $dateIntArray[2], $_GET['note'], $_GET['anchor']);
+				$appointment = new Appointment($_GET['title'], $dateArray[2], $dateArray[0], $dateArray[1], $_GET['note'], $_GET['anchor']);
+				
 				insertAppointment($appointment);
+				$calendar = new Calendar(date('n'), date('Y')); 	
 				include_once('v/schedule.php');
 				break;
-
+			case 'changeMonth' :
+				if($_GET['direction'] == 'fwd'){
+					$calendar = new Calendar($_GET['month']+1, date('Y')); 
+				}else{
+					$calendar = new Calendar($_GET['month']-1, date('Y')); 
+				}
+				include_once('v/schedule.php');
+				break;
 			default :
 				
 				break;
 		}
 	}else{
+		
+		$calendar = new Calendar(date('n'), date('Y')); 	
 		include_once('v/schedule.php');
 	}
 
 } else if (isset($_POST)) {
-	//echo("<br> CONTROLLER POST</br>");
+	echo("<br> CONTROLLER POST</br>");
 	$searchKey = sanitize($_POST['search_key']);
 	switch ($_POST['method']) {
 		
@@ -39,9 +54,16 @@ if (isset($_GET)) {
 			break;
 	}
 } 
+//include_once(GLOBAL_DIR."/glib/global_lib/code_report/code_report.php");
+
+//include_once('v/schdeule.php');
+
+
 function handleDatepickerResponse($dateArray) {
-	//in: array ('August', '20th,', '2014' );
+	//in: integer array //OLD array ('August', '20th,', '2014' );
 	//out: integer array ( year, month, day)
+	echo("<br>date array <pre>");print_r($dateArray);echo("</pre>");
+	
 	$monthString = strtolower($dateArray[0]);
 	$arrayOfMonths = array('january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december');
 	switch ($monthString) {
@@ -92,12 +114,12 @@ function handleDatepickerResponse($dateArray) {
 	$yearInt = 0 + $yearString;
 
 	$intArray = array($yearInt, $monthInt, $dayInt);
-	return $intArray;
+	print_r($intArray);
+	//return $intArray;
+	return $dateArray;
 }
 
 
  
-//include_once(GLOBAL_DIR."/glib/global_lib/code_report/code_report.php");
 
-include_once('v/schdeule.php');
 ?>

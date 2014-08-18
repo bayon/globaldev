@@ -21,10 +21,10 @@ class Appointment{
 	}
 	
 }
-function getAppointmentByDay($day) {
+function getAppointmentByDay($day,$month,$year) {
 	$dbh = appConnectPDO();
 	$sql = "SELECT * FROM ".APP_DB.".appointments 
- WHERE day = $day;";
+ WHERE 1=1 AND day = $day AND month = $month AND year = $year;";
  
 	foreach ($dbh->query($sql) as $row) {
 		$data = $row;
