@@ -27,9 +27,9 @@ class ajaxSortableCCMathTable {
 		foreach ($kvArrayOfHeaderFields as $fieldHeader) {
 			//echo("<hr><pre>");print_r($fieldHeader); echo("</pre>"); makes NO sense!
 			$ajaxSortableTable .= '<th  class="ast_width_20pct">
-		<img id="' . $fieldHeader['id_up'] . '" src="' . GLOBAL_URL . '/glib/global_img/arrowUp1.png" onClick = "getagents(\'' . $fieldHeader['fieldName'] . '\',\'\');clearimgs();setupimg(\'' . $fieldHeader['id_up'] . '\');">
+		<img id="' . $fieldHeader['id_up'] . '" src="' . GLOBAL_URL . '/glib/global_img/arrowUp1.png" onClick = "getagents(\'' . $fieldHeader['fieldName'] . '\',\'asc\');clearimgs();setupimg(\'' . $fieldHeader['id_up'] . '\');">
 		' . $fieldHeader['title'] . '
-		<img id="' . $fieldHeader['id_down'] . '" src="' . GLOBAL_URL . '/glib/global_img/arrowDown1.png" onClick = "getagents(\'ContactID\',\'desc\');clearimgs();setdownimg(\'' . $fieldHeader['id_down'] . '\');">
+		<img id="' . $fieldHeader['id_down'] . '" src="' . GLOBAL_URL . '/glib/global_img/arrowDown1.png" onClick = "getagents(\'' . $fieldHeader['fieldName'] . '\',\'desc\');clearimgs();setdownimg(\'' . $fieldHeader['id_down'] . '\');">
 		</th>';
 
 			$fieldHeader = null;

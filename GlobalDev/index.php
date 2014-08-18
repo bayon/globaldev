@@ -61,6 +61,7 @@ create code in localdev, then hard reset the master to local dev, then push up.
 	<?php
 	//$domain = "172.16.162.61"; // SUBSTITUTE FOR MOBILE TESTING ON HP
 	echo("<br>GLOBAL URL:".GLOBAL_URL);
+	echo("<br>GLOBAL ENVIRONMENT:".GLOBAL_ENVIRONMENT);
 	//GLOBAL URL:http://localhost:8888/github_globaldev/globaldev/GlobalDev
 	?>
 	<div class="global_enterprise_div">
