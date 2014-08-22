@@ -18,5 +18,6 @@ define('ROOT_DIR', 'projectX');
 	define('PASSWORD', '');
 	define('APP_DB', 'projectx');
 
-
+ //!!!  DO NOT FORGET: !!! 
+ // js/constants.js
 ?>

@@ -55,8 +55,8 @@ else if (isset($_GET['subnavigation'])) {
 	//print_r($_GET);
 	switch ($_GET['subnavigation']) {
 		
-		case 'sub1' :
-		
+		case 'appts' :
+		include_once ('c/schedule/appointment.php');
 		break;
 		
 		default :

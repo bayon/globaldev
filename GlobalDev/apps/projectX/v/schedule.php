@@ -5,8 +5,8 @@ include_once ('HEADS/datepicker_head.php');
 <?php echo(navigation()); ?>
 <?php 
 $kvArray = array(
-	array('id'=>'subnav1','value'=>'appts'),
-	array('id'=>'subnav2','value'=>'specials')
+	array('id'=>'subnav1','value'=>'appts','subnav_function'=>'ajaxSubNavigate("appointment","subnavToAppt")'),
+	array('id'=>'subnav2','value'=>'specials','subnav_function'=>'ajaxSubNavigate("specials","subnavToSpecials")')
 );
 echo(subnavigation("schedule.php",$kvArray)); 
 
@@ -44,5 +44,7 @@ echo(subnavigation("schedule.php",$kvArray));
 		?>
 		<?= $calendar -> render(); ?>
 	 </div>
+	 
 </div>
+ 
 

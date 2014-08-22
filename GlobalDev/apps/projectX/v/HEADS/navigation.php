@@ -21,6 +21,45 @@ function navigation() {
 
 }
 function subnavigation($controller,$kvArray) {
+	//PARAMS:
+	 //kvArray ('id'=>'subnav1','value'='sub1','subnav_function' => 'ajaxSubNavigate("appointment","subnavToAppt")')
+	 
+	$html = "<div  id='subnavigation '  >";
+	$html .= "
+	<div class='subnav_container main_gradient' >
+	<input type='hidden' name='controller' value ='".$controller."'/>";
+	
+	foreach($kvArray as $a){
+		$html .= "<input 
+		id='".$a['id']."' 
+		type='submit' 
+		class='subnav_buttons main_gradient' 
+		name='subnavigation' 
+		onclick='".$a['subnav_function']."'
+		value='".$a['value']."'/>";
+	}
+	 
+	
+	$html .= "</div>";
+	$html .= "</div>";
+	$html .= "
+		<script>
+			function ajaxSubNavigate(subcontroller,method) {
+			
+			datastring = 'subcontroller=' + subcontroller + '&method=' + method + '';
+			controller = '../' + app + '/c/subnavigation_controller.php';
+			receiverId = 'content';
+			postAjaxForm(datastring, controller, receiverId);
+			}
+		</script>
+		";
+	// TRY and pull this from js constants, currently in js/index.js
+	//var app = 'projectX';
+
+	return ($html);
+
+}
+function subnavigation_OLD($controller,$kvArray) {
 	 //kvArray ('id'=>'subnav1','value'='sub1')
 	$html = "<div  id='subnavigation '  ><form method='get' action='$_SERVER[PHP_SELF]' >";
 	$html .= "
@@ -72,7 +111,7 @@ function customCSSMenu() {
 		<option " . $theme3_selected . ">theme3</option>
 		 
 	</select>
-	<input type='submit' class='nav_buttons main_gradient' name='submit' value='custom css'/>
+	<input type='submit' class='nav_buttons main_gradient' name='submit' value='change'/>
 	</div>
 	";
 	$html .= "</form></div>";

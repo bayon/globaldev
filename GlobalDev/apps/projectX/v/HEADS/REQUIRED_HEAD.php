@@ -41,6 +41,7 @@ if (isset($_SESSION['custom_theme'])) {
 <script type='text/javascript' src='../../glib/global_js/rwd.js'></script>
 <script type='text/javascript' src='../../glib/global_js/latest_jquery.js'></script>
 <script type='text/javascript' src='js/index.js'></script>
+<script type='text/javascript' src='js/constants.js'></script>
 
 <script src="../../glib/global_jq_suite/js/jquery.js" type="text/javascript"></script>
 <script src="../../glib/global_jq_suite/js/jquery-ui-custom.min.js" type="text/javascript"></script>

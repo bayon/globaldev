@@ -3,14 +3,7 @@ include_once ('HEADS/default_head.php');
 include_once ('HEADS/custom_confirm_head.php');
 ?>
 <?php echo(navigation()); ?>
-<?php 
-$kvArray = array(
-	array('id'=>'subnav1','value'=>'this'),
-	array('id'=>'subnav2','value'=>'that'),
-	array('id'=>'subnav3','value'=>'the other')
-);
-echo(subnavigation("pageX.php",$kvArray)); 
-?>
+
 <div id='content'>
 	<div class='page_title'>
 		Page X
