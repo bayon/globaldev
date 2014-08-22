@@ -3,6 +3,14 @@ include_once ('HEADS/default_head.php');
 include_once ('HEADS/datepicker_head.php');
 ?>
 <?php echo(navigation()); ?>
+<?php 
+$kvArray = array(
+	array('id'=>'subnav1','value'=>'appts'),
+	array('id'=>'subnav2','value'=>'specials')
+);
+echo(subnavigation("schedule.php",$kvArray)); 
+
+?>
 <div id='content'>
 	<div class='page_title'>
 		Schedule

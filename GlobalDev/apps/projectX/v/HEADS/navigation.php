@@ -20,25 +20,25 @@ function navigation() {
 	return ($html);
 
 }
-function subnavigation($controller) {
-	 
+function subnavigation($controller,$kvArray) {
+	 //kvArray ('id'=>'subnav1','value'='sub1')
 	$html = "<div  id='subnavigation '  ><form method='get' action='$_SERVER[PHP_SELF]' >";
 	$html .= "
 	<div class='subnav_container main_gradient' >
-	<input type='hidden' name='controller' value ='".$controller."'/>
-	<input id='subnav1' type='submit' class='subnav_buttons main_gradient' name='subnavigation' value='sub1'/>
-	<input id='subnav2'  type='submit' class='subnav_buttons main_gradient' name='subnavigation' value='sub2'/>
-	<input id='subnav3'  type='submit' class='subnav_buttons main_gradient' name='subnavigation' value='sub3' />
-	<input id='subnav4'  type='submit' class='subnav_buttons main_gradient' name='subnavigation' value='sub4'/>
+	<input type='hidden' name='controller' value ='".$controller."'/>";
+	
+	foreach($kvArray as $a){
+		$html .= "<input id='".$a['id']."' type='submit' class='subnav_buttons main_gradient' name='subnavigation' value='".$a['value']."'/>";
+	}
 	 
 	
-	</div>
-	";
+	$html .= "</div>";
 	$html .= "</form></div>";
 
 	return ($html);
 
 }
+
 function customCSSMenu() {
 	$html = "<div  class=''  style='margin-top:50px;text-align:center;width:100%;'><form method='post' action='$_SERVER[PHP_SELF]' >";
 	$theme1_selected = " selected ";
