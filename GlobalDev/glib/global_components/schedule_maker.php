@@ -9,42 +9,32 @@ class Schedule_Maker {
 		$schedulerHTML = "";
 		$schedulerHTML .= "
 		
-<style>
-	.schedulerLabel{
-		width:100%;
-		float:left;
-	}
-	.scheduler{
-		width:500px;
-		min-width:125px;
-		 border:solid 1px black;
-	}
-</style>
-<div class='container scheduler' style='margin-bottom:30px;'>
-	<div>
-		Schedule Appointment:
+
+<div class='container scheduler' >
+	<div class='schedulerRow schedulerTitle'>
+		Scheduler
 	</div>
 	<form name='schedulerForm' method='get' action=" . $_SERVER['PHP_SELF'] . ">
 		<input type='hidden'  name='controller' value='".$this->controller."'/>
 		<input type='hidden'  name='method' value='addAppointment'/>
-	<div>
-		<label class='schedulerLabel' >title:</label>
-		<input id='title' type='text' name='title' />
+	<div class='schedulerRow'>
+		<div class='schedulerLabel' >title:</div>
+		<input id='title' class='schedulerInput' type='text' name='title' />
 	</div>
-	<div>
-		<label class='schedulerLabel' >note:</label>
-		<textarea id='note'   name='note' ></textarea>
+	<div class='schedulerRow'>
+		<div class='schedulerLabel' >note:</div>
+		<textarea id='note'  class='schedulerInput schedulerTextarea'   name='note' ></textarea>
 	</div>
-	<div>
-		<label class='schedulerLabel' >anchor:</label>
-		<input id='anchor' type='text' name='anchor' />
+	<div class='schedulerRow'>
+		<div class='schedulerLabel' >anchor:</div>
+		<input id='anchor'  class='schedulerInput' type='text' name='anchor' />
 	</div>
-	<div>
-		<label class='schedulerLabel' >date:</label>
-		<input id='datepickScheduler' name='date' size='30' />
+	<div class='schedulerRow'>
+		<div class='schedulerLabel' >date:</div>
+		<input id='datepickScheduler'  class='schedulerInput' name='date' size='30' />
 	</div>
-	<div>
-		<button style='width:100%;' onClick='getDateSelected()'>
+	<div class='schedulerRow'>
+		<button    class='schedulerInput schedulerButton'  onClick='getDateSelected()'>
 			set
 		</button>
 	</div>

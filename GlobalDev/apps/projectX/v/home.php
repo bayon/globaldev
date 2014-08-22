@@ -99,7 +99,7 @@ https://github.com/paypal/merchant-sdk-php/blob/master/README.md
    
 	</ul>
 </div>
- 
+
 <?php
 include_once ('HEADS/html_foot.php');
 ?>

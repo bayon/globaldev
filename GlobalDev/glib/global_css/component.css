@@ -126,49 +126,51 @@
 		 It's recommended that you only add styles that effect the visual presentation of the
 		 text here, (color, font-size, etc), rather than it's layout.
 		 */
-		#day_runner {
-			font-weight: regular;
-			color:#CCC;
-		}
+	
+#day_runner {
+	font-weight: regular;
+	color: #CCC;
+}
 
-		/*
-		 This controls the appearance of the month name at the top of the calendar
-		 */
-		#month_name {
-			 
-			font-size: 20px;
-			font-weight: regular;
-			color:#CCC;
-		}
+/*
+ This controls the appearance of the month name at the top of the calendar
+ */
+#month_name {
 
-		/*
-		 This controls the appearance of the individual days of the month. Bear in mind
-		 that the width of these boxes can be programatically controlled when you first
-		 create the calendar, removing the need to figure out appropriate widths here.
-		 */
-		.date_box {
-			height: 90px;
-			border: 1px solid #CCC;
-			background-image: url('../global_img/white_75.png');
-		}
+	font-size: 20px;
+	font-weight: regular;
+	color: #CCC;
+}
 
-		/*
-		 This controls the visual appearance of the date box that represents the current
-		 date.  It's recommended that you only change basic visual styles for this class,
-		 (such as background color or text color, etc.)
-		 */
-		.current_day {
-			background-color: #e8d2b0;
-		}
+/*
+ This controls the appearance of the individual days of the month. Bear in mind
+ that the width of these boxes can be programatically controlled when you first
+ create the calendar, removing the need to figure out appropriate widths here.
+ */
+.date_box {
+	height: 90px;
+	border: 1px solid #CCC;
+	background-image: url('../global_img/white_75.png');
+}
 
-		/*
-		 This controls the style of any boxes that are 'fill in', that is, not representing
-		 a date, but used to fill out the calendar square.
-		 */
-		.empty_date {
-			background:none;
-			background-image: url('../global_img/black_50.png');
-		}
+/*
+ This controls the visual appearance of the date box that represents the current
+ date.  It's recommended that you only change basic visual styles for this class,
+ (such as background color or text color, etc.)
+ */
+.current_day {
+	background-color: #e8d2b0;
+}
+
+/*
+ This controls the style of any boxes that are 'fill in', that is, not representing
+ a date, but used to fill out the calendar square.
+ */
+.empty_date {
+	background: none;
+	background-image: url('../global_img/black_50.png');
+}
+
 .calendarControlPanel{
 	width:100%;
 	float:left;
@@ -176,7 +178,7 @@
 }
 .calendarControlPanel .back{
 	float:left;
-	color:#ccc;
+	color:#222;
 	background:none;
 	background-image: url('../global_img/white_50.png');
 	
@@ -184,11 +186,64 @@
 }
 .calendarControlPanel .fwd{
 	float:right;
-	color:#ccc;
+	color:#222;
 	background:none;
 	background-image: url('../global_img/white_50.png');
 	
 }
+
+
+.scheduler {
+	float:left;
+	width: 320px;
+	min-width: 125px;
+	border: solid 1px #222222;
+	background-image: url('../global_img/black_50.png');
+	margin-bottom:30px;
+	text-align:left;
+	 color:#eee;
+	
+}
+.schedulerTitle{
+	font-style:italic;
+	font-weight:bold;
+	margin-left:5px;
+	margin-top:5px;
+}
+.schedulerRow{
+	width:100%;
+	float:left;
+	
+}
+.schedulerLabel {
+	 
+	text-align:right;
+	width:32%;
+	max-width:32%;
+	min-width:32%;
+	margin-top:5px;
+	
+}
+.schedulerInput{
+	float:right;
+	width:65%;
+	max-width:65%;
+	min-width:65%;
+	border : solid 1px #222; 
+	background-image: url('../global_img/white_25.png');
+	margin-top:-15px;
+	margin-right:2px;
+}
+.schedulerTextarea{
+	border:solid 1px #222;
+	background-image: url('../global_img/white_25.png');
+}
+ .schedulerButton{
+ 	margin-top:20px;
+ 	margin-bottom:2px;
+ 	background-image: url('../global_img/white_50.png');
+ }
+
 /*------------------DESKTOP----------------*/
 
 @media screen and (max-width: 5000px) {

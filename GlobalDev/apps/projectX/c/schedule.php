@@ -24,17 +24,17 @@ if (isset($_GET)) {
 			case 'changeMonth' :
 				if($_GET['direction'] == 'fwd'){
 					if($_GET['month'] != 12){
-						$calendar = new Calendar($_GET['month']+1, $_GET['year'],500); 
+						$calendar = new Calendar($_GET['month']+1, $_GET['year'],320); 
 					}else{
-						$calendar = new Calendar(1, $_GET['year']+1,500);
+						$calendar = new Calendar(1, $_GET['year']+1,320);
 					}
 					
 				}else{
 					
 					if($_GET['month'] != 1){
-						$calendar = new Calendar($_GET['month']-1, $_GET['year'],500); 
+						$calendar = new Calendar($_GET['month']-1, $_GET['year'],320); 
 					}else{
-						$calendar = new Calendar(12, $_GET['year']-1,500); 
+						$calendar = new Calendar(12, $_GET['year']-1,320); 
 					}
 				}
 				include_once('v/schedule.php');
@@ -45,7 +45,7 @@ if (isset($_GET)) {
 		}
 	}else{
 		
-		$calendar = new Calendar(date('n'), date('Y'),500); 	
+		$calendar = new Calendar(date('n'), date('Y'),320); 	
 		include_once('v/schedule.php');
 	}
 

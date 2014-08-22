@@ -8,7 +8,7 @@ class Calendar {
 	public $year;
 	public $calendar_width;
 
-	public function __construct($month = null, $year = null, $calendar_width = 500) {
+	public function __construct($month = null, $year = null, $calendar_width = 320) {
 		$this -> month = $month;
 		$this -> year = $year;
 		$this -> calendar_width = $calendar_width;
@@ -35,7 +35,7 @@ class Calendar {
 		$this -> month = $this -> month ? $this -> month : $month;
 		$this -> year = $this -> year ? $this -> year : $year;
 		$month_name = $this -> months[$this -> month - 1];
-		$calendar_width_style = $this -> calendar_width ? "width: {$this->calendar_width}px;" : "";
+		$calendar_width_style = $this -> calendar_width ? "width: ".$this->calendar_width."px;" : "";
 		$box_width_style = $this -> calendar_width ? "width: " . $this -> calculate_box_width() . "px;" : "";
 		$html = <<<CAL
       <div id='calendar_wrapper' style="$calendar_width_style">
