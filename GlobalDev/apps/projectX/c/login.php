@@ -7,6 +7,6 @@ if ($userVerificationResult -> user_id != 0) {
 	include_once ('v/home.php');
 } else {
 	echo("<script> alert('UN-VERIFIED'); </script>");
-	include_once ('view.php');
+	include_once ('v/default_view.php');
 }
 ?>
