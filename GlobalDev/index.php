@@ -66,6 +66,7 @@ create code in localdev, then hard reset the master to local dev, then push up. 
 	?>
 	<div class="global_enterprise_div">
 		<a href =<?=GLOBAL_URL;?>/apps/projectX/index.php>Project X</a>
+		<a href =<?=GLOBAL_URL;?>/apps/coreKeeper/index.php>Core Keeper</a>
 
 	</div>
 
