@@ -54,15 +54,15 @@ body {
 	margin-right: 5%;
 	margin-top:2%;
 }
+
 #site_header {
 	width: 100%;
-	height: 100px;
-	min-height: 200px;
-	max-height: 200px;
-	/*background-image: url('../global_img/black_85.png');*/
+	height: 70px;
+	max-height: 70px;
+	min-height: 70px;
 	text-align: center;
-	border: solid blue 2px;
 }
+
 #site_logo {
 	float: left;
 	font-size: 42;
@@ -148,92 +148,3 @@ a {
 	color: green;
 }
 
-/*------------------DESKTOP----------------*/
-
-@media screen and (max-width: 5000px) {
-}
-
-/*------------------TABLET----------------*/
-@media screen and (max-width: 1024px) {
-}
-
-/*------------------iPhone----------------*/
-@media screen and (max-width: 480px) {
-	#content {
-		margin-left: 2%;
-		margin-right: 2%;
-	}
-	.nav_buttons {
-		min-width: 75px;
-		width: 75px;
-		max-width: 75px;
-		font-size: 11px;
-		 
-	}
-	.nav_container {
-		height: 60px;
-		max-height: 60px;
-		 
-	}
-	.subnav_container {
-		height: 60px;
-		max-height: 60px;
-	}
-	#site_header {
-		height: 60px;
-		max-height: 60px;
-		font-size: 30px;
-	}
-	#site_logo {
-
-		margin-left: 5%;
-		font-size: 30px;
-	}
-	#site_name {
-		font-size: 30px;
-	}
-	/*jQuery Components*/
-	.jq_accordion {
-		width: 98%;
-		height: 300px;
-	}
-	.jq_accordion h3 {
-		height: 25px;
-		font-size: 12px;
-	}
-	.jq_accordion p {
-		font-size: 11px;
-	}
-	.jq_slider {
-		width: 98%;
-	}
-
-	.jq_sortable {
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-		width: 98%;
-	}
-	.jq_sortable li {
-		margin: 0 3px 3px 3px;
-		padding: 0.4em;
-		padding-left: 1.5em;
-		font-size: .9em;
-		height: 18px;
-	}
-	.jq_sortable li span {
-		position: absolute;
-		margin-left: -1.3em;
-	}
-	.jq_dialog p {
-
-	}
-	.jqscheduler_container {
-		height: 300px;
-		margin: 0 auto;
-		width: 50%;
-		font-size: 0.8em;
-		border: none;
-	}
-
-}

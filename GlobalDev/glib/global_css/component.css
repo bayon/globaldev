@@ -120,6 +120,7 @@
 .ast_width_20pct{
 	width:20%;
 }
+
 /*--------    CALENDAR ------*/
 	/*
 		 This controls the appearance of the days of the week header at the top of the calendar.
@@ -255,15 +256,16 @@
 
 /*------------------iPhone----------------*/
 @media screen and (max-width: 480px) {
+	
 	/*------- ANCHOR TABLE */
-	.anchorTable_table_container .inputText{
-		 font-size:11px;
+	.anchorTable_table_container .inputText {
+		font-size: 11px;
 	}
 	.anchorTable_table_container {
 		margin-top: 2px;
 	}
 	.anchorTable_table_container a {
-		font-size:11px;
+		font-size: 11px;
 	}
 	.anchorTable_table_container  table {
 	}
@@ -284,9 +286,10 @@
 	.anchorTable_id_button {
 		width: 100%;
 	}
-	
-/*-----		FLOT GRAPH */
-.flot_graph_container{
-	 height:200px; 
-}
+
+	/*-----		FLOT GRAPH */
+	.flot_graph_container {
+		height: 200px;
+	}
+
 }

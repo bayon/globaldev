@@ -22,9 +22,7 @@ body {
 	border-left: 1px solid #eee;
 }
 #site_header {
-	min-height: 200px;
-	max-height: 200px;
-	border: solid 1px yellow;
+	
 }
 #site_logo {
 	float: left;
@@ -147,3 +145,99 @@ a {
 .ajaxSortableTable  tr:hover {
 	background-image: url('../../global_img/white_25.png');
 }
+
+
+/*--------    CALENDAR ------*/
+
+#day_runner {
+	font-weight: regular;
+	color: #222;
+}
+#month_name {
+
+	font-size: 20px;
+	font-weight: regular;
+	color: #222;
+}
+
+.date_box {
+	height: 90px;
+	border: 1px solid #222;
+	background-image: url('../../global_img/white_50.png');
+}
+
+.current_day {
+	background-color: none;
+	background-image: url('../../global_img/red1.png');
+}
+
+.empty_date {
+	background: none;
+	background-image: url('../../global_img/yellow1.png');
+}
+
+.calendarControlPanel {
+	width: 100%;
+	float: left;
+}
+.calendarControlPanel .back {
+	float: left;
+	color: #222;
+	background: none;
+	background-image: url('../../global_img/yellow1.png');
+}
+.calendarControlPanel .fwd {
+	float: right;
+	color: #222;
+	background: none;
+	background-image: url('../../global_img/yellow1.png');
+}
+/*--------    SCHEDULER ------*/
+.scheduler {
+	float: left;
+	width: 320px;
+	min-width: 125px;
+	border: solid 1px #222222;
+	background-image: url('../../global_img/yellow1.png');
+	margin-bottom: 30px;
+	text-align: left;
+	color: #eee;
+}
+.schedulerTitle {
+	font-style: italic;
+	font-weight: bold;
+	margin-left: 5px;
+	margin-top: 5px;
+}
+.schedulerRow {
+	width: 100%;
+	float: left;
+}
+.schedulerLabel {
+
+	text-align: right;
+	width: 32%;
+	max-width: 32%;
+	min-width: 32%;
+	margin-top: 5px;
+}
+.schedulerInput {
+	float: right;
+	width: 65%;
+	max-width: 65%;
+	min-width: 65%;
+	border: solid 1px #222;
+	background-image: url('../../global_img/white_25.png');
+	margin-top: -15px;
+	margin-right: 2px;
+}
+.schedulerTextarea {
+	border: solid 1px #222;
+	background-image: url('../../global_img/white_25.png');
+}
+.schedulerButton {
+	margin-top: 20px;
+	margin-bottom: 2px;
+	background-image: url('../../global_img/white_50.png');
+}
+

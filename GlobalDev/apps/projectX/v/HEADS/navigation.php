@@ -120,7 +120,7 @@ function customCSSMenu() {
 }
 
 function createHeader() {
-	$html = "<div id='site_header ' class='main_gradient'>";
+	$html = "<div id='site_header' class='main_gradient'>";
 	$html .= "<div id='site_logo' >@</div>";
 	$html .= "<div id='site_name'>X-Comp@ny</div>";
 	$html .= "</div>";
