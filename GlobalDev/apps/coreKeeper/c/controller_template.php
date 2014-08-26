@@ -13,7 +13,8 @@ if (isset($_GET)) {
 		}
 	}
 
-} else if (isset($_POST)) {
+} 
+if (isset($_POST)) {
 	
 	if (isset($_POST['method'])) {
 		switch ($_POST['method']) {
