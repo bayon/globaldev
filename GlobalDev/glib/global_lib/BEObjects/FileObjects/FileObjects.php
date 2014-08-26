@@ -9,13 +9,15 @@ class FileUpload {
 	 */
 	public $app;//application name
 	public $codePage;//objectsClient.php
+	public $controller;
 	public $methodName; //uploadFile
 	public $target_path; //uploads/
 	public $max_file_size;//10000000
 	public $file_name_prefix;
-	public function __construct($app,$codePage,$methodName='uploadFile',$target_path,$max_file_size='100000',$file_name_prefix='') {
+	public function __construct($app,$codePage,$controller,$methodName='uploadFile',$target_path,$max_file_size='100000',$file_name_prefix='') {
 		$this->app = $app;	
 		$this->codePage = $codePage;
+		$this->controller = $controller;
 		$this->methodName = $methodName;
 		$this->target_path = $target_path;
 		$this->max_file_size = $max_file_size;
@@ -35,14 +37,31 @@ class FileUpload {
 		";
 		return $input;
 	}
+	public function fileUploadForm(){
+		$form =  $this->uploadFormHead();
+		$form .=  $this->make();
+		$form .=  $this->uploadFormFinish();
+		return $form;
+	}
 	public function handleUpload() {
 		//echo("<br>FileObject fn: handleUpload()");
 		$target_path = GLOBAL_DIR."/apps/".$this->app."/".$this->target_path ."/".$this->file_name_prefix."_" . basename($_FILES['uploadedfile']['name']);
-		echo("<br>".$target_path);
+		//echo("<br>".$target_path);
 		move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path);
-		$html .= "<span>" . basename($_FILES['uploadedfile']['name']) . "</br> uploaded successfully</span>";
+		$html = "<span>" . basename($_FILES['uploadedfile']['name']) . "</br> uploaded successfully</span>";
 		echo($html);
 	}
+	
+	public function uploadFormHead(){
+		$formHead = "<form id='uploadFileForm' enctype='multipart/form-data' action='" . $this->codePage . "' method='POST' >";
+		$formHead .= "<input type='hidden' name='controller' value='".$this->controller."' />";
+		return $formHead;
+	}
+	public function uploadFormFinish(){
+		$formEnd = "</form>";
+		return $formEnd;
+	}
+	
 }
 
 ?>
