@@ -94,7 +94,7 @@ class ajaxSortableCCMathTable {
 			function getagentsBySearch(column, direc) {
 				 var searchKey = document.getElementById("searchKey").value;
 				datastring="controller=' . $controller . '&method=' . $callBackFunction . '&column="+column+"&direc="+direc+"&searchKey="+searchKey+"";
-				alert(datastring);
+				//alert(datastring);
 				controller="../' . $this -> ROOT_DIR . '/c/' . $controller . '.php";
 				receiverId="ajaxSortableTableResults";
 				console.log(datastring);

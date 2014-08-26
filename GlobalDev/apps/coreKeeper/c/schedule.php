@@ -6,7 +6,7 @@
 include_once (GLOBAL_DIR . '/glib/global_components/calendar.php');
 
 if (isset($_GET)) {
-	//echo("<br> CONTROLLER GET isset</br>");
+	//echo("<br> schedule CONTROLLER GET isset</br>");print_r($_GET);
 	if (isset($_GET['method'])) {
 		switch($_GET['method']) {
 			case 'addAppointment' :

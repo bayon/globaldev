@@ -115,7 +115,25 @@
 
 /*--- ajaxSortableTable ----*/
 .ajaxSortableTable{
-	background-image: url('../global_img/red1.png');
+	background-image: url('../global_img/white_25.png');
+}
+.ajaxSortableTable td{
+	 
+	padding:5px;
+}
+.ajaxSortableTable a{
+	font-size:14px;
+	color:#222;
+}
+.ajaxSortableTable a:hover{
+	color:#FFF;
+}
+.ajaxSortableTable tr{
+	background:none;
+}
+.ajaxSortableTable tr:hover{
+	background-image: url('../global_img/blue1.png');
+}
 }
 .ast_width_20pct{
 	width:20%;
@@ -244,6 +262,8 @@
  	margin-bottom:2px;
  	background-image: url('../global_img/white_50.png');
  }
+
+
 
 /*------------------DESKTOP----------------*/
 

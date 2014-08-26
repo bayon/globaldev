@@ -22,6 +22,7 @@ class Appointment{
 	
 }
 function getAppointmentByDay($day,$month,$year) {
+	//echo("<br>fn getAppointmentByDay");
 	$dbh = appConnectPDO();
 	$sql = "SELECT * FROM ".APP_DB.".appointments 
  WHERE 1=1 AND day = $day AND month = $month AND year = $year;";
@@ -43,6 +44,7 @@ function getAppointmentByDay($day,$month,$year) {
 
  
 function insertAppointment($appointment) {
+	//echo("<br>fn insertAppointment");
 	$dbh = appConnectPDO();
 	$sql = "INSERT INTO ".APP_DB.".appointments (id,title,year,month,day,note,anchor) VALUES ('NULL',
 	'" . $appointment -> title . "',

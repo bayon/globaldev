@@ -27,24 +27,17 @@ if (isset($_GET['navigation'])) {
 		case 'home' :
 			include_once ('c/home.php');
 			break;
-		case 'pageX' :
-			include_once ('c/pageX.php');
-			break;
-		case 'components' :
-			include_once ('c/component.php');
-			break;
-		case 'examples' :
-			include_once ('c/examples.php');
-			break;
+		 
+		 
+		 
 		case 'schedule' :
 			include_once ('c/schedule.php');
 			break;
 		case 'codes' :
-			include_once ('c/ajaxTable.php');
+			//include_once ('c/ajaxTable.php');
+			include_once ('c/ccCodes.php');
 			break;
-		case 'files' :
-			include_once ('c/files.php');
-			break;
+		 
 		case 'ccDetails' :
 			include_once ('c/ccDetails.php');
 			break;
@@ -114,19 +107,13 @@ if (isset($_POST['controller'])) {
 		case 'home.php' :
 			include_once ('c/home.php');
 			break;
-		case 'pageX.php' :
-			include_once ('c/pageX.php');
-			break;
-		case 'examples.php' :
-			include_once ('c/examples.php');
+		 
+		 case 'ccCodes.php' :
+			include_once ('c/ccCodes.php');
 			break;
 
-		case 'component.php' :
-			include_once ('c/component.php');
-			break;
-		case 'files.php' :
-			include_once ('c/files.php');
-			break;
+		 
+		 
 		case 'ccDetails.php' :
 			include_once ('c/ccDetails.php');
 			break;

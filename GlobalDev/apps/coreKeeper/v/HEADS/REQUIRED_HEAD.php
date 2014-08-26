@@ -10,11 +10,11 @@
 <link rel='stylesheet' type='text/css' href='../../glib/global_lib/UIObjects/ContainerObjects/containerObjects.css'>
 <link rel='stylesheet' type='text/css' href='../../glib/global_lib/UIObjects/InputObjects/inputObjects.css'>
 <link rel='stylesheet' type='text/css' href='../../glib/global_lib/UIObjects/LabelObjects/labelObjects.css'>
-
-
-
 <?php
-
+echo("<link rel='stylesheet' type='text/css' href='../../glib/global_css/".APP_THEME."/theme.css'>");
+?>
+<?php
+/*
 if (isset($_SESSION['custom_theme'])) {
 	switch ($_SESSION['custom_theme']) {
 		case 'theme1' :
@@ -26,10 +26,13 @@ if (isset($_SESSION['custom_theme'])) {
 		case 'theme3' :
 			echo("<link rel='stylesheet' type='text/css' href='../../glib/global_css/theme3/theme.css'>");
 			break;
+			
 		default :
 			break;
 	}
 }
+ * 
+ */
 ?>
 <!-- THIS NEEDS TO BE THE LAST GLOBAL CSS and THEME AGNOSTIC -->
 <link rel='stylesheet' type='text/css' href='../../glib/global_css/global_rwd.css'>

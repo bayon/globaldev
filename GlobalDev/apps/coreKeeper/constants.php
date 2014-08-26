@@ -5,6 +5,7 @@
 define('APP_NAME','coreKeeper');// used for attachments,other...
 define('TITLE', 'Core Keeper');
 define('ROOT_DIR', 'coreKeeper');
+define('APP_THEME','theme_coreKeeper');
 // !!! IF DIFFERENT THAN THE APPS CONFIG HOSTNAME
 
 ///littleMac

@@ -55,24 +55,7 @@ function subnavigation($controller,$kvArray) {
 	return ($html);
 
 }
-function subnavigation_OLD($controller,$kvArray) {
-	 //kvArray ('id'=>'subnav1','value'='sub1')
-	$html = "<div  id='subnavigation '  ><form method='get' action='$_SERVER[PHP_SELF]' >";
-	$html .= "
-	<div class='subnav_container main_gradient' >
-	<input type='hidden' name='controller' value ='".$controller."'/>";
-	
-	foreach($kvArray as $a){
-		$html .= "<input id='".$a['id']."' type='submit' class='subnav_buttons main_gradient' name='subnavigation' value='".$a['value']."'/>";
-	}
-	 
-	
-	$html .= "</div>";
-	$html .= "</form></div>";
-
-	return ($html);
-
-}
+ 
 
 function customCSSMenu() {
 	$html = "<div  class=''  style='margin-top:50px;text-align:center;width:100%;'><form method='post' action='$_SERVER[PHP_SELF]' >";

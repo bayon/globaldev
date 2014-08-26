@@ -5,12 +5,33 @@ include_once ("../config.php");
 // Try to funnel all ajax request through this main ajax controller.
 //because: they all need to include the constants and configs above.
 
-
-//echo("<br>".__FILE__);
-//echo("<pre>");print_r($_POST);echo("</pre>");
-//echo("<pre>");print_r($_GET);echo("</pre>");
 switch ($_POST['method']) {
-	case 'PremadeAjaxFormMethodCall' :
+
+	
+
+	case 'ajaxSortableCCMathTable' :
+		 //include_once("ajaxTable.php");
+		 include_once("ccCodes.php");
+
+		break;
+	case 'replaceContentForSchedule' :
+		//echo("great foo has come...");
+		include_once("schedule/appointment.php");
+		break;
+	case 'replaceContentForSchedule2' :
+		//echo("great foo has come...");
+		print_r($_POST);
+		include_once("schedule/appointment.php");
+		break;
+	default :
+		echo("<br>" . __FILE__);
+		echo("<pre>");
+		print_r($_POST);
+		echo("</pre>");
+		break;
+}
+/*
+ * case 'PremadeAjaxFormMethodCall' :
 		//echo("<br>ROOT_DIR: ".ROOT_DIR."</br>");
 		echo("<br> Results from callFromPremadeAjaxForm method call.");
 		break;
@@ -39,7 +60,7 @@ switch ($_POST['method']) {
 		</table>
 		");
 		break;
-	case 'ajaxSelectToTable' :
+ * case 'ajaxSelectToTable' :
 		$user_id = $_POST['option'];
 		$user = getUserWithId($user_id);
 
@@ -56,12 +77,9 @@ switch ($_POST['method']) {
 		echo("<br>Hit the function...");
 
 		break;
-
-	case 'ajaxSortableTable' :
+ * case 'ajaxSortableTable' :
 		//get data and formulate table data here
-		// appConnectPDO();
-		//echo("<br>constants: APP_DB=".APP_DB." : HOST_DB=".HOST_DB."");
-		//echo("<br>".APP_DB.'-'.HOST_DB.'-'.USERNAME.'-'.PASSWORD.'</br>');
+	
 		$textout = "";
 		if (isset($_POST)) {
 			mysql_connect(HOST_DB, USERNAME, PASSWORD);
@@ -75,11 +93,11 @@ switch ($_POST['method']) {
 				$agentsalut = $myrow["ContactSalutation"];
 				$agentinttel = $myrow["ContactTel"];
 				$textout .= "<tr>
-		<td class='ast_width_20pct' >" . $agentid . "</td>
-		<td  class='ast_width_20pct'>" . $agentname . "</td>
-		<td  class='ast_width_20pct'>" . $agentsalut . "</td>
-		<td  class='ast_width_20pct'>" . $agentinttel . "</td>
-		</tr>";
+								<td class='ast_width_20pct' >" . $agentid . "</td>
+								<td  class='ast_width_20pct'>" . $agentname . "</td>
+								<td  class='ast_width_20pct'>" . $agentsalut . "</td>
+								<td  class='ast_width_20pct'>" . $agentinttel . "</td>
+								</tr>";
 			}
 		} else {
 			$textout = "";
@@ -87,25 +105,5 @@ switch ($_POST['method']) {
 		echo "<table cellspacing=\"0\" cellpadding=\"0\" width=\"100%\"  >" . $textout . "</table>";
 
 		break;
-
-	case 'ajaxSortableCCMathTable' :
-		 include_once("ajaxTable.php");
-
-		break;
-	case 'replaceContentForSchedule' :
-		//echo("great foo has come...");
-		include_once("schedule/appointment.php");
-		break;
-	case 'replaceContentForSchedule2' :
-		//echo("great foo has come...");
-		print_r($_POST);
-		include_once("schedule/appointment.php");
-		break;
-	default :
-		echo("<br>" . __FILE__);
-		echo("<pre>");
-		print_r($_POST);
-		echo("</pre>");
-		break;
-}
+ */
 ?>
