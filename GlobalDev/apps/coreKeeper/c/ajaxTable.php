@@ -21,10 +21,11 @@ if (isset($_POST['method'])) {
 						$statement = $myrow["statement"];
 
 						$textout .= "<tr>
-		<td class='ast_width_20pct' >" . $code . "</td>
-		<td  class='ast_width_20pct'>" . $statement . "</td>
+		<td class='ast_width_20pct' ><a href='?navigation=ccDetails&ccode=" . $code . "' >" . $code . "</a></td>
+		
 		
 		</tr>";
+		//<td  class='ast_width_20pct'>" . $statement . "</td>
 					}
 
 				} else {
@@ -49,10 +50,12 @@ if (isset($_POST['method'])) {
 						$statement = $myrow["statement"];
 
 						$textout .= "<tr>
-		<td class='ast_width_20pct' >" . $code . "</td>
-		<td  class='ast_width_20pct'>" . $statement . "</td>
+		<td class='ast_width_20pct' ><a href='?navigation=ccDetails&ccode=" . $code . "' >" . $code . "</a></td>
+		 
 		
 		</tr>";
+		//<td class='ast_width_20pct' >" . $code . "</td>
+		//<td  class='ast_width_20pct'>" . $statement . "</td>
 					}
 				} else {
 					$textout = "";

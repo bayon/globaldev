@@ -8,9 +8,9 @@
 	if (isset($_POST['method'])) {
 		switch ($_POST['method']) {
 			case 'uploadFile' :
-				echo("<br>attachments.php uploading file...???");
+				echo("<br>attachments-1.0.0.php uploading file...???");
 				//upload file condition can not be delegated to a separate controller...
-				$fileUploadHandler = new FileUpload($_SERVER['PHP_SELF'], "uploadFile", "uploads/", "10000000");
+				$fileUploadHandler = new FileUpload(APP_NAME,$_SERVER['PHP_SELF'], "uploadFile", "uploads/", "10000000");
 				$fileUploadHandler -> handleUpload();
 				break;
 			default :
@@ -20,7 +20,7 @@
 	// using the file upload class
 	function upload_form() {
 		 
-		$fileUpload = new FileUpload($_SERVER['PHP_SELF'], "uploadFile", "../uploads/", "10000000");
+		$fileUpload = new FileUpload(APP_NAME,$_SERVER['PHP_SELF'], "uploadFile", "../uploads/", "10000000");
 		$html = $fileUpload -> make();
 		$html .= "</form>";
 		return $html;
@@ -30,7 +30,7 @@
 	$procedure_id = 999;
 	//the form
 	$table .= "<form id='uploadFileForm' enctype='multipart/form-data' action='".$_SERVER['PHP_SELF']."' method='POST' >";
-	$table .= "<input type='hidden' name='controller' value='files.php' />"; //was component.php controller
+	$table .= "<input type='hidden' name='controller' value='ccDetails.php' />"; //was component.php controller
 	$table .= "<input type='hidden' name='procedure_id' value='$procedure_id' />";
 	$table .= upload_form();
 	echo($table);

@@ -2,6 +2,7 @@
 // APP SPECIFIC CONSTANTS
 //$site_root="GlobalDev/projectX";
 //CROSS DEV ENVIRONMENT CHECK: include_once ('../../global_includes.php'); NOT NEEDED BY HP
+define('APP_NAME','coreKeeper');// used for attachments,other...
 define('TITLE', 'Core Keeper');
 define('ROOT_DIR', 'coreKeeper');
 // !!! IF DIFFERENT THAN THE APPS CONFIG HOSTNAME

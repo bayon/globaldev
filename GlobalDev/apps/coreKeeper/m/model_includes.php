@@ -6,4 +6,5 @@ include_once('User.php');
 include_once('Toolbox.php');
 include_once('Appointment.php');
 //include_once('training.php');
+include_once('CCMATH.php');
 ?>

@@ -39,11 +39,14 @@ if (isset($_GET['navigation'])) {
 		case 'schedule' :
 			include_once ('c/schedule.php');
 			break;
-		case 'ajaxTable' :
+		case 'codes' :
 			include_once ('c/ajaxTable.php');
 			break;
 		case 'files' :
 			include_once ('c/files.php');
+			break;
+		case 'ccDetails' :
+			include_once ('c/ccDetails.php');
 			break;
 		default :
 			include_once ('c/default.php');
@@ -123,6 +126,9 @@ if (isset($_POST['controller'])) {
 			break;
 		case 'files.php' :
 			include_once ('c/files.php');
+			break;
+		case 'ccDetails.php' :
+			include_once ('c/ccDetails.php');
 			break;
 		case 'schedule.php' :
 			include_once ('c/schedule.php');

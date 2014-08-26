@@ -6,13 +6,9 @@ function navigation() {
 	$html .= "
 	<div class='nav_container main_gradient' >
 	<input id='nav1' type='submit' class='nav_buttons main_gradient' name='navigation' value='home'/>
-	<input id='nav2'  type='submit' class='nav_buttons main_gradient' name='navigation' value='pageX'/>
-	<input id='nav3'  type='submit' class='nav_buttons main_gradient' name='navigation' value='examples' />
-	<input id='nav4'  type='submit' class='nav_buttons main_gradient' name='navigation' value='components'/>
-	<input id='nav5'  type='submit' class='nav_buttons main_gradient' name='navigation' value='schedule'/>
-	<input id='nav6'  type='submit' class='nav_buttons main_gradient' name='navigation' value='ajaxTable'/>
-	<input id='nav7'  type='submit' class='nav_buttons main_gradient' name='navigation' value='files'/>
 	
+	<input id='nav5'  type='submit' class='nav_buttons main_gradient' name='navigation' value='codes'/>
+	<input id='nav6'  type='submit' class='nav_buttons main_gradient' name='navigation' value='schedule'/>
 	</div>
 	";
 	$html .= "</form></div>";
@@ -122,7 +118,7 @@ function customCSSMenu() {
 function createHeader() {
 	$html = "<div id='site_header' class='main_gradient'>";
 	$html .= "<div id='site_logo' >@</div>";
-	$html .= "<div id='site_name'>X-Comp@ny</div>";
+	$html .= "<div id='site_name'>common core</div>";
 	$html .= "</div>";
 
 	return $html;

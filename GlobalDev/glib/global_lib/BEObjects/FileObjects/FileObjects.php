@@ -7,20 +7,26 @@ class FileUpload {
 	 * 1) Once to build the form.
 	 * 2) And second, to handle the upload in the same "code page" as the form.
 	 */
+	public $app;//application name
 	public $codePage;//objectsClient.php
 	public $methodName; //uploadFile
 	public $target_path; //uploads/
 	public $max_file_size;//10000000
-	public function __construct($codePage,$methodName='uploadFile',$target_path,$max_file_size='100000') {
+	public $file_name_prefix;
+	public function __construct($app,$codePage,$methodName='uploadFile',$target_path,$max_file_size='100000',$file_name_prefix='') {
+		$this->app = $app;	
 		$this->codePage = $codePage;
 		$this->methodName = $methodName;
 		$this->target_path = $target_path;
 		$this->max_file_size = $max_file_size;
+		$this->file_name_prefix = $file_name_prefix;
 	}
 	public function make() {
 		//echo("<br>FileObject fn: make()");
 		$input = "
 		<div class = 'attachmentsContainer'>
+		<input type='hidden' name='app' value='".$this->app."'  />
+		<input type='hidden' name='file_name_prefix' value='".$this->file_name_prefix."'  />
 		<input type='hidden' name='page' value='".$this->codePage."'  />
 		<input type='hidden' name='MAX_FILE_SIZE' value='".$this->max_file_size."' />
 		<input name='uploadedfile' class='file_upload' type='file' />
@@ -31,25 +37,10 @@ class FileUpload {
 	}
 	public function handleUpload() {
 		//echo("<br>FileObject fn: handleUpload()");
-		$target_path = GLOBAL_DIR."/apps/projectX/".$this->target_path . basename($_FILES['uploadedfile']['name']);
+		$target_path = GLOBAL_DIR."/apps/".$this->app."/".$this->target_path ."/".$this->file_name_prefix."_" . basename($_FILES['uploadedfile']['name']);
+		echo("<br>".$target_path);
 		move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path);
 		$html .= "<span>" . basename($_FILES['uploadedfile']['name']) . "</br> uploaded successfully</span>";
-		/* Code : no longer relevant at this location.
-		//echo("<br>debug: target_path:".$target_path);
-		//echo("<br>debug: :".$_FILES['uploadedfile']['tmp_name']);
-		if (move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path)) {
-			$html .= "<span> SUCCESS: " . basename($_FILES['uploadedfile']['name']) . " uploaded!</span>";
-		} else {
-			$html .= "<br><span style='color:red;' >UPLOAD FAILED</span>";
-			$html .= "<br>MAX_FILE_SIZE:".$this->max_file_size;
-			$html .= "
-			<p>Target Path: $target_path</p>";
-			 
-		}
-		 * 
-		 */
-		 
-		 
 		echo($html);
 	}
 }
