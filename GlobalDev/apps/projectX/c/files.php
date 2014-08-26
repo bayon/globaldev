@@ -5,7 +5,9 @@ if (isset($_POST['method'])) {
 		case 'uploadFile' :
 			echo("<br>FILES.php post method case: uploadFile");
 			//upload file condition can not be delegated to a separate controller...
-			$fileUploadHandler = new FileUpload($_SERVER['PHP_SELF'], "uploadFile", "uploads/", "10000000");
+			//	public function __construct($app,$codePage,$controller,$methodName='uploadFile',$target_path,$max_file_size='100000',$file_name_prefix='') {
+			
+			$fileUploadHandler = new FileUpload("projectX",$_SERVER['PHP_SELF'],"files.php", "uploadFile", "uploads/", "10000000","projectX");
 			$fileUploadHandler -> handleUpload();
 			//insert_procedure_attachment(basename($_FILES['uploadedfile']['name']));
 			//include_once ('c/files.php');
