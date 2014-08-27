@@ -13,6 +13,11 @@
 	#site_name {
 		font-size: 40px;
 	}
+	#content {
+		margin-left: 2%;
+		margin-right: 2%;
+		margin-top: 100px;
+	}
 }
 
 /*------------------DESKTOP----------------*/
@@ -31,6 +36,11 @@
 	#site_name {
 		font-size: 40px;
 	}
+	#content {
+		margin-left: 2%;
+		margin-right: 2%;
+		margin-top: 100px;
+	}
 }
 
 /*------------------TABLET----------------*/
@@ -47,6 +57,11 @@
 	#site_name {
 		font-size: 30px;
 	}
+	#content {
+		margin-left: 2%;
+		margin-right: 2%;
+		margin-top: 75px;
+	}
 	.nav_buttons {
 		min-width: 55px;
 		width: 55px;
@@ -57,6 +72,8 @@
 	.nav_container {
 		height: 30px;
 		max-height: 30px;
+	/*top:40px; is to marry fixed navigation to fixed site_header*/
+		 top:40px;
 	}
 	.subnav_buttons {
 		min-width: 55px;
@@ -77,7 +94,7 @@
 	#content {
 		margin-left: 2%;
 		margin-right: 2%;
-		margin-top: 15%;
+		margin-top: 60px;
 	}
 	#site_header {
 		height: 30px;
@@ -112,6 +129,8 @@
 	.nav_container {
 		height: 30px;
 		max-height: 30px;
+		/*top:30px; is to marry fixed navigation to fixed site_header*/
+		 top:30px;
 	}
 	.subnav_buttons {
 		min-width: 55px;

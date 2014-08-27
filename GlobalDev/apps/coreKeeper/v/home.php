@@ -1,5 +1,6 @@
 <?php
 include_once ('HEADS/default_head.php');
+include_once('./components/ajaxStudentForm.php');
 ?>
 <?php 
 		echo(navigation());
