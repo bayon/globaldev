@@ -14,9 +14,9 @@ switch ($_POST['method']) {
 		 include_once("ccCodes.php");
 
 		break;
-	case 'ajaxSortableStudentTable' :
+	//case 'ajaxSortableStudentTable' :
 		 //include_once("ajaxTable.php");
-		 include_once("students.php");
+		// include_once("students.php");
 
 		break;
 	case 'replaceContentForSchedule' :
