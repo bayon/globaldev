@@ -2,9 +2,7 @@
 include_once ('HEADS/default_head.php');
 ?>
 <?php echo(navigation()); ?>
-<?php
-
-?>
+<?php include_once('./ajax_constants.php'); ?>
 <div id='content'>
 	<div class='page_title'>
 		Title
@@ -27,6 +25,18 @@ include_once ('HEADS/default_head.php');
 					 //	public function __construct($app,$codePage,$controller,$methodName='uploadFile',$target_path,$max_file_size='100000',$file_name_prefix='') {
 					$fileUploadHandler = new FileUpload(APP_NAME, $_SERVER['PHP_SELF'],"ccDetails.php", "uploadFile", "uploads/", "10000000",$_POST['file_name_prefix']);
 					$fileUploadHandler -> handleUpload();
+					
+					// save attachment filename to attachment table,
+					//along with user_id ( student id NOT needed at this point).
+					echo("<br>SAVE ATTACHMENT INFORMATION HERE.");
+					echo("<br>user_id".$user->user_id." prefix:".$_POST['file_name_prefix']." actual file:".basename($_FILES['uploadedfile']['name']));
+					 $filename = $_POST['file_name_prefix']."_".basename($_FILES['uploadedfile']['name']);
+					$user_id = $user->user_id;
+					echo("<br>".$user_id."--".$filename);
+					 $attachment = new Attachment("0", $user_id,"0",$filename);
+					 createAttachment($attachment);
+					 
+					echo("<hr>");
 					break;
 				default :
 					break;

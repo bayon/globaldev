@@ -28,7 +28,14 @@ class Object {
 	 
 }
 
-
+function createObject($object) {
+	$dbh = appConnectPDO();
+	$sql = "INSERT INTO ".APP_DB.".object (object_id,user_id,firstName,middleName,lastName,email,phone) 
+	VALUES 
+	('NULL','" . $object -> user_id . "','" . $object -> firstName . "' ,'" . $object -> middleName . "','" . $object -> lastName . "','" . $object -> email . "','" . $object -> phone . "')";
+	$dbh -> query($sql);
+	$dbh = null;
+}
 
 function getAllObjects() {
 	$dbh = appConnectPDO();

@@ -6,4 +6,5 @@ include_once('User.php');
 include_once('Appointment.php');
 include_once('CCMATH.php');
 include_once('Student.php');
+include_once('Attachment.php');
 ?>
