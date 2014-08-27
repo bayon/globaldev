@@ -6,9 +6,9 @@ function navigation() {
 	$html .= "
 	<div class='nav_container main_gradient' >
 	<input id='nav1' type='submit' class='nav_buttons main_gradient' name='navigation' value='home'/>
-	
-	<input id='nav5'  type='submit' class='nav_buttons main_gradient' name='navigation' value='codes'/>
-	<input id='nav6'  type='submit' class='nav_buttons main_gradient' name='navigation' value='schedule'/>
+	<input id='nav2'  type='submit' class='nav_buttons main_gradient' name='navigation' value='codes'/>
+	<input id='nav3'  type='submit' class='nav_buttons main_gradient' name='navigation' value='students'/>
+	<input id='nav4'  type='submit' class='nav_buttons main_gradient' name='navigation' value='schedule'/>
 	
 	</div>
 	";

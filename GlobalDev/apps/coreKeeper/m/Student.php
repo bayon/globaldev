@@ -81,7 +81,9 @@ class Student {
 }
 function createStudent($student) {
 	$dbh = appConnectPDO();
-	$sql = "INSERT INTO ".APP_DB.".student (student_id,user_id,firstName) VALUES ('NULL','" . $student -> user_id . "','" . $student -> firstName . "' )";
+	$sql = "INSERT INTO ".APP_DB.".student (student_id,user_id,firstName,middleName,lastName,email,phone) 
+	VALUES 
+	('NULL','" . $student -> user_id . "','" . $student -> firstName . "' ,'" . $student -> middleName . "','" . $student -> lastName . "','" . $student -> email . "','" . $student -> phone . "')";
 	$dbh -> query($sql);
 	$dbh = null;
 }

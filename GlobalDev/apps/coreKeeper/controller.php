@@ -37,7 +37,9 @@ if (isset($_GET['navigation'])) {
 			//include_once ('c/ajaxTable.php');
 			include_once ('c/ccCodes.php');
 			break;
-		 
+		 case 'students' :
+			include_once ('c/students.php');
+			break;
 		case 'ccDetails' :
 			include_once ('c/ccDetails.php');
 			break;

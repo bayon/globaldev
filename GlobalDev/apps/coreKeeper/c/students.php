@@ -1,26 +1,4 @@
-
 <?php
-		//echo("<br>ACTUAL SESSION: <pre>");print_r($_SESSION);echo("</pre>");
-		//Do asynchronous requests NOT have access to session data?
-		//  L E F T   O F F   H E R E    
-		if(1 ==2){
-			if($user){
-			echo("<br>user_id:".$user->user_id);
-			echo("<br>username:".$user->username);
-			echo("<br>user_password:".$user->password);
-			$_SESSION['user']=serialize($user);
-		}else{
-			 $user = unserialize($_SESSION['user']);
-			 echo("<br>user_id:".$user->user_id);
-			echo("<br>username:".$user->username);
-			echo("<br>user_password:".$user->password);
-			$_SESSION['user']=serialize($user);
-		}
-		}
-		
-?>
-<?php
-
 if (isset($_GET)) {
 	//echo("get");
 	if (isset($_GET['method'])) {
@@ -33,6 +11,11 @@ if (isset($_GET)) {
 				echo("get default");
 				break;
 		}
+	}else{
+		if (isset($_GET['navigation'])) {
+			//initial navigation to students page
+			include_once ('./v/students.php');
+		}
 	}
 
 }
@@ -41,7 +24,7 @@ if (isset($_POST)) {
 	if (isset($_POST['method'])) {
 		switch ($_POST['method']) {
 			case 'ajaxStudentFormResults' :			 
-		 	$student = new Student("", sanitize($_POST['user_id']), sanitize($_POST['first_name']) );
+		 	$student = new Student("", sanitize($_POST['user_id']), sanitize($_POST['first_name']) , sanitize($_POST['middle_name']) , sanitize($_POST['last_name']) , sanitize($_POST['email']) , sanitize($_POST['phone']) );
 			 //add fields here and in the model.
 			 createStudent($student);
 			 
