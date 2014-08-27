@@ -1,8 +1,10 @@
 <?php
 class Schedule_Maker {
 	public $controller;
-	public function __construct($controller = "mustBeSet") {
+	public $user_id;
+	public function __construct($controller = "mustBeSet",$user_id=0) {
 		$this -> controller = $controller;
+		$this -> user_id = $user_id;
 	}
 
 	public function make() {
@@ -17,6 +19,7 @@ class Schedule_Maker {
 	<form name='schedulerForm' method='get' action=" . $_SERVER['PHP_SELF'] . ">
 		<input type='hidden'  name='controller' value='".$this->controller."'/>
 		<input type='hidden'  name='method' value='addAppointment'/>
+		<input type='hidden'  name='user_id' value='".$this->user_id."'/>
 	<div class='schedulerRow'>
 		<div class='schedulerLabel' >title:</div>
 		<input id='title' class='schedulerInput' type='text' name='title' />

@@ -2,17 +2,25 @@
 <?php
 
 class Calendar {
-
+	public $user_id;
 	public $months;
 	public $month;
 	public $year;
 	public $calendar_width;
 
-	public function __construct($month = null, $year = null, $calendar_width = 320) {
+	public function __construct($user_id = 0,$month = null, $year = null, $calendar_width = 320) {
+		$this -> user_id = $user_id;	
 		$this -> month = $month;
 		$this -> year = $year;
 		$this -> calendar_width = $calendar_width;
 		$this -> months = array('January', 'Feburary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
+	}
+	public function set_user_id($user_id) {
+		$this -> user_id = $user_id;
+	}
+
+	public function get_user_id() {
+		return $this -> user_id;
 	}
 
 	public function setYear($year) {
@@ -106,7 +114,7 @@ CAL;
 		$html .= ">$day_num";
 		//need an array of appts to loop through sorted by appt time of course.
 
-		$appt = getAppointmentByDay($day_num,$this->month,$this->year);
+		$appt = getAppointmentByDay($this->user_id,$day_num,$this->month,$this->year);
 
 		$html .= "<br><a style='font-size:10px;' href='" . $appt -> anchor . "'  title='" . $appt -> note . "'    >" . $appt -> title . "</a>";
 

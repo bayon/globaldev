@@ -42,6 +42,10 @@ body {
 	margin-right: 5%;
 	margin-top:2%;
 }
+#logout{
+	color:#222;
+	float:right;margin-right:30px;margin-top:10px;
+}
 .main_gradient {
 	background: -webkit-linear-gradient(#444, #111); /* For Safari 5.1 to 6.0 */
 	background: -o-linear-gradient(#444, #111); /* For Opera 11.1 to 12.0 */
@@ -64,6 +68,7 @@ body {
 	width: 120px;
 	font-size: 13px;
 	border:none;
+	
 }
 .subnav_container {
 	width: 100%;
@@ -71,6 +76,8 @@ body {
 	max-height: 30px;
 	/*background-image: url('../global_img/zeroBackground_50.png');*/
 	text-align: center;
+	 position:fixed;
+	 top:80px;
 }
 .nav_buttons {
 	height: 30px;

@@ -6,38 +6,21 @@ include_once('./components/ajaxStudentForm.php');
 		echo(navigation());
 		//echo(customCSSMenu());
 ?>
- 
+<?php include_once('./ajax_constants.php'); ?>
 <div id='content'>
 	<div class='page_title'>
 		Home
 	</div>
 	
 	<?php
-	$ajaxStudentForm = new ajaxStudentForm("coreKeeper");
+	$ajaxStudentForm = new ajaxStudentForm("coreKeeper",$user->user_id);
 	echo($ajaxStudentForm->make());
 	
 	?>
 	<div id='ajaxStudentList'></div>
 </div>
 <div>
-	<?php
-		//echo("<br>ACTUAL SESSION: <pre>");print_r($_SESSION);echo("</pre>");
-		if(1 ==2){
-			if($user){
-			echo("<br>user_id:".$user->user_id);
-			echo("<br>username:".$user->username);
-			echo("<br>user_password:".$user->password);
-			$_SESSION['user']=serialize($user);
-		}else{
-			 $user = unserialize($_SESSION['user']);
-			 echo("<br>user_id:".$user->user_id);
-			echo("<br>username:".$user->username);
-			echo("<br>user_password:".$user->password);
-			$_SESSION['user']=serialize($user);
-		}
-		}
-		
-	?>
+	
 	<?php
 	include_once ('./components/ajax_tableHelper_students.php');
 	?>
@@ -46,6 +29,10 @@ include_once('./components/ajaxStudentForm.php');
 <div class='todoList'>
 	<p>To Do CC:</p>
 		<ul>
+			<li>make schedule preselect calendar dates</li>
+			<li>move students to own section and complete fields for students creation.</li>
+			<li>schedule user specific</li>
+			<li>log out</li>
 			<li>user settings: roster,attachments,etc...</li>
 			<li>roster</li>
 			<li>attachments table to store by user</li>
@@ -68,7 +55,7 @@ include_once('./components/ajaxStudentForm.php');
 <script>
 //function postAjaxForm(dataString,controller,receiverId)
 function initCodePage(){
-	postAjaxForm('method=ajaxSortableStudentsTable&column=firstName&direc=asc', './c/ajax_controller.php', 'ajaxSortableTableResults');
+	postAjaxForm('method=ajaxSortableStudentsTable&user_id='+user_id +'&column=firstName&direc=asc', './c/ajax_controller.php', 'ajaxSortableTableResults');
 }
 initCodePage();
 </script>

@@ -1,6 +1,6 @@
 <?php
 // CONTROLLER CODE
-//echo("<br>".__FILE__."</br>");
+//echo("<br>".__FILE__."</br>"); new 
 //echo("<pre>SESSION:");print_r($_SESSION);echo("</pre>");
 //echo("<pre>GET:");print_r($_GET);echo("</pre>");
 include_once (GLOBAL_DIR . '/glib/global_components/calendar.php');
@@ -15,26 +15,26 @@ if (isset($_GET)) {
 				//$dateIntArray = handleDatepickerResponse($dateArray);
 				
 				//$appointment = new Appointment($_GET['title'], $dateIntArray[0], $dateIntArray[1], $dateIntArray[2], $_GET['note'], $_GET['anchor']);
-				$appointment = new Appointment($_GET['title'], $dateArray[2], $dateArray[0], $dateArray[1], $_GET['note'], $_GET['anchor']);
+				$appointment = new Appointment($_GET['user_id'],$_GET['title'], $dateArray[2], $dateArray[0], $dateArray[1], $_GET['note'], $_GET['anchor']);
 				
 				insertAppointment($appointment);
-				$calendar = new Calendar(date('n'), date('Y')); 	
+				$calendar = new Calendar($_GET['user_id'],date('n'), date('Y')); 	
 				include_once('v/schedule.php');
 				break;
 			case 'changeMonth' :
 				if($_GET['direction'] == 'fwd'){
 					if($_GET['month'] != 12){
-						$calendar = new Calendar($_GET['month']+1, $_GET['year'],320); 
+						$calendar = new Calendar($_GET['user_id'],$_GET['month']+1, $_GET['year'],320); 
 					}else{
-						$calendar = new Calendar(1, $_GET['year']+1,320);
+						$calendar = new Calendar($_GET['user_id'],1, $_GET['year']+1,320);
 					}
 					
 				}else{
 					
 					if($_GET['month'] != 1){
-						$calendar = new Calendar($_GET['month']-1, $_GET['year'],320); 
+						$calendar = new Calendar($_GET['user_id'],$_GET['month']-1, $_GET['year'],320); 
 					}else{
-						$calendar = new Calendar(12, $_GET['year']-1,320); 
+						$calendar = new Calendar($_GET['user_id'],12, $_GET['year']-1,320); 
 					}
 				}
 				include_once('v/schedule.php');
@@ -45,7 +45,7 @@ if (isset($_GET)) {
 		}
 	}else{
 		
-		$calendar = new Calendar(date('n'), date('Y'),320); 	
+		$calendar = new Calendar($_GET['user_id'],date('n'), date('Y'),320); 	
 		include_once('v/schedule.php');
 	}
 

@@ -9,6 +9,7 @@ function navigation() {
 	
 	<input id='nav5'  type='submit' class='nav_buttons main_gradient' name='navigation' value='codes'/>
 	<input id='nav6'  type='submit' class='nav_buttons main_gradient' name='navigation' value='schedule'/>
+	
 	</div>
 	";
 	$html .= "</form></div>";
@@ -101,7 +102,7 @@ function customCSSMenu() {
 function createHeader() {
 	$html = "<div id='site_header' class='main_gradient'>";
 	$html .= "<div id='site_logo' >@</div>";
-	$html .= "<div id='site_name'>common core</div>";
+	$html .= "<div id='site_name'>common core <a id='logout' href='".GLOBAL_URL."'   >Log Out</a> </div>";
 	$html .= "</div>";
 
 	return $html;

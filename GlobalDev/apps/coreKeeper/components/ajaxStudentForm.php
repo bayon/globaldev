@@ -3,14 +3,16 @@
 class ajaxStudentForm {
 	//limitations: only one use per page, because of "unique" id and function.
 	public $ROOT_DIR;
-	function __construct($ROOT_DIR = "project1") {
+	public $user_id;
+	function __construct($ROOT_DIR = "project1" ,$user_id=0) {
 		$this -> ROOT_DIR = $ROOT_DIR;
-	}
+		$this ->user_id = $user_id;
+		}
 
-	function make() {
+		function make() {
 		$ajaxForm = ' <div> ';
 		
-		$gridMatrix[0][0] = "first name:";
+		$gridMatrix[0][0] = "first name:<input type='hidden' id='user_id' name='user_id' value='".$this ->user_id."' />";
 		$gridMatrix[0][1] = '<input type="text" id="first_name" />';
 		$gridMatrix[1][0] = "middle name:";
 		$gridMatrix[1][1] = '<input type="text" id="middle_name" />';
@@ -34,21 +36,21 @@ class ajaxStudentForm {
 		$ajaxForm .='
 			<script>
 			function tableFormFunction(){
-				 
+				 var user_id = document.getElementById("user_id");
 				var firstname = document.getElementById("first_name");
 				var middlename = document.getElementById("middle_name");
 				var lastname = document.getElementById("last_name");
 				var email = document.getElementById("email");
 				var phone = document.getElementById("phone");
 				 
-				 
+				 user_id = user_id.value;
 				firstname = firstname.value;
 				middlename = middlename.value;
 				lastname = lastname.value;
 				email = email.value;
 				phone = phone.value;
 				
-				datastring="controller=ajax_controller&method=ajaxStudentFormResults&first_name="+firstname+"&middle_name="+middlename+"&last_name="+lastname+"&email="+email+"&phone="+phone+"";
+				datastring="controller=ajax_controller&method=ajaxStudentFormResults&user_id="+user_id+"&first_name="+firstname+"&middle_name="+middlename+"&last_name="+lastname+"&email="+email+"&phone="+phone+"";
 				controller="../' . $this -> ROOT_DIR . '/c/ajax_controller.php";
 				receiverId="tableFormId";
 				

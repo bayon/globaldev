@@ -269,9 +269,11 @@ class ajaxSortableTable {
 	// add SEARCH FIELD AS A PARAM AND NOTHING ELSE HAD TO CHANGE.
 	public $ROOT_DIR;
 	public $mainSearchField;
-	function __construct($ROOT_DIR = "coreKeeper",$mainSearchField) {
+	public $user_id;
+	function __construct($ROOT_DIR = "projectX",$mainSearchField,$user_id = 0) {
 		$this -> ROOT_DIR = $ROOT_DIR;
 		$this ->mainSearchField = $mainSearchField;
+		$this ->user_id = $user_id;
 	}
 
 	function make($controller, $callBackFunction, $kvArrayOfHeaderFields) {
@@ -282,7 +284,7 @@ class ajaxSortableTable {
 		$ajaxSortableTable .= '
 		 <div class="ajaxSortableTable_container">
 		 <div class="ajaxSearchDiv">
-	
+	<input id="user_id" type ="hidden" name="user_id" value="'.$this ->user_id.'" /> 
 	<input id="searchKey" type ="text" name="searchKey" /> 
 	<button id="searchButton" onClick = "getagentsBySearch(\''.$this ->mainSearchField.'\',\'desc\');" >search</button>
 </div>
@@ -346,8 +348,8 @@ class ajaxSortableTable {
 		
 		$ajaxSortableTable .= '	<script>
 			function getagents(column, direc) {
-				 
-				datastring="controller=' . $controller . '&method=' . $callBackFunction . '&column="+column+"&direc="+direc+"";
+				 var user_id = document.getElementById("user_id").value;
+				datastring="controller=' . $controller . '&method=' . $callBackFunction . '&user_id="+user_id+"&column="+column+"&direc="+direc+"";
 				//alert(datastring);//sending correct data for 2 and 4, yes!
 				controller="../' . $this -> ROOT_DIR . '/c/' . $controller . '.php";
 				receiverId="ajaxSortableTableResults";
@@ -359,9 +361,10 @@ class ajaxSortableTable {
 			</script>';
 		$ajaxSortableTable .= '	<script>
 			function getagentsBySearch(column, direc) {
+				 var user_id = document.getElementById("user_id").value;
 				 var searchKey = document.getElementById("searchKey").value;
-				datastring="controller=' . $controller . '&method=' . $callBackFunction . '&column="+column+"&direc="+direc+"&searchKey="+searchKey+"";
-				//alert(datastring);
+				datastring="controller=' . $controller . '&method=' . $callBackFunction . '&user_id="+user_id+"&column="+column+"&direc="+direc+"&searchKey="+searchKey+"";
+				alert(datastring);
 				controller="../' . $this -> ROOT_DIR . '/c/' . $controller . '.php";
 				receiverId="ajaxSortableTableResults";
 				console.log(datastring);

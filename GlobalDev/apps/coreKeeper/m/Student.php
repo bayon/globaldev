@@ -1,14 +1,16 @@
 <?php
 class Student {
 	public $student_id;
+	public $user_id;
 	public $firstName;
 	public $middleName;
 	public $lastName;
 	public $email;
 	public $phone;
 
-	public function __construct($student_id = "0", $firstName = "default",$middleName="",$lastName="",$email="",$phone="") {
+	public function __construct($student_id = "0",$user_id="0", $firstName = "default",$middleName="",$lastName="",$email="",$phone="") {
 		$this -> student_id = $student_id;
+		$this->user_id = $user_id;
 		$this -> firstName = $firstName;
 		$this -> middleName = $middleName;
 		$this -> lastName = $lastName;
@@ -25,7 +27,17 @@ class Student {
 	function get_student_id() {
 		return $this -> student_id;
 	}
+	
+	
+	function set_user_id($id) {
+		$this -> user_id = $id;
+	}
 
+	function get_user_id() {
+		return $this -> user_id;
+	}
+	
+	 
 	function set_firstName($firstName) {
 		$this -> firstName = $firstName;
 	}
@@ -69,7 +81,7 @@ class Student {
 }
 function createStudent($student) {
 	$dbh = appConnectPDO();
-	$sql = "INSERT INTO ".APP_DB.".student (student_id,firstName) VALUES ('NULL','" . $student -> firstName . "' )";
+	$sql = "INSERT INTO ".APP_DB.".student (student_id,user_id,firstName) VALUES ('NULL','" . $student -> user_id . "','" . $student -> firstName . "' )";
 	$dbh -> query($sql);
 	$dbh = null;
 }

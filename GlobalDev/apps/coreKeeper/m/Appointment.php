@@ -1,6 +1,7 @@
 <?php
 
 class Appointment{
+	public $user_id;
 	public $title;
 	public $year;
 	public $month;
@@ -8,7 +9,8 @@ class Appointment{
 	public $note;
 	public $anchor;
 	
-	public function __construct($title ="",$year ="",$month="",$day="",$note="",$anchor=""){
+	public function __construct($user_id=0,$title ="",$year ="",$month="",$day="",$note="",$anchor=""){
+		$this -> user_id = $user_id;	
 		$this->title = $title;
 		$this->year = $year;
 		$this->month = $month;
@@ -21,18 +23,21 @@ class Appointment{
 	}
 	
 }
-function getAppointmentByDay($day,$month,$year) {
+function getAppointmentByDay($user_id,$day,$month,$year) {
 	//echo("<br>fn getAppointmentByDay");
 	$dbh = appConnectPDO();
 	$sql = "SELECT * FROM ".APP_DB.".appointments 
- WHERE 1=1 AND day = $day AND month = $month AND year = $year;";
- 
-	foreach ($dbh->query($sql) as $row) {
+ WHERE user_id= $user_id AND day = $day AND month = $month AND year = $year;";
+ //echo($sql);
+ //echo($dbh->query($sql));
+ 	foreach ($dbh->query($sql) as $row) {
 		$data = $row;
 	}
+ 
+	
 	 
 	if(isset($data)){
-		$appt = new Appointment($data['title'],$data['year'],$data['month'],$data['day'], $data['note'], $data['anchor']);
+		$appt = new Appointment($data['user_id'],$data['title'],$data['year'],$data['month'],$data['day'], $data['note'], $data['anchor']);
 		$data = null;
 		$dbh = null;
 		
@@ -46,7 +51,8 @@ function getAppointmentByDay($day,$month,$year) {
 function insertAppointment($appointment) {
 	//echo("<br>fn insertAppointment");
 	$dbh = appConnectPDO();
-	$sql = "INSERT INTO ".APP_DB.".appointments (id,title,year,month,day,note,anchor) VALUES ('NULL',
+	$sql = "INSERT INTO ".APP_DB.".appointments (id,user_id,title,year,month,day,note,anchor) VALUES ('NULL',
+	'" . $appointment -> user_id . "',
 	'" . $appointment -> title . "',
 	'" . $appointment -> year . "'
 	,'" . $appointment -> month . "'

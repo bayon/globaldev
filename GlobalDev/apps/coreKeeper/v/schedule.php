@@ -3,6 +3,7 @@ include_once ('HEADS/default_head.php');
 include_once ('HEADS/datepicker_head.php');
 ?>
 <?php echo(navigation()); ?>
+<?php include_once('./ajax_constants.php'); ?>
 <?php 
 $kvArray = array(
 	array('id'=>'subnav1','value'=>'appts','subnav_function'=>'ajaxSubNavigate("appointment","subnavToAppt")'),
@@ -17,7 +18,8 @@ echo(subnavigation("schedule.php",$kvArray));
 	</div>
 	<?php
 	include_once (GLOBAL_DIR . '/glib/global_components/schedule_maker.php');
-	$scheduler = new Schedule_Maker("schedule.php");
+	//echo("<br>SCHEDULER.php user_id:".$user->user_id);die();
+	$scheduler = new Schedule_Maker("schedule.php",$user->user_id);
 // new Calendar
 	//echo("<script> var screenWidth = window.screen.width; alert('screen width:'+ screenWidth); </script>");
 	?>
