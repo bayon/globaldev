@@ -1,6 +1,6 @@
 <?php
 include_once ('../../../global_includes.php');
-include_once ("../m/model_includes.php");
+include_once ("../m/model_includes_ajax.php");
 include_once ("../constants.php");
 include_once ("../config.php");
 // Try to funnel all ajax request through this main ajax controller.

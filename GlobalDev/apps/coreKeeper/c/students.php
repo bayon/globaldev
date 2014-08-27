@@ -1,12 +1,10 @@
 <?php
-
 if (isset($_GET)) {
 	//echo("get");
 	if (isset($_GET['method'])) {
 		switch($_GET['method']) {
 			case 'whatever' :
 				break;
-
 			default :
 				include_once ('v/whatever_view.php');
 				print_r($_GET);
@@ -28,12 +26,18 @@ if (isset($_POST)) {
 				break;
 
 			case 'ajaxSortableStudentsTable' :
+				
+				//local constants
+				$textout = "";
+					$db = "coreKeeper";
+					$table = "student";
+				
 				//echo('success'); 
 				if (isset($_POST['searchKey'])) {
 					//SEARCH BY KEYWORD
-					$textout = "";
-					$db = "coreKeeper";
-					$table = "student";
+					//$textout = "";
+					//$db = "coreKeeper";
+					//$table = "student";
 					if (isset($_POST)) {
 						mysql_connect(HOST_DB, USERNAME, PASSWORD);
 						$sql = "SELECT * FROM " . $db . "." . $table . "  WHERE 1=1 AND firstName like '%" . $_POST['searchKey'] . "%' OR lastName like '%" . $_POST['searchKey'] . "%'ORDER BY " . $_POST['column'] . " " . $_POST['direc'] . " ";
@@ -51,11 +55,9 @@ if (isset($_POST)) {
 					echo "<table cellspacing=\"0\" cellpadding=\"0\" width=\"100%\" class=\"ajaxSortableTable\" >" . $textout . "</table>";
 
 				} else {
-					//echo("<br>Regular sort?:");
+					 
 					//REGULAR SORT
-					$textout = "";
-					$db = "coreKeeper";
-					$table = "student";
+					
 					if (isset($_POST)) {
 						//echo("<pre>");print_r($_POST);echo("</pre>");
 						mysql_connect(HOST_DB, USERNAME, PASSWORD);
@@ -84,7 +86,4 @@ if (isset($_POST)) {
 	print_r($_POST);
 }
 
-
-
- 
 ?>
