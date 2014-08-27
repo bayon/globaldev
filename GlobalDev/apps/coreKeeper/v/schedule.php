@@ -48,5 +48,14 @@ echo(subnavigation("schedule.php",$kvArray));
 	 </div>
 	 
 </div>
- 
+ <!--
+ 	jumps start calendar with appointments.....
+ 	<script>
+//function postAjaxForm(dataString,controller,receiverId)
+function initCodePage(){
+	postAjaxForm('method=ajaxSortableStudentsTable&user_id='+user_id +'&column=firstName&direc=asc', './c/ajax_controller.php', 'ajaxSortableTableResults');
+}
+initCodePage();
+</script>
+ -->
 

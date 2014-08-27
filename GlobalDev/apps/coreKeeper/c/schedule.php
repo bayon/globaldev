@@ -45,7 +45,9 @@ if (isset($_GET)) {
 		}
 	}else{
 		
-		$calendar = new Calendar($_GET['user_id'],date('n'), date('Y'),320); 	
+		 // INITIALIZE the calendar with user appointments upon arrival at page.
+		include_once('./ajax_constants.php');
+		$calendar = new Calendar($user->user_id,date('n'), date('Y'),320); 	
 		include_once('v/schedule.php');
 	}
 
