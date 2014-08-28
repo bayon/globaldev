@@ -98,23 +98,23 @@ function getAllStudents() {
 	return $data;
 }
 
-function getStudentWithId($id) {
+function getStudentWithId($user_id,$id) {
+	//($student_id = "0",$user_id="0", $firstName = "default",$middleName="",$lastName="",$email="",$phone="") {
+	
 	$dbh = appConnectPDO();
 	$sql = "SELECT * FROM " . APP_DB . ".student 
- WHERE student_id = $id;";
+ WHERE student_id = $id  AND user_id = $user_id;";
 	foreach ($dbh->query($sql) as $row) {
 		$data[] = $row;
 	}
 	$dbh = null;
-	$student = new student($data[0]['student_id'], $data[0]['firstName']);
+	$student = new student($data[0]['student_id'], $user_id,$data[0]['firstName'],$data[0]['middleName'],$data[0]['lastName'],$data[0]['email'],$data[0]['phone']);
 	return $student;
 }
 
-function updateStudentWithId($id) {
+function updateStudentWithId($student) {
 	$dbh = appConnectPDO();
-	$firstName = sanitize($_POST['firstName']);
-	$password = sanitize($_POST['password']);
-	$sql = "UPDATE " . APP_DB . ".student set firstName = '$firstName', password = '$password' WHERE student_id = $id ;";
+	$sql = "UPDATE " . APP_DB . ".student set firstName = '".$student->firstName."', middleName = '".$student->middleName."', lastName = '".$student->lastName."', email = '".$student->email."', phone = '".$student->phone."'  WHERE student_id =  '".$student->student_id."' ;";
 	$dbh -> query($sql);
 	$dbh = null;
 }

@@ -10,7 +10,8 @@
 <div class='todoList'>
 	<p>To Do CC:</p>
 		<ul>
-			
+			<li>navigate to student details</li>
+			<li>hide/show new student form</li>
 			<li>lesson plan section</li>
 				<ul>
 					<li>make list of cc_codes that are pertinent</li>

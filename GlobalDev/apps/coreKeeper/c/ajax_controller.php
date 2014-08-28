@@ -42,7 +42,9 @@ switch ($_POST['method']) {
 		
 		include_once("students.php");
 		break;
-	
+	case 'ajaxStudentFormEdit' :
+		include_once("students.php");
+		break;
 	default :
 		echo("<br>" . __FILE__);
 		echo("<pre>");
