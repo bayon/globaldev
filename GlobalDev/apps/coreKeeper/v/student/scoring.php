@@ -22,13 +22,11 @@ include_once ('./ajax_constants.php');
 	</div>
 	<div class=" jq_slider" style="width:200px;margin-left:20%;margin-top:50px;"></div>
 
-	<button onclick="documentScore()">
-		document
-	</button>
+	 
 	<button onClick="if(confirm('Are you sure?'))
 	{ verify();}
 	else { deny();}">
-		smooth
+		score
 	</button>
 
 </div>
@@ -60,12 +58,12 @@ include_once ('./ajax_constants.php');
 	}
 
 	function verify() {
-		alert("you confirmed!");
+		//alert("you confirmed!");
 		submitform();
 	}
 
 	function deny() {
-		alert("you denied");
+		//alert("you denied");
 	}
 </script>
 

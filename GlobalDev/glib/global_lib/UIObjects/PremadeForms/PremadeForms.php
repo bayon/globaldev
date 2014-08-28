@@ -32,7 +32,7 @@ class LoginForm {
 	public $controller;
 	public $method;
 
-	function __construct($username = "Default username", $password = "Default Password", $controller = "login", $method = "login") {
+	function __construct($username = "Default username", $password = "Default Password", $controller = "login.php", $method = "login") {
 		if ($username) {$this -> username = $username;
 		}
 		if ($password) {$this -> password = $password;
