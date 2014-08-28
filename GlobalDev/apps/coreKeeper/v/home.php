@@ -10,7 +10,7 @@
 <div class='todoList'>
 	<p>To Do CC:</p>
 		<ul>
-			<li>attachments table to store by user</li>
+			
 			<li>lesson plan section</li>
 				<ul>
 					<li>make list of cc_codes that are pertinent</li>
@@ -24,7 +24,9 @@
 		</ul>
 	
 	<p>Done:</p>
-		<ul>			
+		<ul>
+			<li>delete or move deleted files to a different folder</li>
+			<li>attachments table to store by user, and deletable(in db only)</li>			
 			<li>navigation and header disappear till window resize on select code(position fixed issue).After researching appears to be a CHROME bug.</li>
 			<li>move students to own section and complete fields for students creation.</li>
 			<li>schedule user specific</li>

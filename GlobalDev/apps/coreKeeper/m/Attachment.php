@@ -52,14 +52,14 @@ function createAttachment($attachment) {
 	$sql = "INSERT INTO ".APP_DB.".attachment (id, user_id,student_id,filename) 
 	VALUES 
 	( 'NULL', '" . $attachment -> user_id . "','" . $attachment -> student_id . "' ,'" . $attachment -> filename . "' )";
-	echo($sql);
+	//echo($sql);
 	$dbh -> query($sql);
 	$dbh = null;
 }
 
-function getAllAttachments() {
+function getAllAttachments($user) {
 	$dbh = appConnectPDO();
-	$sql = "SELECT * FROM ".APP_DB.".attachment ;";
+	$sql = "SELECT * FROM ".APP_DB.".attachment WHERE user_id = ".$user->user_id."  ;";
 	foreach ($dbh->query($sql) as $row) {
 		$data[] = $row;
 	}
