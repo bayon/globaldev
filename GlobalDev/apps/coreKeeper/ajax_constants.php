@@ -4,10 +4,13 @@ if(isset($user)){
 	echo("<script>var user_id = ".$user->user_id.";  </script>");
 	$_SESSION['user']=serialize($user);
 }else{
-	 $user = unserialize($_SESSION['user']);
-	//REQUIRED FOR AJAX:
-	 echo("<script>var user_id = ".$user->user_id."; </script>");
-	$_SESSION['user']=serialize($user);
+	if(isset($_SESSION['user'])){
+		 $user = unserialize($_SESSION['user']);
+		//REQUIRED FOR AJAX:
+	 	echo("<script>var user_id = ".$user->user_id."; </script>");
+		$_SESSION['user']=serialize($user);
+	}
+	
 }
 		
 ?>

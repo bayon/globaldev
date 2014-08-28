@@ -52,3 +52,18 @@ if (isset($_SESSION['custom_theme'])) {
 //include_once('custom_confirm_head.php');
 include_once ('navigation.php');
 ?>
+
+<?php include_once('./ajax_constants.php'); ?>
+<?php
+if(isset($_SESSION['authorized'])){
+	if( $_SESSION['authorized'] == "yes"){
+		//echo("<script>alert('authorized USER:".$user->username."');</script>"); ?>
+		<div><?php  echo(navigation($user)); ?></div>
+	<?php
+	}else{
+		hideNavigation();
+		echo("<script>alert('Sorry, we don't recognize you yet.: ');</script>");
+	}
+}
+
+?>

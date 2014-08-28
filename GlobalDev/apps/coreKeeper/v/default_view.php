@@ -2,7 +2,10 @@
 include_once ('HEADS/default_head.php');
 ?>
 
-<?php //echo(navigation()); ?>
+<?php  
+	$homeAnchor = "<div>  <a id='logout' href='".GLOBAL_URL."/index.php?'>HOME</a> </div>";
+ 	echo($homeAnchor);
+?>
 
 <div id='content'>
 	<div class='page_title'>

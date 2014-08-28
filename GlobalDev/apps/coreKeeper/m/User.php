@@ -65,10 +65,13 @@ function login($user) {
 	foreach ($dbh->query($sql) as $row) {
 		$data[] = $row;
 	}
-
-	try {
-		$user = new User($data[0]['user_id'], $data[0]['username'], $data[0]['password']);
-	} catch(Exception $e) {
+	if(isset($data)){
+		try {
+			$user = new User($data[0]['user_id'], $data[0]['username'], $data[0]['password']);
+		} catch(Exception $e) {
+			$user = new User(0, "0", "0");
+		}
+	}else{
 		$user = new User(0, "0", "0");
 	}
 	$dbh = null;

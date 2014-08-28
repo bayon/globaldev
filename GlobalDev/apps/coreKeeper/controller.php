@@ -27,9 +27,6 @@ if (isset($_GET['navigation'])) {
 		case 'home' :
 			include_once ('c/home.php');
 			break;
-		 
-		 
-		 
 		case 'schedule' :
 			include_once ('c/schedule.php');
 			break;

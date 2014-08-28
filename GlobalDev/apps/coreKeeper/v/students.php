@@ -2,10 +2,7 @@
 include_once ('HEADS/default_head.php');
 include_once('./components/ajaxStudentForm.php');
 ?>
-<?php 
-		echo(navigation());
-		//echo(customCSSMenu());
-?>
+ 
 <?php include_once('./ajax_constants.php'); ?>
 <div id='content'>
 	<div class='page_title'>

@@ -1,7 +1,8 @@
 <?php
 
-function navigation() {
-	$html = createHeader();
+function navigation($user) {
+	showNavigation();
+	$html = createHeader($user);
 	$html .= "<div  id='navigation '   ><form method='get' action='$_SERVER[PHP_SELF]' >";
 	$html .= "
 	<div class='nav_container main_gradient' >
@@ -16,6 +17,12 @@ function navigation() {
 
 	return ($html);
 
+}
+function hideNavigation(){
+	echo("<script>document.getElementById.style.display='none';</script>");
+}
+function showNavigation(){
+	echo("<script>document.getElementById.style.display='block';</script>");
 }
 function subnavigation($controller,$kvArray) {
 	//PARAMS:
@@ -99,10 +106,10 @@ function customCSSMenu() {
 
 }
 
-function createHeader() {
+function createHeader($user) {
 	$html = "<div id='site_header' class='main_gradient'>";
-	$html .= "<div id='site_logo' >@</div>";
-	$html .= "<div id='site_name'>common core <a id='logout' href='".GLOBAL_URL."'   >Log Out</a> </div>";
+	$html .= "<div id='site_logo' >@</div><div id='userGreeting'>".$user->username."</div>";
+	$html .= "<div id='site_name'>common core <a id='logout' href='".BASE_URL."index.php?controller=login.php&method=logout'   >Log Out</a> </div>";
 	$html .= "</div>";
 
 	return $html;

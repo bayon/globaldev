@@ -2,7 +2,7 @@
 include_once ('HEADS/default_head.php');
 include_once ('HEADS/datepicker_head.php');
 ?>
-<?php echo(navigation()); ?>
+ 
 <?php include_once('./ajax_constants.php'); ?>
 <?php 
 $kvArray = array(

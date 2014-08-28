@@ -1,10 +1,12 @@
 <?php
+
+ 
 session_start();
 
 // this blows up the session object if turned on here?
 /*
 if(!isset($_SESSION['home'])) {
-	$_SESSION['home']="";
+	$_SESSION['home']=""; 
 }
  * 
  */

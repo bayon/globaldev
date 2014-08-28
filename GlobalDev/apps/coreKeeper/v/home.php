@@ -1,10 +1,6 @@
-<?php
-include_once ('HEADS/default_head.php');
-//include_once('./components/ajaxStudentForm.php');
-?>
 
-<?php include_once('./ajax_constants.php'); ?>
-<div><?php  echo(navigation()); ?></div>
+<?php include_once ('HEADS/default_head.php');?>
+
 <div id='content' >
 	<div class='page_title'>
 		Home
@@ -14,8 +10,6 @@ include_once ('HEADS/default_head.php');
 <div class='todoList'>
 	<p>To Do CC:</p>
 		<ul>
-			<li>user settings: roster,attachments,etc...</li>
-			<li>roster</li>
 			<li>attachments table to store by user</li>
 			<li>lesson plan section</li>
 				<ul>
