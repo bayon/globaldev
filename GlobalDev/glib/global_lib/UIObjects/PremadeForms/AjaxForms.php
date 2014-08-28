@@ -265,7 +265,7 @@ class ajaxAPICall {
 
 
 class ajaxSortableTable {
-	//limitations: only one use per page, because of "unique" id and function.
+	//limitations: only one use per page, because of "unique" id and function. cc_math
 	// add SEARCH FIELD AS A PARAM AND NOTHING ELSE HAD TO CHANGE.
 	public $ROOT_DIR;
 	public $mainSearchField;
@@ -277,18 +277,15 @@ class ajaxSortableTable {
 	}
 
 	function make($controller, $callBackFunction, $kvArrayOfHeaderFields) {
-		$ajaxSortableTable = ' <div>';
-
-		//"ContactID","ContactFullName","ContactSalutation","ContactTel"
-		//column headers here
-		$ajaxSortableTable .= '
-		 <div class="ajaxSortableTable_container">
-		 <div class="ajaxSearchDiv">
+		
+		$ajaxSortableTable =' <div class="ajaxSearchDiv" style="float:left;">
 	<input id="user_id" type ="hidden" name="user_id" value="'.$this ->user_id.'" /> 
 	<input id="searchKey" type ="text" name="searchKey" /> 
 	<button id="searchButton" onClick = "getagentsBySearch(\''.$this ->mainSearchField.'\',\'desc\');" >search</button>
-</div>
-<table cellspacing="0" cellpadding="0"  width=100%  border=1 class="ajaxSortableTable">
+</div>';
+		
+		
+		$ajaxSortableTable .= '<table cellspacing="0" cellpadding="0"  width=100%  border=1 class="ajaxSortableTable">
 	<tr>';
 
 		// ???  HEADERS 2 and 4 are buggy !!!
@@ -305,7 +302,17 @@ class ajaxSortableTable {
 		}
 
 		$ajaxSortableTable .= '</tr>
-</table>
+</table>';
+		
+		
+		$ajaxSortableTable .= ' <div class="sortableTableContainer" >';
+
+		//"ContactID","ContactFullName","ContactSalutation","ContactTel"
+		//column headers here
+		$ajaxSortableTable .= '
+		 <div class="ajaxSortableTable_container">
+		
+
 
 <div id="hiddenDIV" style="visibility:hidden; background-color:white;  "></div>	
 		 ';
@@ -350,7 +357,7 @@ class ajaxSortableTable {
 			function getagents(column, direc) {
 				 var user_id = document.getElementById("user_id").value;
 				datastring="controller=' . $controller . '&method=' . $callBackFunction . '&user_id="+user_id+"&column="+column+"&direc="+direc+"";
-				//alert(datastring);//sending correct data for 2 and 4, yes!
+				
 				controller="../' . $this -> ROOT_DIR . '/c/' . $controller . '.php";
 				receiverId="ajaxSortableTableResults";
 				console.log(datastring);
@@ -364,7 +371,7 @@ class ajaxSortableTable {
 				 var user_id = document.getElementById("user_id").value;
 				 var searchKey = document.getElementById("searchKey").value;
 				datastring="controller=' . $controller . '&method=' . $callBackFunction . '&user_id="+user_id+"&column="+column+"&direc="+direc+"&searchKey="+searchKey+"";
-				//alert(datastring);
+				
 				controller="../' . $this -> ROOT_DIR . '/c/' . $controller . '.php";
 				receiverId="ajaxSortableTableResults";
 				console.log(datastring);

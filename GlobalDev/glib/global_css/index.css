@@ -55,6 +55,15 @@ body {
 	width:100px;
 	max-width:100px;
 }
+.sortableTableContainer{
+	
+	 min-height:50px;
+	 max-height:250px;
+	 overflow-y:scroll;
+}
+#hiddenDIV{
+	 border:solid 1px blue;
+}
 .main_gradient {
 	background: -webkit-linear-gradient(#444, #111); /* For Safari 5.1 to 6.0 */
 	background: -o-linear-gradient(#444, #111); /* For Opera 11.1 to 12.0 */

@@ -11,7 +11,7 @@ if (isset($_POST['method'])) {
 					mysql_connect(HOST_DB, USERNAME, PASSWORD);
 					$sql = "SELECT * FROM " . $db . "." . $table . "  WHERE 1=1 AND code like '%" . $_POST['searchKey'] . "%' OR statement like '%" . $_POST['searchKey'] . "%'ORDER BY " . $_POST['column'] . " " . $_POST['direc'] . " ";
 					
-					echo($sql);
+					//echo($sql);
 					$result = mysql_query($sql);
 					while ($myrow = mysql_fetch_array($result)) {
 						$code = $myrow["code"];

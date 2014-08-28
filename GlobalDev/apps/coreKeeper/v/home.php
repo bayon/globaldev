@@ -10,22 +10,22 @@
 <div class='todoList'>
 	<p>To Do CC:</p>
 		<ul>
-			<li>navigate to student details</li>
-			<li>hide/show new student form</li>
+			<li>students section</li>
+				<ul>
+					<li>scores with attachments</li>
+				</ul>
 			<li>lesson plan section</li>
 				<ul>
 					<li>make list of cc_codes that are pertinent</li>
 					<li>make additional notes</li>
 					<li>add plan to calendar?</li>
 				</ul>
-			<li>students section</li>
-				<ul>
-					<li>scores with attachments</li>
-				</ul>
 		</ul>
 	
 	<p>Done:</p>
 		<ul>
+			<li>navigate to student details</li>
+			<li>hide/show new student form</li>
 			<li>delete or move deleted files to a different folder</li>
 			<li>attachments table to store by user, and deletable(in db only)</li>			
 			<li>navigation and header disappear till window resize on select code(position fixed issue).After researching appears to be a CHROME bug.</li>

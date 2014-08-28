@@ -119,6 +119,9 @@ if (isset($_POST['controller'])) {
 		case 'schedule.php' :
 			include_once ('c/schedule.php');
 			break;
+		case 'students.php' :
+			include_once('c/students.php');
+		break;
 		case 'Default Method' :
 			include_once ('c/examples.php');
 			echo("<BR>CONTROLLER: DEFAULT METHOD");
