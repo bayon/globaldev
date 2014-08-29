@@ -390,6 +390,88 @@ class ajaxSortableTable {
 	}
 
 }
-
-
+/*
+class HandleAjaxSortableTableSelection {
+		public $db;
+		public $table;
+		public $controller;
+		public $navigationKey; //ex. 1)navigation or 2)myController.php
+		public $navigationValue;//ex. 1)deatils   or 2)methodName
+		public $pk;
+		public $arrayOfDisplayFields;
+		 
+			
+	public function __construct($db,$table,$controller,$navigationKey,$navigationValue,$pk,$arrayOfDisplayFields){
+		$this -> db = $db;
+		$this -> table = $table;
+		$this -> controller = $controller;
+		$this -> navigationKey = $navigationKey;
+		$this -> navigationValue = $navigationValue;
+		$this -> pk = $pk;
+		$this -> arrayOfDisplayFields = $arrayOfDisplayFields;
+	}
+	public function sortBySearch($searchKey,$column,$direc){
+			$textout = "";
+			mysql_connect(HOST_DB, USERNAME, PASSWORD);
+			$sql = "SELECT * FROM " . $this->db . "." . $this->table . "  WHERE 1=1 ";
+			
+			//loop through array of fields
+			foreach($this->arrayOfFields as $field){
+				$sql .= " OR " . $field . " like '%" . $searchKey . "%' ";
+			}
+			
+			
+			$sql .= "ORDER BY " . $column . " " . $direc . " ";
+			//echo($sql);
+			$result = mysql_query($sql);
+			while ($row = mysql_fetch_array($result)) {
+				$pkValue = $row[$this->pk];
+				
+				//$statement = $row["statement"];
+				
+				$textout .= " <tr>";
+				
+				//loop through array of fields
+				foreach($this->arrayOfFields as $field){
+					 $textout .= "
+					<td class='ast_width_20pct' >
+					<a href='?controller=" . $controller . "&" . $navigationKey . "=" . $navigationValue . "&" . $this->pk . "=" . $pkValue . "' >" . $field . "</a>
+					</td>";
+				}
+				
+				$textout .= "</tr>";
+			}
+			$result =  "<table cellspacing=\"0\" cellpadding=\"0\" width=\"100%\" class=\"ajaxSortableTable\" >" . $textout . "</table>";
+			return $result;
+	}		
+	public function regularSort($column,$direc){
+			//REGULAR SORT
+			$textout = "";
+			mysql_connect(HOST_DB, USERNAME, PASSWORD);
+			$sql = "
+			SELECT * FROM " . $this->db . "." . $this->table . " 
+			ORDER BY " . $column . " " . $direc . " ";
+			$result = mysql_query($sql);
+			while ($row = mysql_fetch_array($result)) {
+				$pkValue = $row["code"];
+				//$statement = $row["statement"];
+				$textout .= " <tr>";
+				
+				//loop through array of fields
+				foreach($this->arrayOfFields as $field){
+					 $textout .= "
+					<td class='ast_width_20pct' >
+					<a href='?controller=" . $controller . "&" . $navigationKey . "=" . $navigationValue . "&" . $this->pk . "=" . $pkValue . "' >" . $field . "</a>
+					</td>";
+				}
+				
+				$textout .= "</tr>";
+			}
+			$result= "<table cellspacing=\"0\" cellpadding=\"0\" width=\"100%\" class=\"ajaxSortableTable\" >" . $textout . "</table>";
+		return $result;
+	}	
+	 
+}
+ * 
+ */
 ?>

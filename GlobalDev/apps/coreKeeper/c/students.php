@@ -124,49 +124,43 @@ if (isset($_POST)) {
 }
 
 function handleCodeSelection($controller, $navigationKey, $navigationValue) {
+	$textout = "";
+	$db = "cc";
+	$table = "cc_math";
+	mysql_connect(HOST_DB, USERNAME, PASSWORD);
 	if (isset($_POST['searchKey'])) {
 		//SEARCH BY KEYWORD
-		$textout = "";
-		$db = "cc";
-		$table = "cc_math";
 		if (isset($_POST)) {
-			mysql_connect(HOST_DB, USERNAME, PASSWORD);
 			$sql = "SELECT * FROM " . $db . "." . $table . "  WHERE 1=1 AND code like '%" . $_POST['searchKey'] . "%' OR statement like '%" . $_POST['searchKey'] . "%'ORDER BY " . $_POST['column'] . " " . $_POST['direc'] . " ";
-
-			//echo($sql);
-			$result = mysql_query($sql);
-			while ($myrow = mysql_fetch_array($result)) {
-				$code = $myrow["code"];
-				$statement = $myrow["statement"];
-				$textout .= "<tr><td class='ast_width_20pct' ><a href='?controller=" . $controller . "&" . $navigationKey . "=" . $navigationValue . "&ccode=" . $code . "' >" . $code . "</a></td></tr>";
-			}
-
+			$refreshedTable = refreshTableWithSql($sql,$controller,$navigationKey,$navigationValue);
+			echo($refreshedTable);
 		} else {
-			$textout = "";
-			//echo("<br>textout nothing  ...");
-		}
-		echo "<table cellspacing=\"0\" cellpadding=\"0\" width=\"100%\" class=\"ajaxSortableTable\" >" . $textout . "</table>";
+			emptyTable();
+ 		}
 
 	} else {
-		//echo("<br>Regular sort?:");
 		//REGULAR SORT
-		$textout = "";
-		$db = "cc";
-		$table = "cc_math";
-		if (isset($_POST)) {
-			//echo("<pre>");print_r($_POST);echo("</pre>");
-			mysql_connect(HOST_DB, USERNAME, PASSWORD);
+		if (isset($_POST)) {			 
 			$sql = "SELECT * FROM " . $db . "." . $table . " ORDER BY " . $_POST['column'] . " " . $_POST['direc'] . " ";
-			$result = mysql_query($sql);
+			$refreshedTable = refreshTableWithSql($sql,$controller,$navigationKey,$navigationValue);
+			echo($refreshedTable);
+		} else {
+			emptyTable();
+		}
+	}
+}
+function refreshTableWithSQL($sql,$controller,$navigationKey,$navigationValue){
+	$textout ="";
+	$result = mysql_query($sql);
 			while ($myrow = mysql_fetch_array($result)) {
 				$code = $myrow["code"];
 				$statement = $myrow["statement"];
 				$textout .= "<tr><td class='ast_width_20pct' ><a href='?controller=" . $controller . "&" . $navigationKey . "=" . $navigationValue . "&ccode=" . $code . "' >" . $code . "</a></td></tr>";
 			}
-		} else {
-			$textout = "";
-		}
-		echo "<table cellspacing=\"0\" cellpadding=\"0\" width=\"100%\" class=\"ajaxSortableTable\" >" . $textout . "</table>";
-	}
+	return 	 "<table cellspacing=\"0\" cellpadding=\"0\" width=\"100%\" class=\"ajaxSortableTable\" >" . $textout . "</table>";
+}
+function emptyTable(){
+	$textout = "";
+	echo "<table cellspacing=\"0\" cellpadding=\"0\" width=\"100%\" class=\"ajaxSortableTable\" >" . $textout . "</table>";
 }
 ?>
