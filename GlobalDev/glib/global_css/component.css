@@ -210,8 +210,6 @@
 	background-image: url('../global_img/white_50.png');
 	
 }
-
-
 .scheduler {
 	float:left;
 	width: 320px;
@@ -235,7 +233,6 @@
 	
 }
 .schedulerLabel {
-	 
 	text-align:right;
 	width:32%;
 	max-width:32%;
@@ -257,13 +254,19 @@
 	border:solid 1px #222;
 	background-image: url('../global_img/white_25.png');
 }
- .schedulerButton{
+.schedulerButton{
  	margin-top:20px;
  	margin-bottom:2px;
  	background-image: url('../global_img/white_50.png');
- }
+}
 
-
+#ajaxStudentForm{
+	font-size:13px;
+}
+#ajaxStudentForm input {
+	width:125px;
+	font-size:13px;
+} 
 
 /*------------------DESKTOP----------------*/
 

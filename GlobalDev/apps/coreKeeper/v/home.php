@@ -10,9 +10,17 @@
 <div class='todoList'>
 	<p>To Do CC:</p>
 		<ul>
+			<li>students.php controller fn handleCodeSelection() find right place to make this globally available.</li>
+			<li>figure out how to delete unused files.</li>
+			<li>translate the scheduler to the grid layout.</li>
+			<li>add student form : hide on submit and change text for submit button</li>
+			<li>Scoring layout into grid layout.Style</li>
+			<li>calendar backward forwards errors, also lose calendar appointments</li>
+			<li>idea: form built based on model object of table or entity.</li>
 			<li>students section</li>
 				<ul>
 					<li>scores with attachments</li>
+					<li>view previous scores</li>
 				</ul>
 			<li>lesson plan section</li>
 				<ul>

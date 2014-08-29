@@ -6,7 +6,7 @@
 	<div class='page_title'>
 		Title
 	</div>
-	 <p>student details for:<?=$student->firstName;?></p>
+	 <p>student:&nbsp;<?=$student->firstName;?></p>
 	<div>
 		 <?php
 	$ajaxStudentEditForm = new ajaxStudentEditForm("coreKeeper",$user->user_id,$student);
@@ -14,10 +14,7 @@
 	
 	?>
 	</div>
-	<ul>
-		<li>add attachments</li>
-		<li>save score</li>
-	</ul>
+	 
 	 <?php
 	include_once ('./components/ajax_tableHelper_ccMath_forStudent.php');
 	?>

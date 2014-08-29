@@ -10,8 +10,8 @@ function displayAttachments($user,$ccode){
 			//SAVE ATTACHMENT INFORMATION HERE
 			$arrayOfUploads = getAllAttachments($user);
 			//print_r($arrayOfUploads);
-			$scrollOfFiles = "<div style='height:150px;overflow-y:scroll;border: solid 1px #222;padding:20px;' >";
-			$scrollOfFiles .= "<p>ccode::".$ccode."</p>";
+			$scrollOfFiles = "<div style='height:150px;overflow-y:scroll;border: solid 1px #ccc;padding:10px;' >";
+			//$scrollOfFiles .= "<p>ccode::".$ccode."</p>";
 			//echo(count($arrayOfUploads));
 			if(count($arrayOfUploads) > 0){
 				foreach ($arrayOfUploads as $a) {

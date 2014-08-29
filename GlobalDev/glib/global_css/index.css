@@ -117,9 +117,10 @@ form{
 	float: left;
 }
 .todoList{
-		text-align:left;float:left;margin-left:5%;overflow-y:scroll;max-height:250px;border:solid 1px black;
+		text-align:left;float:left;margin-left:5%;margin-right:5%;overflow-y:scroll;max-height:250px;border:solid 1px black;
 		background-color:#111111;
 		color:green;
+		font-size:13px;
 	}
 	.todoList p{
 		color:white;

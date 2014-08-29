@@ -50,7 +50,7 @@ include_once ('HEADS/default_head.php');
 		$table = $fileUpload->fileUploadForm();
 		echo($table);
 		
-		echo($user->username);
+		//echo($user->username);
 		if($ccmath -> code){
 			 displayAttachments($user,$ccmath -> code );
 		} else{
