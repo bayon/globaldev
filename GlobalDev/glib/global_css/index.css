@@ -181,3 +181,10 @@ a {
 	color: green;
 }
 
+.scheduleMakerContainer{
+	font-size:13px;
+	 
+}
+.scheduleMakerContainer input{
+	max-width:125px;
+}
