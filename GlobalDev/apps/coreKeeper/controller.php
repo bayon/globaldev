@@ -24,6 +24,7 @@ if (isset($_GET['navigation'])) {
 		case 'ccDetails' :
 			include_once ('c/ccDetails.php');
 			break;
+		 
 		default :
 			include_once ('c/default.php');
 			break;

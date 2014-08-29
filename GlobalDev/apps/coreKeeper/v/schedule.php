@@ -30,11 +30,13 @@ echo(subnavigation("schedule.php",$kvArray));
 		<?php echo($scheduler -> make()); ?>
 		<!-- NOTE !!!: Because this is a class, I believe it LINGERS around after the page has moved on.... -->
 		<?php
-		$calendarControlPanel = "<div class=' container calendarControlPanel' style='width:320px; ' ><form method='get' action='" . $_SERVER['PHP_SELF'] . "' >";
+		$calendarControlPanel = "<div class=' container calendarControlPanel' style='width:320px; ' >";
+		$calendarControlPanel .= "<form method='get' action='" . $_SERVER['PHP_SELF'] . "' >";
 		$calendarControlPanel .= "<input type='hidden' name='year' value='" . $calendar -> getYear() . "'/>";
 		$calendarControlPanel .= "<input type='hidden' name='month' value='" . $calendar -> getMonth() . "'/>";
 		$calendarControlPanel .= "<input type='hidden' name='controller' value='schedule.php'/>";
-		$calendarControlPanel .= "<input type='hidden' name='method' value='changeMonth'/>";
+		$calendarControlPanel .= "<input type='hidden' name='method' value='changeMonth' />";
+		$calendarControlPanel .= "<input type='hidden' name='user_id' value='".$user->user_id."' />";
 		$calendarControlPanel .= "<input type='submit' class='back' name='direction' value='back'></input>";
 		$calendarControlPanel .= "<input type='submit' class = 'fwd' name='direction' value='fwd'></input>";
 

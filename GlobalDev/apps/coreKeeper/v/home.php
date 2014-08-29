@@ -10,12 +10,7 @@
 <div class='todoList'>
 	<p>To Do CC:</p>
 		<ul>
-			
-			
-			
-			<li>Scoring layout into grid layout.Style</li>
-			<li>calendar backward forwards errors, also lose calendar appointments</li>
-			<li>idea: form built based on model object of table or entity.</li>
+			<li>calendar link to appt details? </li>
 			<li>students section</li>
 				<ul>
 					<li>scores with attachments</li>
@@ -27,10 +22,13 @@
 					<li>make additional notes</li>
 					<li>add plan to calendar?</li>
 				</ul>
+			<li>idea: form built based on model object of table or entity.</li>
 		</ul>
 	
 	<p>Done:</p>
 		<ul>
+			<li>calendar backward forwards errors, also lose calendar appointments</li>
+			<li>Scoring layout into grid layout.Style</li>
 			<li>add student form : hide on submit and change text for submit button</li>
 			<li>students.php controller fn handleCodeSelection() find right place to make this globally available.</li>
 			<li>translate the scheduler to the grid layout.</li>

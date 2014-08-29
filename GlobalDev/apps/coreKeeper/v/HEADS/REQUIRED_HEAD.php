@@ -14,6 +14,7 @@
 echo("<link rel='stylesheet' type='text/css' href='../../glib/global_css/".APP_THEME."/theme.css'>");
 ?>
 <?php
+//echo("<br>".__FILE__);
 /*
 if (isset($_SESSION['custom_theme'])) {
 	switch ($_SESSION['custom_theme']) {

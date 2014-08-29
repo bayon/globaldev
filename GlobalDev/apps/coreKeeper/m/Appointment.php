@@ -30,9 +30,12 @@ function getAppointmentByDay($user_id,$day,$month,$year) {
  WHERE user_id= $user_id AND day = $day AND month = $month AND year = $year;";
  //echo($sql);
  //echo($dbh->query($sql));
+ if($dbh->query($sql)){
  	foreach ($dbh->query($sql) as $row) {
 		$data = $row;
 	}
+ }
+ 	
  
 	
 	 

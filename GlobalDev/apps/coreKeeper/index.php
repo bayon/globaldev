@@ -26,5 +26,8 @@ echo("<br>GLOBAL_ENVIRONMENT".GLOBAL_ENVIRONMENT);
 echo("<br>GLOBAL_ROOT".GLOBAL_ROOT);
 echo("<br>GLOBAL_URL".GLOBAL_URL);
 echo("<br>GLOBAL_DIR".GLOBAL_DIR);
- */
+
+echo("<br>BASE_URL".BASE_URL);
+*/
+
 ?>

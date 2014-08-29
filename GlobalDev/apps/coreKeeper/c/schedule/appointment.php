@@ -3,7 +3,10 @@ if (isset($_GET)) {
 
 	if (isset($_GET['method'])) {
 		switch($_GET['method']) {
-			case 'whatever' :
+			case 'selectAppt' :
+				include_once ('../../v/HEADS/default_head.php');
+				include_once ('../../v/schedule/appointment.php');
+				print_r($_GET);
 				break;
 
 			default :
