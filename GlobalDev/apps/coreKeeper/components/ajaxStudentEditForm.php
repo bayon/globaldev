@@ -33,6 +33,7 @@ class ajaxStudentEditForm {
 		
 		
 		$gridMatrix[5][0] = '<button onClick="tableFormFunction()" >update</button>';
+		$gridMatrix[5][1] = '<button onClick="deleteStudent()" >delete</button>';
 		$gridMatrix[6][0] = '<div id="tableFormId" > <!--ajax  results--></div>';
 		$rows = 7;
 		$cols = 2;
@@ -68,6 +69,9 @@ class ajaxStudentEditForm {
 				receiverId="tableFormId";
 				
 				postAjaxForm(datastring, controller, receiverId);
+			}
+			function deleteStudent(){
+				alert("Delete Functionality Does Not Exist Yet.");
 			}
 			function toggleNewFormOn(){
 				//alert("newFormBody toggle");

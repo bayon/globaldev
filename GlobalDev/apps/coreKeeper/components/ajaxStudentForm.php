@@ -28,8 +28,9 @@ class ajaxStudentForm {
 		$gridMatrix[4][1] = '<input type="text" id="phone" />';
 		
 		
-		$gridMatrix[5][0] = '<button onClick="tableFormFunction()" >ajax table</button>';
-		$gridMatrix[6][0] = '<div id="tableFormId" > <!--ajax  results--></div>';
+		$gridMatrix[5][0] = '<button onClick="tableFormFunction()" >add</button>';
+		$gridMatrix[5][1] = '<button onClick="toggleNewFormOff()" >cancel</button>';
+		$gridMatrix[6][0] = '<div id="tableFormId" > <!--add--></div>';
 		$rows = 7;
 		$cols = 2;
 		$columnWidthPercentsArray = array(40, 40);
@@ -53,6 +54,8 @@ class ajaxStudentForm {
 				lastname = lastname.value;
 				email = email.value;
 				phone = phone.value;
+				
+				toggleNewFormOff();
 				
 				datastring="controller=ajax_controller&method=ajaxStudentFormResults&user_id="+user_id+"&first_name="+firstname+"&middle_name="+middlename+"&last_name="+lastname+"&email="+email+"&phone="+phone+"";
 				controller="../' . $this -> ROOT_DIR . '/c/ajax_controller.php";

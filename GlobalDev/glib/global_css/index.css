@@ -188,3 +188,7 @@ a {
 .scheduleMakerContainer input{
 	max-width:125px;
 }
+
+#scoringFormContainer{
+	max-width:380px;
+}

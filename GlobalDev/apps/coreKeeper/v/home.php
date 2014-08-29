@@ -11,9 +11,8 @@
 	<p>To Do CC:</p>
 		<ul>
 			
-			<li>students.php controller fn handleCodeSelection() find right place to make this globally available.</li>
-			<li>translate the scheduler to the grid layout.</li>
-			<li>add student form : hide on submit and change text for submit button</li>
+			
+			
 			<li>Scoring layout into grid layout.Style</li>
 			<li>calendar backward forwards errors, also lose calendar appointments</li>
 			<li>idea: form built based on model object of table or entity.</li>
@@ -32,6 +31,9 @@
 	
 	<p>Done:</p>
 		<ul>
+			<li>add student form : hide on submit and change text for submit button</li>
+			<li>students.php controller fn handleCodeSelection() find right place to make this globally available.</li>
+			<li>translate the scheduler to the grid layout.</li>
 			<li>assure SQL backup process, for new sql during dev.</li>
 				<ul>
 					<li>sql_backups folder in each apps root dir.</li>
