@@ -192,3 +192,10 @@ a {
 #scoringFormContainer{
 	max-width:380px;
 }
+#ajaxSortableTableResults a {
+	 
+	display:inline-block;
+	width: 100%;
+	font-style:italic;
+}
+

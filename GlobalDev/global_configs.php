@@ -1,13 +1,20 @@
 <?php
 define('GLOBAL_DIR', realpath(dirname(__FILE__)));
-$devLocation = "NOTlittleMac";//littleMac
-if($devLocation != "littleMac"){
+$devLocation = "littleMac";//littleMac
+if($devLocation == "hp"){
 	define('GLOBAL_ROOT', 'gdev/globaldev/GlobalDev');
-	define('GLOBAL_ENVIRONMENT',"other");
-}else{
+	define('GLOBAL_ENVIRONMENT',"hp");
+}else if($devLocation == "littleMac"){
 	define('GLOBAL_ROOT', 'forteworks/globaldev/GlobalDev');
 	define('GLOBAL_ENVIRONMENT',"littleMac");
+}else if($devLocation == "live"){
+	define('GLOBAL_ROOT', 'GlobalDev');
+	define('GLOBAL_ENVIRONMENT',"live");
 }
+
+
+
+
 
 /*============================================================*/
 /*-----	AUTOMATED CONFIGS	 ---------------------------------*/
