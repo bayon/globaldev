@@ -9,6 +9,10 @@ if (isset($_GET)) {
 				//[student_id] => 19
 				$student = getStudentWithId($user -> user_id, $_GET['student_id']);
 				$_SESSION['student'] = serialize($student);
+				
+				$scores = getAllScoresForStudentId($student->student_id);
+				
+				
 				include_once ('v/student/details.php');
 				break;
 			case 'selectCodeForStudentScore' :
@@ -20,8 +24,15 @@ if (isset($_GET)) {
 				include_once ('components/ajaxStudentEditForm.php');
 				include_once ('v/HEADS/default_head.php');
 				$student = getStudentWithId($user -> user_id, $_GET['student_id']);
-				//print_r($_GET);
-				
+				//insert the score
+					// create score table id, user_id, student_id, code, score, attach_id , notes, date .
+				$date = date("Y-m-d H:i:s");
+				$score = new Score('null',$student->user_id,$student->student_id,$_GET['code'],$_GET['score'],$_GET['attach_id'],$_GET['notes'],$date);
+				//get all other scores ( total )
+				createScore($score);
+				$_SESSION['student'] = serialize($student);
+				$scores = getAllScoresForStudentId($student->student_id);
+				//include_once ('v/student/scoring.php');
 				include_once ('v/student/details.php');
 				break;
 			default :

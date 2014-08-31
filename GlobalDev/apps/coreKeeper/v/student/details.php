@@ -14,10 +14,16 @@
 	
 	?>
 	</div>
+	
 	 
 	 <?php
 	include_once ('./components/ajax_tableHelper_ccMath_forStudent.php');
 	?>
+	
+	<div style='float:left;margin-left:15%;margin-bottom:20px;margin-top:30px;max-height:100px;overflow-y:scroll;border:solid black 1px;'>
+		
+		<?php echo("<pre>");print_r($scores);echo("</pre>"); ?>
+	</div>
 	
 </div>
 <script>
