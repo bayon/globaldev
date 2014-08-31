@@ -14,7 +14,7 @@ include_once ('./ajax_constants.php');
 	$gridMatrix[1][0] = "<input type = 'text' id='firstName' name='firstName' value='" . $student -> firstName . "'/>";
 	$gridMatrix[2][0] = "<input type = 'text' id='ccode' name='ccode' value='" . $_GET['ccode'] . "'/>";
 	$gridMatrix[3][0] = "<input type = 'text' id='score' name='score' />";
-	$gridMatrix[4][0] = "<div class=' jq_slider' style='width:200px;margin-left:20%;margin-top:10px; '></div>";
+	$gridMatrix[4][0] = '<input type="range" name="slider-fill" id="slider-fill" onchange="showValue()" value="60" min="0" max="100" data-highlight="true" />';
 	$gridMatrix[5][0] = "<button style='width:100%;' onClick=\"if(confirm('Are you sure?'))
 	{ verify();}
 	else { deny();}\">
@@ -39,18 +39,12 @@ include_once ('./ajax_constants.php');
 		var score = document.getElementById("score").value;
 		alert(code + ":" + student_id + ":" + score);
 	}
-
-	$(function() {
-		$(".jq_slider").slider({
-			max : 100,
-			slide : function(event, ui) {
-				var val = $(".jq_slider").slider("value");
-				console.log(val);
-				$('#score').val(val);
-			}
-		});
-	});
-
+	function showValue(){
+		var value = $('#slider-fill').attr('value');
+		
+		$('#score').val(value);
+	}
+	
 	function submitform() {
 		document.js_activated_form.submit();
 	}
