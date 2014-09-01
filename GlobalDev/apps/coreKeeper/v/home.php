@@ -10,13 +10,18 @@
 <div class='todoList'>
 	<p>To Do CC:</p>
 		<ul>
-			<li>calendar link to appt details? </li>
-			<li>students section</li>
+			
+			<li>STUDENTS:</li>
 				<ul>
 					<li>scores with attachments</li>
-					<li>view previous scores</li>
+					<li>view previous scores: currently action list</li>
 				</ul>
-			<li>lesson plan section</li>
+			<li>CLALENDAR: </li>
+				<ul>
+					<li> link to appt details?</li>
+				</ul>
+			
+			<li>LESSON PLAN:</li>
 				<ul>
 					<li>make list of cc_codes that are pertinent</li>
 					<li>make additional notes</li>
