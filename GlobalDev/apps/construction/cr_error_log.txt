@@ -1,0 +1,28 @@
+[10-Jul-2014 21:12:39 Europe/Berlin] PHP Notice:  Undefined variable: data in C:\xampp\htdocs\GlobalDev\apps\projectX\m\User.php on line 74
+[10-Jul-2014 21:12:39 Europe/Berlin] PHP Notice:  Undefined variable: data in C:\xampp\htdocs\GlobalDev\apps\projectX\m\User.php on line 74
+[10-Jul-2014 21:12:39 Europe/Berlin] PHP Notice:  Undefined variable: data in C:\xampp\htdocs\GlobalDev\apps\projectX\m\User.php on line 74
+[10-Jul-2014 21:15:12 Europe/Berlin] PHP Notice:  Undefined variable: data in C:\xampp\htdocs\GlobalDev\apps\projectX\m\User.php on line 74
+[10-Jul-2014 21:15:12 Europe/Berlin] PHP Notice:  Undefined variable: data in C:\xampp\htdocs\GlobalDev\apps\projectX\m\User.php on line 74
+[10-Jul-2014 21:15:12 Europe/Berlin] PHP Notice:  Undefined variable: data in C:\xampp\htdocs\GlobalDev\apps\projectX\m\User.php on line 74
+[14-Aug-2014 21:33:05 Europe/Berlin] PHP Notice:  Undefined index: user in C:\xampp\htdocs\github_globaldev\globaldev\GlobalDev\apps\projectX\v\component.php on line 11
+[14-Aug-2014 21:36:44 Europe/Berlin] PHP Warning:  include_once(../app_lib/app_lib_includes.php): failed to open stream: No such file or directory in C:\xampp\htdocs\github_globaldev\globaldev\GlobalDev\apps\projectX\index.php on line 20
+[14-Aug-2014 21:36:44 Europe/Berlin] PHP Warning:  include_once(): Failed opening '../app_lib/app_lib_includes.php' for inclusion (include_path='.;\xampp\php\PEAR') in C:\xampp\htdocs\github_globaldev\globaldev\GlobalDev\apps\projectX\index.php on line 20
+[14-Aug-2014 21:38:06 Europe/Berlin] PHP Warning:  include_once(../app_lib/app_lib_includes.php): failed to open stream: No such file or directory in C:\xampp\htdocs\github_globaldev\globaldev\GlobalDev\apps\projectX\index.php on line 20
+[14-Aug-2014 21:38:06 Europe/Berlin] PHP Warning:  include_once(): Failed opening '../app_lib/app_lib_includes.php' for inclusion (include_path='.;\xampp\php\PEAR') in C:\xampp\htdocs\github_globaldev\globaldev\GlobalDev\apps\projectX\index.php on line 20
+[14-Aug-2014 21:38:19 Europe/Berlin] PHP Warning:  include_once(../app_lib/app_lib_includes.php): failed to open stream: No such file or directory in C:\xampp\htdocs\github_globaldev\globaldev\GlobalDev\apps\projectX\index.php on line 20
+[14-Aug-2014 21:38:19 Europe/Berlin] PHP Warning:  include_once(): Failed opening '../app_lib/app_lib_includes.php' for inclusion (include_path='.;\xampp\php\PEAR') in C:\xampp\htdocs\github_globaldev\globaldev\GlobalDev\apps\projectX\index.php on line 20
+[14-Aug-2014 21:41:10 Europe/Berlin] PHP Warning:  include_once(../app_lib/app_lib_includes.php): failed to open stream: No such file or directory in C:\xampp\htdocs\github_globaldev\globaldev\GlobalDev\apps\projectX\index.php on line 20
+[14-Aug-2014 21:41:10 Europe/Berlin] PHP Warning:  include_once(): Failed opening '../app_lib/app_lib_includes.php' for inclusion (include_path='.;\xampp\php\PEAR') in C:\xampp\htdocs\github_globaldev\globaldev\GlobalDev\apps\projectX\index.php on line 20
+[14-Aug-2014 21:44:31 Europe/Berlin] PHP Notice:  Undefined variable: _SESSION in C:\xampp\htdocs\github_globaldev\globaldev\GlobalDev\apps\projectX\v\component.php on line 11
+[14-Aug-2014 21:45:22 Europe/Berlin] PHP Notice:  Undefined variable: _SESSION in C:\xampp\htdocs\github_globaldev\globaldev\GlobalDev\apps\projectX\v\component.php on line 11
+[14-Aug-2014 21:46:26 Europe/Berlin] PHP Notice:  Undefined variable: _SESSION in C:\xampp\htdocs\github_globaldev\globaldev\GlobalDev\apps\projectX\v\component.php on line 11
+[14-Aug-2014 21:46:34 Europe/Berlin] PHP Notice:  Undefined variable: _SESSION in C:\xampp\htdocs\github_globaldev\globaldev\GlobalDev\apps\projectX\v\component.php on line 11
+[14-Aug-2014 21:46:42 Europe/Berlin] PHP Notice:  Undefined variable: _SESSION in C:\xampp\htdocs\github_globaldev\globaldev\GlobalDev\apps\projectX\v\component.php on line 11
+[14-Aug-2014 21:46:53 Europe/Berlin] PHP Notice:  Undefined variable: _SESSION in C:\xampp\htdocs\github_globaldev\globaldev\GlobalDev\apps\projectX\v\component.php on line 11
+[14-Aug-2014 21:47:14 Europe/Berlin] PHP Notice:  Undefined variable: _SESSION in C:\xampp\htdocs\github_globaldev\globaldev\GlobalDev\apps\projectX\v\component.php on line 11
+[14-Aug-2014 21:47:23 Europe/Berlin] PHP Notice:  Undefined variable: _SESSION in C:\xampp\htdocs\github_globaldev\globaldev\GlobalDev\apps\projectX\v\component.php on line 11
+[14-Aug-2014 21:47:23 Europe/Berlin] PHP Warning:  Missing argument 1 for ajaxAPICall::make(), called in C:\xampp\htdocs\github_globaldev\globaldev\GlobalDev\glib\global_components\ajax_examples.php on line 21 and defined in C:\xampp\htdocs\github_globaldev\globaldev\GlobalDev\glib\global_lib\UIObjects\PremadeForms\AjaxForms.php on line 122
+[14-Aug-2014 21:47:23 Europe/Berlin] PHP Warning:  Missing argument 1 for ajaxSortableTable::make(), called in C:\xampp\htdocs\github_globaldev\globaldev\GlobalDev\glib\global_components\ajax_examples.php on line 26 and defined in C:\xampp\htdocs\github_globaldev\globaldev\GlobalDev\glib\global_lib\UIObjects\PremadeForms\AjaxForms.php on line 174
+[14-Aug-2014 21:47:23 Europe/Berlin] PHP Notice:  Undefined index: req-email in C:\xampp\htdocs\github_globaldev\globaldev\GlobalDev\glib\global_components\email_html.php on line 7
+[14-Aug-2014 21:47:23 Europe/Berlin] PHP Notice:  Undefined index: req-email in C:\xampp\htdocs\github_globaldev\globaldev\GlobalDev\glib\global_components\email_html.php on line 8
+[14-Aug-2014 21:53:48 Europe/Berlin] PHP Notice:  Undefined variable: _SESSION in C:\xampp\htdocs\github_globaldev\globaldev\GlobalDev\apps\projectX\v\component.php on line 11

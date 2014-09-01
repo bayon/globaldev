@@ -14,9 +14,9 @@
 			<li>STUDENTS:</li>
 				<ul>
 					<li>scores with attachments</li>
-					<li>view previous scores: currently action list</li>
+					
 				</ul>
-			<li>CLALENDAR: </li>
+			<li>CALENDAR: </li>
 				<ul>
 					<li> link to appt details?</li>
 				</ul>

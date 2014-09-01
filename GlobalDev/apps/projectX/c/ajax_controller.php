@@ -92,15 +92,7 @@ switch ($_POST['method']) {
 		 include_once("ajaxTable.php");
 
 		break;
-	case 'replaceContentForSchedule' :
-		//echo("great foo has come...");
-		include_once("schedule/appointment.php");
-		break;
-	case 'replaceContentForSchedule2' :
-		//echo("great foo has come...");
-		print_r($_POST);
-		include_once("schedule/appointment.php");
-		break;
+	
 	default :
 		echo("<br>" . __FILE__);
 		echo("<pre>");

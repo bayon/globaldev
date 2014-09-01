@@ -1,0 +1,105 @@
+-- phpMyAdmin SQL Dump
+-- version 3.3.9.2
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Sep 01, 2014 at 05:00 PM
+-- Server version: 5.5.9
+-- PHP Version: 5.3.6
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Database: `construction`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `estimation_unit`
+--
+
+CREATE TABLE `estimation_unit` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `description` varchar(100) NOT NULL,
+  `supply_costs` decimal(10,0) NOT NULL,
+  `work_time` float NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `estimation_unit`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `items`
+--
+
+CREATE TABLE `items` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `description` varchar(100) NOT NULL,
+  `cost_each` decimal(10,0) NOT NULL,
+  `y_inches` float NOT NULL,
+  `x_inches` float NOT NULL,
+  `z_inches` float NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+--
+-- Dumping data for table `items`
+--
+
+INSERT INTO `items` VALUES(1, '4x4X8 treated post', 10, 4, 4, 96);
+INSERT INTO `items` VALUES(2, 'wooden picket 6ft tall', 2, 0.5, 5.5, 72);
+INSERT INTO `items` VALUES(3, '3 ft wire 50 feet', 40, 0.125, 36, 600);
+INSERT INTO `items` VALUES(4, 'wire 4 x 50 feet', 70, 0, 48, 600);
+INSERT INTO `items` VALUES(5, '2x4x8  treated', 3, 2, 4, 96);
+INSERT INTO `items` VALUES(6, 'concrete 40lb bag', 3, 0, 0, 0);
+INSERT INTO `items` VALUES(7, 'screws 3 inch 1 lb box', 5, 0, 0, 0);
+INSERT INTO `items` VALUES(8, 'screws 1 and qtr in 1 lb box', 5, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `job`
+--
+
+CREATE TABLE `job` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `description` varchar(100) NOT NULL,
+  `date_created` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `job`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tasks`
+--
+
+CREATE TABLE `tasks` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `description` varchar(100) NOT NULL,
+  `time` float NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `tasks`
+--
+
+INSERT INTO `tasks` VALUES(1, 'post hole 2 ft deep', 15);
+INSERT INTO `tasks` VALUES(2, 'stabilize and plumb post', 15);
+INSERT INTO `tasks` VALUES(3, 'layout perimeter string', 15);
+INSERT INTO `tasks` VALUES(4, 'attach horizontal 2x4s', 15);
+INSERT INTO `tasks` VALUES(5, 'attach picket', 5);
+INSERT INTO `tasks` VALUES(6, 'cut top of post', 5);
+INSERT INTO `tasks` VALUES(7, 'level post tops with marks', 5);

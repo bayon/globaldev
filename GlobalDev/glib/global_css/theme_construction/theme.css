@@ -1,0 +1,223 @@
+body {
+	background-color: #bbb;
+	background-image: url('../../global_img/transparentWhite10x10.png');
+	color: #000;
+}
+.main_gradient{
+	background: -webkit-linear-gradient(white, #ccc); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(white, #ccc); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(white, #ccc); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(white, #ccc); /* Standard syntax */
+}
+.nav_container {
+	max-height: 30px;
+	/*background-image: url('../../global_img/black_25.png');*/
+}
+
+.nav_buttons {
+	height: 30px;
+	max-height: 30px;
+	padding: 5px;
+	border: none;
+	border-left: 1px solid #eee;
+}
+#site_header {
+	 
+}
+#site_logo{
+	float:left;font-size:42;color:#ccc;margin-left:5%;
+}
+#site_name{
+	font-size:42;color:#ccc;
+}
+.gridMatrixContainer {
+	background-color: none;
+}
+input {
+	border: none;
+	background: none;
+	background-image: url('../../global_img/transparentWhite10x10.png');
+	color: #000;
+	border: solid 1px #FFF;
+}
+
+table tr:hover {
+	background-image: url('../../global_img/black_25.png') !important;
+}/* hovering */
+.section {
+	border: solid #000000 1px;
+	background-image: url('../../global_img/transparentWhite10x10.png');
+}
+.standard_value {
+	color: #cccccc;
+}
+
+textarea {
+	background: none;
+	background-image: url('../../global_img/transparentWhite10x10.png');
+	color: #FFF;
+	border: none;
+}
+a {
+	color: blue;
+}
+.inputText {
+	color: green;
+}
+.component_title {
+	color: #000;
+}
+.anchorTable_table_container a {
+	color: #000000;
+}
+.anchorTable_table_container  table {
+
+	border: 1px solid #FFF;
+	background-image: url('../../global_img/transparentWhite10x10.png');
+}
+.anchorTable_table_container table td, th {
+	border: solid 1px #FFF;
+}
+.anchorTable_table_container table th {
+	background-image: url('../../global_img/transparentWhite10x10.png');
+}
+.anchorTable_table_container  tr:hover {
+	background-image: url('../../global_img/transparentWhite10x10.png');
+}
+
+/*------------------------ACTION LIST */
+.actionList_container {
+
+	color: #000;
+}
+
+.actionList_container table {
+
+	border: 1px solid #FFF;
+	background-image: url('../../global_img/black_50.png');
+}
+
+.actionList_container .actionList_title {
+
+}
+.actionList_container table td, th {
+	border: solid 1px #FFF;
+}
+.actionList_container table th {
+	background-image: url('../../global_img/transparentWhite10x10.png');
+	color: #FFF;
+}
+.actionList_container table td {
+	color: #FFF;
+}
+.actionList_container  tr {
+	background: none;
+}
+.actionList_container  tr:hover {
+	background-image: url('../../global_img/black_50.png');
+}
+.actionList_container textarea {
+	background: none;
+	/*background-image: url('../global_img/black_50.png');*/
+	color: #FFF;
+}
+.actionList_container input {
+	background-image: url('../../global_img/black_50.png');
+	color: #FFF;
+}
+
+/*--------    CALENDAR ------*/
+
+#day_runner {
+	font-weight: regular;
+	color: #333;
+}
+#month_name {
+
+	font-size: 20px;
+	font-weight: regular;
+	color: #333;
+}
+
+.date_box {
+	height: 90px;
+	border: 1px solid #333;
+	background-image: url('../../global_img/blue1.png');
+}
+
+.current_day {
+	background-color: #fff;
+	background-image: url('../../global_img/yellow1.png');
+}
+
+.empty_date {
+	background: none;
+	background-image: url('../../global_img/white_50.png');
+}
+
+.calendarControlPanel {
+	width: 100%;
+	float: left;
+}
+.calendarControlPanel .back {
+	float: left;
+	color: #222;
+	background: none;
+	background-image: url('../../global_img/blue1.png');
+}
+.calendarControlPanel .fwd {
+	float: right;
+	color: #222;
+	background: none;
+	background-image: url('../../global_img/blue1.png');
+}
+/*--------    SCHEDULER ------*/
+.scheduler {
+	float: left;
+	width: 320px;
+	min-width: 125px;
+	border: solid 1px #222222;
+	background-image: url('../../global_img/blue1.png');
+	margin-bottom: 30px;
+	text-align: left;
+	color: #eee;
+}
+.schedulerTitle {
+	font-style: italic;
+	font-weight: bold;
+	margin-left: 5px;
+	margin-top: 5px;
+}
+.schedulerRow {
+	width: 100%;
+	float: left;
+}
+.schedulerLabel {
+
+	text-align: right;
+	width: 32%;
+	max-width: 32%;
+	min-width: 32%;
+	margin-top: 5px;
+}
+.schedulerInput {
+	float: right;
+	width: 65%;
+	max-width: 65%;
+	min-width: 65%;
+	border: solid 1px #222;
+	background-image: url('../../global_img/white_25.png');
+	margin-top: -15px;
+	margin-right: 2px;
+}
+.schedulerTextarea {
+	border: solid 1px #222;
+	background-image: url('../../global_img/white_25.png');
+}
+.schedulerButton {
+	margin-top: 20px;
+	margin-bottom: 2px;
+	background-image: url('../../global_img/white_50.png');
+}
+
+

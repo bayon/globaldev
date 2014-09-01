@@ -1,0 +1,10 @@
+CREATE TABLE  `coreKeeper`.`score` (
+`id` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`user_id` INT NOT NULL ,
+`student_id` INT NOT NULL ,
+`code` VARCHAR( 20 ) NOT NULL ,
+`score` INT NOT NULL ,
+`attach_id` INT NOT NULL ,
+`notes` VARCHAR( 60 ) NOT NULL ,
+`date` DATE NOT NULL
+) ENGINE = INNODB;
