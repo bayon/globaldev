@@ -136,13 +136,16 @@ function deleteScoreWithId($id) {
 	$dbh = null;
 }
 
-function searchScoresForKeyword($keyword) {
+function searchScoresForKeyword($keyword,$user,$student) {
 	$dbh = appConnectPDO();
 	$sql = "SELECT * FROM " . APP_DB . ".score WHERE 
 	(notes LIKE  '%" . $keyword . "%'  ) 
 	OR
 	(code LIKE  '%" . $keyword . "%'   )
+	AND user_id = '".$user->user_id."' AND student_id = '".$student->student_id."' 
 	 ORDER BY  user_id ";
+	//echo($sql);
+	
 	foreach ($dbh->query($sql) as $row) {
 		$data[] = $row;
 	}

@@ -12,7 +12,7 @@ if (isset($_GET)) {
 				
 				$scores = getAllScoresForStudentId($student->student_id);
 				
-				
+				//echoRequests();
 				include_once ('v/student/details.php');
 				break;
 			case 'selectCodeForStudentScore' :
@@ -53,13 +53,42 @@ if (isset($_POST)) {
 	//echo("post ");
 	if (isset($_POST['method'])) {
 		switch ($_POST['method']) {
+				
+	case 'studentScoreSearch' :
+		
+		$student = getStudentWithId($_POST['user_id'], $_POST['student_id']);
+		$user = getUserWithId($_POST['user_id']);
+		$scores = searchScoresForKeyword($_POST['search_key'],$user,$student);
+		include_once ('v/HEADS/default_head.php');
+		include_once ('components/ajaxStudentEditForm.php');
+		
+		$_SESSION['student'] = serialize($student);
+		include_once ('v/student/details.php');
+		
+	break;
+				
 			case 'ajaxStudentFormResults' :
 				$student = new Student("", sanitize($_POST['user_id']), sanitize($_POST['first_name']), sanitize($_POST['middle_name']), sanitize($_POST['last_name']), sanitize($_POST['email']), sanitize($_POST['phone']));
 				//add fields here and in the model.
 				createStudent($student);
 
 				break;
-
+				case 'edit score' :
+				//debug();
+				$student = getStudentWithId($_POST['user_id'],$_POST['student_id']);
+				$scores = getAllScoresForStudentId($student->student_id);
+				include_once ('v/HEADS/default_head.php');
+				include_once ('components/ajaxStudentEditForm.php');
+				include_once ('v/student/details.php');
+				break;
+			case 'delete score' :
+				deleteScoreWithId($_POST['score_id']);
+				$student = getStudentWithId($_POST['user_id'],$_POST['student_id']);
+				$scores = getAllScoresForStudentId($student->student_id);
+				include_once ('v/HEADS/default_head.php');
+				include_once ('components/ajaxStudentEditForm.php');
+				include_once ('v/student/details.php');
+				break;
 			case 'ajaxSortableStudentsTable' :
 
 				//local constants

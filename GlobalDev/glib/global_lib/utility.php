@@ -86,4 +86,15 @@ function round_eighth($input) {
 	// should be up to nearest eighth
 	return $stepthree;
 }
+function echoArray($array){
+	echo("<pre>");print_r($array);echo("</pre>");
+}
+function debug(){
+	echo("<br>SESSION:");
+	echoArray($_SESSION);
+	echo("<br>POST:");
+	echoArray($_POST);
+	echo("<br>GET:");
+	echoArray($_GET);
+}
 ?>
