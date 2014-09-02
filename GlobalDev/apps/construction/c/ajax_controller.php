@@ -14,6 +14,15 @@ switch ($_POST['method']) {
 		 include_once("jobs.php");
 
 		break;
+	case 'ajaxJobsFormResults' :
+		//debug();
+		//echo("ajaxJobsFormResults: save job in the back ground");
+		//	public function __construct($user_id,$jobs_id = "0", $description = "default" ,$date_created="default") {
+		
+		$jobs = new Jobs($_POST['user_id'],"NULL",$_POST['description'],"");
+		createJobs($jobs);
+		
+		break;
 	case 'ajaxSortableItems' :
 		 //include_once("ajaxTable.php");
 		include_once("items.php");

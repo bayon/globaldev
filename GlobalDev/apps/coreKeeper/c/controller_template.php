@@ -11,6 +11,11 @@ if (isset($_GET)) {
 				print_r($_GET);
 				break;
 		}
+	}else {
+		if (isset($_GET['navigation'])) {
+			//initial navigation to students page
+			include_once ('./v/whatever.php');
+		}
 	}
 
 } 

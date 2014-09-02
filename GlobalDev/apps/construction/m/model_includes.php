@@ -4,8 +4,6 @@
 include_once('./app_lib/app_lib_includes.php');// moved to model_includes_ajax.php
 include_once('User.php');
 include_once('Appointment.php');
-include_once('CCMATH.php');
-include_once('Student.php');
 include_once('Attachment.php');
-include_once('Score.php');
+
 ?>

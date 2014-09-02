@@ -13,6 +13,14 @@ if (isset($_GET)) {
 				break;
 		}
 	}else{
+		//
+		
+		 
+		//
+		
+		
+		
+		
 		include_once('v/jobs.php');
 	}
 
@@ -21,7 +29,10 @@ if (isset($_POST)) {
 	
 	if (isset($_POST['method'])) {
 		switch ($_POST['method']) {
-			case 'whatever' :
+			case 'ajaxSortableJobsTable' :
+				
+				debug();
+				echo('success');
 				break;
 
 			default :
