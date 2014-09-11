@@ -9,7 +9,7 @@
 	 <p>student:&nbsp;<?=$student->firstName;?></p>
 	<div>
 		 <?php
-	$ajaxStudentEditForm = new ajaxStudentEditForm("coreKeeper",$score->score_id,$student);
+	$ajaxStudentEditForm = new ajaxStudentEditForm("coreKeeper",$score->id,$student);
 	echo($ajaxStudentEditForm->make());
 	
 	?>
@@ -41,7 +41,9 @@ initCodePage();
 </script>
 <?php
 function actionList_studentScores($data,$user,$student) {
-	//echo("<br> actionlist with data:");print_r($data);
+	echo("<br> actionlist with data:");print_r($data);
+	echo("<br>username:".$user->username);
+	echo("<br>student first name : ".$student->firstName);
 	$table = "<div class=' actionList_container'><div class='textAlignLeft'><div class='actionList_title'>scores</div>";
 	$table .= searchForm_studentScores('students.php',$user,$student);
 	$table .= "</div>";
@@ -112,7 +114,7 @@ function actionList_studentScores($data,$user,$student) {
 }
 
 function searchForm_studentScores($controller,$user,$student) {
-	$searchForm .= "<div class='search_form'  >";
+	$searchForm = "<div class='search_form'  >";
 	$searchForm .= "<form method='post' action=$_SERVER[PHP_SELF] >";
 	$searchForm .= "<input type='hidden' name='controller' value='" . $controller . "' />";
 	$searchForm .= "

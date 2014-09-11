@@ -1,0 +1,14 @@
+{
+  "name": "IndexedDB example App",
+  "description": "example app using the IndexedDB API.",
+  "version": "0.1",
+  "app": {
+    "background": {
+      "scripts": ["background.js"]
+    }
+  },
+  "icons": { "128": "128.png" },
+  "permissions": [
+    "unlimitedStorage"
+  ]
+}

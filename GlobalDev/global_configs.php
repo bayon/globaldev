@@ -1,6 +1,6 @@
 <?php
 define('GLOBAL_DIR', realpath(dirname(__FILE__)));
-$devLocation = "littleMac";//littleMac
+$devLocation = "hp";//littleMac  //hp  //live
 if($devLocation == "hp"){
 	define('GLOBAL_ROOT', 'gdev/globaldev/GlobalDev');
 	define('GLOBAL_ENVIRONMENT',"hp");

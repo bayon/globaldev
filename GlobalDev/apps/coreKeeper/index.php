@@ -10,6 +10,17 @@ if(!isset($_SESSION['home'])) {
 }
  * 
  */
+
+
+
+include_once ('../../global_includes.php');
+
+include_once("constants.php");
+include_once ('config.php');
+include_once ('controller.php');
+include_once('app_lib/app_lib_includes.php');
+
+//set this after config has defined "DEBUG_MODE"
 if(DEBUG_MODE =="on"){
 	// display errors
 	ini_set('display_errors', 1);
@@ -23,16 +34,5 @@ if(DEBUG_MODE =="on"){
 	// DO NOT display errors
 	ini_set('display_errors', 0);
 }
-
-
-include_once ('../../global_includes.php');
-
-include_once("constants.php");
-include_once ('config.php');
-include_once ('controller.php');
-include_once('app_lib/app_lib_includes.php');
-
-
-
 
 ?>
