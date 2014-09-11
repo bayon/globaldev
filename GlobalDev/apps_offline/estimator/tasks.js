@@ -1,6 +1,13 @@
 var db = null;
 var DBNAME = "people_db";
 var DBVER = 3;
+// L E F T   O F F   H E R E  
+
+//change people_db to "estimate_db"  THROUGH WHOLE APP....
+//in openDB change table to "tasks"
+//change key to autoincrement or timestamp
+//add function change table to "tasks"
+// findAll table to "tasks"...
 
 //document.getElementById('btn_open').onclick = function (e) {
  // openDB();
