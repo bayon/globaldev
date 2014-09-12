@@ -1,6 +1,6 @@
 <?php include_once('head/head.php'); ?>
 <?php include_once('head/navigation.php'); ?>
-<body onload='openDB_global();' >
+<body onload='init();' >
 	<div class="content">
 
 		<h3>Task
@@ -16,7 +16,7 @@
 			</button>
   <div id='newTaskForm' style='display:none;'>
 		<table border=1 class="estimatorTable">
-			<form type="post" onsubmit="addTask(); return false;">
+			<form type="post"  >
 				<tr>
 					<td>task</td><td>
 					<input type="text" id="name" name="task"    />
@@ -34,12 +34,13 @@
 				</tr>
 			</form>
 		</table>
-		<table id="taskItems" border=1 class="estimatorTable"></table>
+		
 
 	</div>
 	 
-	 <table id="taskList" border=1 class="estimatorTable">
+	 <table id="taskListTable" border=1 class="estimatorTable">
 	  <thead><tr><th>Task</th><th title='Time to complete once.'>Minutes</th><th>Action</th></tr></thead>
+	  <tbody id="taskListBody"></tbody>
 	 </table>
   
   </div>
@@ -50,22 +51,20 @@
 </html>
 <script>
 $(document).ready(function() {
-		//var taskList = document.getElementById('taskList');
-		//taskList.style.display = "none";
+		
 	});
+	function init(){
+		openDB_global();
+		 
+	}
 	function openNewTaskForm(){
 		var newTaskForm = document.getElementById('newTaskForm');
 		newTaskForm.style.display="block";
-		//var taskList = document.getElementById('taskList');
-		//taskList.style.display="none";
 	}
 	function openTaskList(){
-		//var taskList = document.getElementById('taskList');
-		//taskList.style.display="block";
-		var taskList = document.getElementById("taskList");
+		var taskListTable = document.getElementById("taskListTable");
 		var newTaskForm = document.getElementById('newTaskForm');
 		newTaskForm.style.display="none";
 		 findAll();
-		//taskList.innerHTML = rowOutput;
 	}
 </script>

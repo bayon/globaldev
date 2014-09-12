@@ -2,6 +2,7 @@ document.getElementById('btn_add').onclick = function (e) {
   var name = document.getElementById("name").value;
   var email = document.getElementById("email").value;
   add({ name: name, email: email});
+   
 };
  
 // add data
@@ -24,17 +25,19 @@ function add(o) {
 function renderTask(key,value) {
 	 
 	  
-	return "<tr> <td>" +value["name"]+ "</td><td>" + value["email"] + " </td><td><a href='javascript:void(0);' style='color:red;'  onclick='deleteByKey(" + key + ")'>X</a></td></tr>";
+	return "<tr> <td>" +value["name"]+ "</td><td>" + value["email"] + " </td><td><a href='javascript:void(0);' style='color:red;'  onclick='deleteByKey(" + value['email'] + ")'>X</a></td></tr>";
 }
  // find all
 function findAll() {
   var tx = db.transaction(["tasks"], "readonly");
   var objectStore = tx.objectStore("tasks");
   var cursor = objectStore.openCursor();
-
+	$('#taskListBody').empty(); //prevents duplication of rows
   cursor.onsuccess = function (e) {
   	var rowOutput = "";
-	var taskList = document.getElementById("taskListBody");
+	var taskListBody = document.getElementById("taskListBody");
+    
+    
     var res = e.target.result;
     if(!!res == false)
       return;
@@ -44,12 +47,24 @@ function findAll() {
       rowOutput += renderTask(res.key,res.value);
       res.continue ();
     
-      $('#taskList').append(rowOutput);
+      $('#taskListBody').append(rowOutput);
   };
 }
 function deleteByKey(key){
-	alert('delete:'+key);
+  var tx = db.transaction(["tasks"], "readwrite");
+  var store = tx.objectStore("tasks");
+  var request = store.delete(key);
+  tx.oncomplete = function(e) {
+  	alert('deleeeting...key ?'+ key );
+    console.log('complete delete now refresh screen?');
+  };
+
+  tx.onerror = function(e) {
+    console.log(e);
+  };
+  
 }
+ 
 /*
  * function loadTaskItems(tx, rs) {
 	var rowOutput = "<tr><th>Task</th><th title='Time to complete once.'>Minutes</th><th>Action</th></tr>";
