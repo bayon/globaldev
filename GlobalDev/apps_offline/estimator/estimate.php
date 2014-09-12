@@ -1,7 +1,7 @@
 <?php include_once('head/head.php'); ?>
 <?php include_once('head/navigation.php'); ?>
 <h3>estimate</h3>
-<body onload='openDB();' >
+<body onload='openDB_global();' >
 	<div class="content">
  
 		<h2>Estimate</h2>

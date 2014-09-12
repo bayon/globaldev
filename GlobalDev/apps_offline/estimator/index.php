@@ -1,6 +1,6 @@
 <?php include_once('head/head.php'); ?>
 <?php include_once('head/navigation.php'); ?>
-<body onload='openDB();' >
+<body onload='openDB_global();' >
   <script src="main.js"></script>
 </body>
 </html>

@@ -1,6 +1,13 @@
 var db = null;
-var DBNAME = "people_db";
+var DBNAME = "estimate_db";
 var DBVER = 3;
+// L E F T   O F F   H E R E  
+
+//change people_db to "estimate_db"  THROUGH WHOLE APP....
+//in openDB change table to "materials"
+//change key to autoincrement or timestamp
+//add function change table to "materials"
+// findAll table to "materials"...
 
 //document.getElementById('btn_open').onclick = function (e) {
  // openDB();
@@ -10,6 +17,7 @@ document.getElementById('btn_add').onclick = function (e) {
   var email = document.getElementById("email").value;
   add({ name: name, email: email});
 };
+/*
 document.getElementById('btn_find').onclick = function (e) {
   var key = document.getElementById('key').value;
   findByKey(key);
@@ -32,29 +40,12 @@ document.getElementById('btn_deleteDB').onclick = function (e) {
   deleteDB(DBNAME);
 };
 
-
+*/
 // open a database
 function openDB() {
   var request = indexedDB.open(DBNAME, DBVER);
 
-  request.onupgradeneeded = function (e) {
-    console.log("Upgrading...");
-    var thisDB = e.target.result;
-    var store = null;
-    if (!thisDB.objectStoreNames.contains("people")) {
-      // create objectStore as keyPath="email"
-      store = thisDB.createObjectStore("people", {
-        keyPath: "email"
-      });
-      //thisDB.createObjectStore("people", { autoIncrement: true });
-      
-      // create index to 'name' for conditional search
-      store.createIndex('name', 'name', {
-        unique: false
-      });
-      //store.deleteIndex('name');
-    }
-  };
+  
 
   request.onsuccess = function (e) {
     console.log("openDB success!");
@@ -68,14 +59,15 @@ function openDB() {
 
 // add data
 function add(o) {
-  var tx = db.transaction(["people"], "readwrite");
-  var store = tx.objectStore("people");
+  var tx = db.transaction(["materials"], "readwrite");
+  var store = tx.objectStore("materials");
   // add 'created' param
   o.created = new Date();
   // add to store
   var request = store.add(o);
   request.onsuccess = function (e) {
     console.log("Add 'person' successful! person=" + JSON.stringify(o));
+    findAll();
   };
   request.onerror = function (e) {
     console.log("Add error", e.target.error.name);
@@ -84,8 +76,8 @@ function add(o) {
 
 // find by key(email)
 function findByKey(key) {
-  var tx = db.transaction(["people"], "readonly");
-  var store = tx.objectStore("people");
+  var tx = db.transaction(["materials"], "readonly");
+  var store = tx.objectStore("materials");
   var request = store.get(key);
   request.onsuccess = function (e) {
     console.log(e.target.result);
@@ -94,8 +86,8 @@ function findByKey(key) {
 
 // find all
 function findAll() {
-  var tx = db.transaction(["people"], "readonly");
-  var objectStore = tx.objectStore("people");
+  var tx = db.transaction(["materials"], "readonly");
+  var objectStore = tx.objectStore("materials");
   var cursor = objectStore.openCursor();
 
   cursor.onsuccess = function (e) {
@@ -111,8 +103,8 @@ function findAll() {
 
 // find by range
 function findByRange(from, to) {
-  var tx = db.transaction(["people"], "readonly");
-  var objectStore = tx.objectStore("people");
+  var tx = db.transaction(["materials"], "readonly");
+  var objectStore = tx.objectStore("materials");
   // find by range. condition: from <= 'name' < to 
   var range = IDBKeyRange.bound(from, to, false, true);
   var cursor = objectStore.index('name').openCursor(range);
@@ -129,8 +121,8 @@ function findByRange(from, to) {
 
 // remove by key(email)
 function removeByKey(key) {
-  var tx = db.transaction(["people"], "readwrite");
-  var store = tx.objectStore("people");
+  var tx = db.transaction(["materials"], "readwrite");
+  var store = tx.objectStore("materials");
   var request = store.delete(key);
   //var request = store.clear(); // delete all from the store
   request.onsuccess = function (e) {
@@ -144,8 +136,8 @@ function removeByKey(key) {
 
 // update by key(email)
 function updateByKey(key) {
-  var tx = db.transaction(["people"], "readwrite");
-  var store = tx.objectStore("people");
+  var tx = db.transaction(["materials"], "readwrite");
+  var store = tx.objectStore("materials");
   store.get(key).onsuccess = function (e) {
     console.log("store.get", key);
     var data = e.target.result;

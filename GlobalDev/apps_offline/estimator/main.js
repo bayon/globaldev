@@ -1,10 +1,11 @@
 var db = null;
-var DBNAME = "people_db";
+var DBNAME = "estimate_db";
 var DBVER = 3;
 
 //document.getElementById('btn_open').onclick = function (e) {
  // openDB();
 //};
+/*
 document.getElementById('btn_add').onclick = function (e) {
   var name = document.getElementById("name").value;
   var email = document.getElementById("email").value;
@@ -32,7 +33,7 @@ document.getElementById('btn_deleteDB').onclick = function (e) {
   deleteDB(DBNAME);
 };
 
-
+*/
 // open a database
 function openDB() {
   var request = indexedDB.open(DBNAME, DBVER);
@@ -41,12 +42,12 @@ function openDB() {
     console.log("Upgrading...");
     var thisDB = e.target.result;
     var store = null;
-    if (!thisDB.objectStoreNames.contains("people")) {
+    if (!thisDB.objectStoreNames.contains("estimates")) {
       // create objectStore as keyPath="email"
-      store = thisDB.createObjectStore("people", {
+      store = thisDB.createObjectStore("estimates", {
         keyPath: "email"
       });
-      //thisDB.createObjectStore("people", { autoIncrement: true });
+      //thisDB.createObjectStore("estimates", { autoIncrement: true });
       
       // create index to 'name' for conditional search
       store.createIndex('name', 'name', {
@@ -54,6 +55,36 @@ function openDB() {
       });
       //store.deleteIndex('name');
     }
+    
+    
+     if (!thisDB.objectStoreNames.contains("tasks")) {
+      // create objectStore as keyPath="email"
+      store = thisDB.createObjectStore("tasks", {
+        keyPath: "email"
+      });
+      //thisDB.createObjectStore("tasks", { autoIncrement: true });
+      
+      // create index to 'name' for conditional search
+      store.createIndex('name', 'name', {
+        unique: false
+      });
+      //store.deleteIndex('name');
+    }
+    
+     if (!thisDB.objectStoreNames.contains("materials")) {
+      // create objectStore as keyPath="email"
+      store = thisDB.createObjectStore("materials", {
+        keyPath: "email"
+      });
+      //thisDB.createObjectStore("tasks", { autoIncrement: true });
+      
+      // create index to 'name' for conditional search
+      store.createIndex('name', 'name', {
+        unique: false
+      });
+      //store.deleteIndex('name');
+    }
+    
   };
 
   request.onsuccess = function (e) {
@@ -68,8 +99,8 @@ function openDB() {
 
 // add data
 function add(o) {
-  var tx = db.transaction(["people"], "readwrite");
-  var store = tx.objectStore("people");
+  var tx = db.transaction(["estimates"], "readwrite");
+  var store = tx.objectStore("estimates");
   // add 'created' param
   o.created = new Date();
   // add to store
@@ -84,8 +115,8 @@ function add(o) {
 
 // find by key(email)
 function findByKey(key) {
-  var tx = db.transaction(["people"], "readonly");
-  var store = tx.objectStore("people");
+  var tx = db.transaction(["estimates"], "readonly");
+  var store = tx.objectStore("estimates");
   var request = store.get(key);
   request.onsuccess = function (e) {
     console.log(e.target.result);
@@ -94,8 +125,8 @@ function findByKey(key) {
 
 // find all
 function findAll() {
-  var tx = db.transaction(["people"], "readonly");
-  var objectStore = tx.objectStore("people");
+  var tx = db.transaction(["estimates"], "readonly");
+  var objectStore = tx.objectStore("estimates");
   var cursor = objectStore.openCursor();
 
   cursor.onsuccess = function (e) {
@@ -111,8 +142,8 @@ function findAll() {
 
 // find by range
 function findByRange(from, to) {
-  var tx = db.transaction(["people"], "readonly");
-  var objectStore = tx.objectStore("people");
+  var tx = db.transaction(["estimates"], "readonly");
+  var objectStore = tx.objectStore("estimates");
   // find by range. condition: from <= 'name' < to 
   var range = IDBKeyRange.bound(from, to, false, true);
   var cursor = objectStore.index('name').openCursor(range);
@@ -129,8 +160,8 @@ function findByRange(from, to) {
 
 // remove by key(email)
 function removeByKey(key) {
-  var tx = db.transaction(["people"], "readwrite");
-  var store = tx.objectStore("people");
+  var tx = db.transaction(["estimates"], "readwrite");
+  var store = tx.objectStore("estimates");
   var request = store.delete(key);
   //var request = store.clear(); // delete all from the store
   request.onsuccess = function (e) {
@@ -144,8 +175,8 @@ function removeByKey(key) {
 
 // update by key(email)
 function updateByKey(key) {
-  var tx = db.transaction(["people"], "readwrite");
-  var store = tx.objectStore("people");
+  var tx = db.transaction(["estimates"], "readwrite");
+  var store = tx.objectStore("estimates");
   store.get(key).onsuccess = function (e) {
     console.log("store.get", key);
     var data = e.target.result;
