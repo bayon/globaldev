@@ -10,7 +10,7 @@ body a {
 	margin-right: 40px;
 }
 body{
-	background-color:#DDD;
+	background-color:#FFF;
 }
 #app_name a{
 	margin-left:30px;
@@ -44,7 +44,7 @@ h2,h3,h4{
 }
 .navigation_container {
 	text-align: center;
-	background-color: #FFB40F;
+	background-color: #eee; /*#FFB40F;*/
 	height:30px;
 	
 }
@@ -91,7 +91,7 @@ h2,h3,h4{
 }
 .estimatorTable th{
 	
-	background-color:#F1FFB8;
+background-color:#eee;/*#F1FFB8*/
 }
 .estimatorTable a{
 	margin:0;
