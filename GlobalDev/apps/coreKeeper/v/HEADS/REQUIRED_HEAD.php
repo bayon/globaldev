@@ -1,6 +1,10 @@
 <head>
 <title><?=TITLE ?></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0,height=device-height, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<meta itemprop="name" content="name of the app">
+
 <!-- additional meta tags for fixed positions in android: height=device-height, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0-->
 <!-- NOTE: using ../../ instead of GLOBAL_URL is MUCH FASTER...! -->
 <link rel="stylesheet" type="text/css" media="screen" href="../../glib/global_jq_suite/themes/dark_custom/jquery-ui.css" />
