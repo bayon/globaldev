@@ -1,0 +1,84 @@
+.code_location{
+	font-style:italic;
+	font-size:13px;
+}
+.section{
+	border:solid #ccc 1px;
+}
+.action_btn{
+	color:#222;
+}
+.text_input{
+	color:#333;
+}
+.submit_btn{
+	color:#000;
+	font-weight:bold;
+}
+.listTable{
+	border:solid 1px #ccc;
+	border-collapse:collapse;
+	 
+}
+.data_text{
+	width:110px;
+	min-width:110px;
+	max-width:110px;
+}
+.data_number{
+	width:50px;
+	min-width:50px;
+	max-width:50px;
+}
+.addForm{
+	display:none;
+}
+.page_controls{
+	width:100%;
+}
+.page_title{
+	width:140px;
+	min-width:120px;
+	color:#ccc;
+	float:left;
+}
+.sumValue{
+	float:left;
+	width:100%;
+}
+a{
+	text-decoration:none;
+	width:100%;
+	display:inline;
+}
+.listAnchor{
+	 
+	width:100%;
+	display:inline;
+}
+#navigation_container{
+	margin-bottom:30px;
+}
+.nav_anchor{
+	margin-right:30px;
+}
+.minus{
+	font-size:20px;
+	color:red;
+	font-weight:bold;
+}
+.plus{
+	font-size:20px;
+	color:green;
+	font-weight:bold;
+}
+
+.hidden{
+	display:none;
+}
+
+
+
+
+
+
