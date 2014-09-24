@@ -3,6 +3,7 @@ html {
 	text-align: center;
 	width: 100%;
 	/*</CENTERING> */
+	 height: 100%;
 }
 body {
 	/*CENTERING */
@@ -22,8 +23,12 @@ body {
 	max-height: 70px;
 	min-height: 70px;
 	text-align: center;
+	/* 
+	 * DOES NOT WORK RIGHT IN CHROME
 	 position:fixed;
 	 top:0px;
+	 */
+	position:relative;
 	 backface-visibility: hidden; 
 	 
 }
@@ -76,8 +81,13 @@ body {
 	max-height: 30px;
 	/*background-image: url('../global_img/zeroBackground_50.png');*/
 	text-align: center;
+	/*
+	 * 
+	 NOT WORKING IN CHROME
 	 position:fixed;
 	 top:50px;
+	 */
+	position:relative;
 }
 .subnav_buttons {
 	height: 30px;

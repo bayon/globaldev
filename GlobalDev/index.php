@@ -47,8 +47,8 @@ create code in localdev, then hard reset the master to local dev, then push up. 
 
 			.global_enterprise_div {
 				margin-top: 30px;
-				color: white;
-				font-size: 30px;
+				color: #ccc;
+				font-size: 20px;
 			}
 			.global_enterprise_div a {
 				color: blue;
@@ -60,7 +60,7 @@ create code in localdev, then hard reset the master to local dev, then push up. 
 	</style>
 	<div class="global_enterprise_div">
 		<p>
-			Global Application Development
+			gdev
 		</p>
 	</div>
 	<?php
