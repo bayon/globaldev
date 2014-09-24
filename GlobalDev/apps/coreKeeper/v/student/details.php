@@ -8,7 +8,14 @@
 	</div>
 	 <p>student:&nbsp;<?=$student->firstName;?></p>
 	<div>
-		 <?php
+	<?php
+	/* -- questionalble
+	if($score->id AND $student){
+		$ajaxStudentEditForm = new ajaxStudentEditForm("coreKeeper",$score->id,$student);
+		echo($ajaxStudentEditForm->make());
+	}
+	 * */
+	//THIS was outside the above condition.9-24-2014
 	$ajaxStudentEditForm = new ajaxStudentEditForm("coreKeeper",$score->id,$student);
 	echo($ajaxStudentEditForm->make());
 	
@@ -22,7 +29,7 @@
 	
 	<div style='float:left;margin-left:15%;margin-bottom:20px;margin-top:30px;max-height:100px;overflow-y:scroll;border:solid black 1px;'>
 		
-		<?php //echo("<pre>");print_r($scores);echo("</pre>"); ?>
+		<?php //echo("<pre>SCORES:");print_r($scores);echo("</pre>"); ?>
 	</div>
 	<div style='float:left;'>
 		<?php
@@ -41,9 +48,9 @@ initCodePage();
 </script>
 <?php
 function actionList_studentScores($data,$user,$student) {
-	echo("<br> actionlist with data:");print_r($data);
-	echo("<br>username:".$user->username);
-	echo("<br>student first name : ".$student->firstName);
+	//echo("<br> actionlist with data:");print_r($data);
+	//echo("<br>username:".$user->username);
+	//echo("<br>student first name : ".$student->firstName);
 	$table = "<div class=' actionList_container'><div class='textAlignLeft'><div class='actionList_title'>scores</div>";
 	$table .= searchForm_studentScores('students.php',$user,$student);
 	$table .= "</div>";
@@ -53,8 +60,8 @@ function actionList_studentScores($data,$user,$student) {
 	$table .= "<tr><th width=10%  >code</th><th width=10%>score</th><th width=15% >notes</th><th width=15% >date_created</th><th width=10% >action</th>";
 	foreach ($data as $row) {
 		//	public function __construct($id = "0", $user_id = "default", $student_id = "default", $code = "default", $score = "default", $attach_id = "default", $notes = "default", $date_created = "default") {
-		
-		$score = new Score($row['id'],$row['user_id'], $row['student_id'], $row['code'],$row['score'], $row['attach_id'], $row['notes'], $row['date_created']);
+		//print_r($row); actionlist with data:
+		$score = new Score($row['id'],$row['user_id'], $row['student_id'], $row['code'],$row['score'], $row['attach_id'], $row['notes'], $row['date']);
 
 		$table .= "<tr>";
 		$table .= " <form id='editscoreForm' method='post' action=$_SERVER[PHP_SELF] >";

@@ -8,7 +8,10 @@ if(!isset($_SESSION['home'])) {
 }
  * 
  */
-
+echo("<pre>SESSION:");print_r($_SESSION); echo("</pre>");
+echo("<pre>POST:");print_r($_POST); echo("</pre>");
+echo("<pre>GET:");print_r($_GET); echo("</pre>");
+echo("<pre>DEFINED_VARS"); var_dump(get_defined_vars()); echo("</div></pre>");
 // display errors
 ini_set('display_errors', 1);
 

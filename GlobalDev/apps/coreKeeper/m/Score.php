@@ -90,10 +90,11 @@ class Score {
 
 function createScore($score) {
 	$dbh = appConnectPDO();
-	$sql = "INSERT INTO " . APP_DB . ".score (id,user_id,student_id,code,score,attach_id,notes,date_created) 
+	$sql = "INSERT INTO " . APP_DB . ".score (id,user_id,student_id,code,score,attach_id,notes,date) 
 	VALUES 
 	('NULL','" . $score -> user_id . "','" . $score -> student_id . "' ,'" . $score -> code . "','" . $score -> score . "','" . $score -> attach_id . "','" . $score -> notes . "','" . $score -> date_created . "')";
 	$dbh -> query($sql);
+	//echo("<br>".$sql);
 	$dbh = null;
 }
 
