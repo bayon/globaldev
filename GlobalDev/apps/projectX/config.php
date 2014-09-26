@@ -1,13 +1,14 @@
 <?php
 
 //require_once('./../../global_configs.php');
-
-if (GLOBAL_ENVIRONMENT == "littleMac") {
-	define('SITE_ROOT', 'forteworks/globaldev/GlobalDev/apps/projectX');
-} else {
-	define('SITE_ROOT', 'gdev/globaldev/GlobalDev/apps/projectX');
+$debugMode = "off";
+if($debugMode == "on"){
+	define('DEBUG_MODE',"on");
+}else{
+	define('DEBUG_MODE',"off");
 }
 
+define('SITE_ROOT', GLOBAL_ROOT.'/apps/coreKeeper');
 /*============================================================*/
 /*-----	AUTOMATED CONFIGS	 ---------------------------------*/
 /*============================================================*/

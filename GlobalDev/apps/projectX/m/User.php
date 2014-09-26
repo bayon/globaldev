@@ -61,7 +61,7 @@ function login($user) {
 	$dbh = appConnectPDO();
 	$sql = "SELECT * FROM ".APP_DB.".user 
  WHERE username = '" . $user -> username . "'  AND password = '" . $user -> password . "'";
-
+echo("<br>".$sql);
 	foreach ($dbh->query($sql) as $row) {
 		$data[] = $row;
 	}

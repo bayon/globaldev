@@ -51,8 +51,8 @@ if (isset($_GET['navigation'])) {
 	}
 } 
 else if (isset($_GET['subnavigation'])) {
-	//echo("<br>GET isset:");
-	//print_r($_GET);
+	echo("<br>GET isset:");
+	print_r($_GET);
 	switch ($_GET['subnavigation']) {
 		
 		case 'appts' :
@@ -98,11 +98,11 @@ else {
 }
 
 if (isset($_POST['controller'])) {
-	//echo("<br>MAIN CONTROLLER POST</br>");
-	//echo("<br>POST:");
-	//print_r($_POST);
+	echo("<br>MAIN CONTROLLER POST</br>");
+	echo("<br>POST:");
+	print_r($_POST);
 	switch ($_POST['controller']) {
-		case 'login' :
+		case 'login.php' :
 			include_once ('c/login.php');
 			break;
 		case 'signup' :
@@ -134,14 +134,15 @@ if (isset($_POST['controller'])) {
 			break;
 
 		default :
-			//print_r($_POST);
+			echo("<br>fooo default!");
+			print_r($_POST);
 			//include_once ('c/default.php');
 			break;
 	}
 } else {
 	if (isset($_GET)) {
 		//echo("<br>GET</br>");
-		// echo("CONTROLLER:<pre>");print_r($_GET);echo("</pre>");
+		echo("CONTROLLER:<pre>");print_r($_GET);echo("</pre>");
 		//AUTOMATIC FOR ALL GET
 		if (isset($_GET['controller'])) {
 			include_once ('c/' . $_GET['controller']);
