@@ -7,10 +7,10 @@
 		</div>
 	</div>
 	<div id="taskListForEstimate" style="display:block;" >
-		<table id="taskTableForEstimate" class="listTable" border="1" width="100%">
+		<table id="taskTableForEstimate" class="listTable" border="0" width="100%">
 			<thead>
 				<tr>
-					<th>task</th><th>time</th><th title='Number of times it will get done.'>#</th><th title=''>subtotal</th><th>cost</th><th>action</th>
+					<th>task</th><th title='time it takes in minutes to do this task once.'>time</th><th title='Number of times it will get done.'>#</th><th title='Number of minutes '>subtotal</th><th title='rate per hour times subtotal of time.'>cost</th><th>action</th>
 				</tr>
 			</thead>
 			<tbody id="taskTBodyForEstimate"></tbody>

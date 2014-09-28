@@ -1,4 +1,4 @@
-////// 	materialForEstimate specific  js //////////////////// 
+////// 	materialForEstimate specific  js ////////////////////
 function addMaterialForEstimate(materialForEstimate,cost,material_id,est_id,totCost) {
 	console.log("addMaterialForEstimate");
 	AppSpace.indexedDB.addMaterialForEstimate(materialForEstimate,cost,material_id,est_id,totCost);
@@ -80,9 +80,9 @@ function renderMaterialForEstimate(row) {
 	var costSubtotal = row.costSubtotal;
 	var tableRow = "<tr id='" + id + "' >"+
 	"<td><input class='data ' type='text' disabled value='" + materialForEstimate + "' /></td>"+
-	"<td><input class='data data_number'  id='cost' value='" + cost + "' disabled /></td>"+
-	"<td><input class='data data_number'  id='numberOf' 	type='number' onchange='calculateMaterialSubtotals(" + id + ");' value='" + numberOf + "'/></td>"+
-	"<td><input class='data data_number'  id='costSubtotal' type='number' value='" + costSubtotal + "' disabled /></td>"+
+	"<td><input class='data data_number'  id='cost' value='" + cost + "' disabled  title='cost per unit' /></td>"+
+	"<td><input class='data data_number'  id='numberOf' 	type='number' onchange='calculateMaterialSubtotals(" + id + ");' value='" + numberOf + "' title='number of units needed'/></td>"+
+	"<td><input class='data data_number'  id='costSubtotal' type='number' value='" + costSubtotal + "' disabled title='cost per unit times number needed'/></td>"+
 	"<td>"+
 		"<button class='action_btn' onclick='updateMaterialForEstimate(" + row.timeStamp + ");' >	save	</button>"+
 		"<button class='action_btn' onclick='deleteMaterialForEstimate(" + row.timeStamp + ");' >	-		</button>"+

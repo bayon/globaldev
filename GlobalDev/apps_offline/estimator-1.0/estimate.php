@@ -1,7 +1,7 @@
 <?php
 include_once ("html_head.php");
 ?>
-<!-- INCLUDE PAGE MODEL-->
+<!-- INCLUDE PAGE MODEL    renderAllEstimates()-->
 <script type='text/javascript' src='estimate.js'></script>
 <script type='text/javascript' src='task.js'></script>
 <script type='text/javascript' src='taskSelection.js'></script>
@@ -14,30 +14,29 @@ include_once ("html_head.php");
 	<div class ='section'>
 		<div class='page_controls'>
 			<div class='page_title' >
-				estimate
+				Estimate
 			</div>
-			<button class = 'action_btn' onclick="openAddEstimateForm();">
+			<button class = 'action_btn' onclick="openAddEstimateForm();" title='add an estimate'>
 				+
 			</button>
-			<button class = 'action_btn' onclick="closeAddEstimateForm();">
+			<button class = 'action_btn' onclick="closeAddEstimateForm();" title='hide form'>
 				-
 			</button>
-			<button class = 'action_btn' onclick="showEstimates();">
+			<button class = 'action_btn' onclick="showEstimates();" title='show list of all estimates'>
 				show
 			</button>
-			<button class = 'action_btn' onclick="hideEstimates();">
+			<button class = 'action_btn' onclick="hideEstimates();" title='hide list of all estimates'>
 				hide
 			</button>
 		</div>
-		<div id="addEstimateForm" class="addForm"  >
+		<div id="addEstimateForm" class="addForm" style="float:left;" >
 			<input class = 'text_input' type="text" id="estimate" name="estimate" placeholder="What job is it?"   />
 			<input class = 'text_input' type="text" id="hourlyRate" name="hourlyRate" placeholder="Hourly Rate?"   />
 			<input class = 'submit_btn' type="submit" value="add" onclick="addEstimate(); return false;"/>
 		</div>
 		<div id="estimateList" style="display:none;">
-			<span class='code_location'>renderAllEstimates()</span>
-			<table id="estimateTable" class="listTable" border="1" width="100%">
-
+			
+			<table id="estimateTable" class="listTable"  border=0  width="100%">
 				<tbody id="estimateTBody"></tbody>
 			</table>
 		</div>
@@ -45,7 +44,7 @@ include_once ("html_head.php");
 
 		</div>
 		<div id="taskSelection" class='hidden'>
-			<!-- taskSelection.js getAllTasksForSelection() -->
+			<!-- taskSelection.js getAllTasksForSelection()  + task-->
 			<?php
 				include ("taskSelection.php");
 			?>

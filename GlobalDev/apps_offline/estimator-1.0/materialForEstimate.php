@@ -7,10 +7,10 @@
 		</div>
 	</div>
 	<div id="materialListForEstimate" style="display:block;" >
-		<table id="materialTableForEstimate" class="listTable" border="1" width="100%">
+		<table id="materialTableForEstimate" class="listTable" border="0" width="100%">
 			<thead>
 				<tr>
-					<th>material</th><th>cost</th><th title='Number of times it will get done.'>#</th><th title=''>subtotal</th><th>action</th>
+					<th >material</th><th title='cost per unit'>cost</th><th title='number of units needed'>#</th><th title='cost per unit times number needed'>subtotal</th><th>action</th>
 				</tr>
 			</thead>
 			<tbody id="materialTBodyForEstimate"></tbody>

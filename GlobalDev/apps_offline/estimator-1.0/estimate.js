@@ -93,9 +93,9 @@ function renderAllEstimates(row) {
 	var estimate = row.estimate;
 	var hourlyRate = row.hourlyRate;
 	var tableRow = "<tr><td>" + estimate + "</td>"+
-	"<td>" + hourlyRate + "</td>"+
-	"<td><a href='javascript:void();' class='listAnchor minus' onclick='deleteEstimate(" + row.timeStamp + ");' >-</a> </td>"+
-	"<td><a href='javascript:void();' class='listAnchor plus' onclick='selectEstimate(" + row.timeStamp + ");' >+</a> </td>"+
+	"<td>$ " + hourlyRate + " p/hr</td>"+
+	"<td><a href='javascript:void();' class='listAnchor minus' onclick='deleteEstimate(" + row.timeStamp + ");' title='delete this estimate'>x</a> </td>"+
+	"<td><a href='javascript:void();' class='listAnchor plus' onclick='selectEstimate(" + row.timeStamp + ");' title='view this estimate' >+</a> </td>"+
 	"</tr>";
 	$('#estimateTBody').append(tableRow);
 }
@@ -107,20 +107,20 @@ function renderSelectedEstimate(row) {
 	var hourlyRate= row.hourlyRate;
 	var ratePerMinute =  (hourlyRate/60).toFixed(2);
 	var id = row.timeStamp;
-	var selectedEstimate = "<h3>" + estimate +"-"+id+"</h3><span class='code_location'>estimate.js renderSelectedEstimate()</span>";
+	var selectedEstimate = "<h3>" + estimate +"</h3>";
 	//------ sessionStorage----------------- 
 	sessionStorage.setItem('estimate_id',id);
 	sessionStorage.setItem('hourlyRate',hourlyRate);
 	sessionStorage.setItem('ratePerMinute',ratePerMinute);
 	sessionStorage.setItem('taxRate',.05); // HARD CODED TAX RATE. !!!
-	selectedEstimate +="<table class='estimateTable' border=1 width=100% >";
+	selectedEstimate +="<table class='estimateTable' border=0 width=100% >";
 	selectedEstimate +="<tr>";
 	selectedEstimate +="<td>";
-	selectedEstimate +="<button onclick='enableTaskSelection("+id+");' class='action_btn' >     + task			</button>";
-	selectedEstimate +="<button onclick='enableMaterialSelection("+id+");' class='action_btn' > + material		</button>";
-	selectedEstimate +="<button onclick='showSelectedTasks("+id+");' class='action_btn' >       current tasks  		</button>";
-	selectedEstimate +="<button onclick='showSelectedMaterials("+id+");' class='action_btn' >   current materials	</button>";
-		selectedEstimate +="<button onclick='calculateEntireEstimate("+id+");' class='action_btn' >   calc est	</button>";
+	selectedEstimate +="<button onclick='enableTaskSelection("+id+");' class='action_btn' title='add a task to the estimate'>     + task			</button>";
+	selectedEstimate +="<button onclick='enableMaterialSelection("+id+");' class='action_btn' title='add a material to the estimate'> + material		</button>";
+	selectedEstimate +="<button onclick='showSelectedTasks("+id+");' class='action_btn' title='see estimates current tasks'>       tasks  		</button>";
+	selectedEstimate +="<button onclick='showSelectedMaterials("+id+");' class='action_btn' title='see estimates current materials'>   materials	</button>";
+		selectedEstimate +="<button onclick='calculateEntireEstimate("+id+");' class='action_btn' title='calculate the final estimate'>   final	</button>";
 
 	selectedEstimate +="</td>";
 	selectedEstimate +="</tr>";
@@ -128,7 +128,7 @@ function renderSelectedEstimate(row) {
 	$('#estimateSelected').append(selectedEstimate);
 }
 
-////	Add Tasks and Materials to Estimate  //
+////	Add Tasks and Materials to Estimate  //estimate.js renderSelectedEstimate()
 function enableTaskSelection(id){
 	hideTasksAndMaterials();
 	console.log("enableTaskSelection"+id);

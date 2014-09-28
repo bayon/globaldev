@@ -8,7 +8,7 @@
 		</div>
 		 
 		<div id="taskList" style="display:block;" >
-			<table id="taskTable" class="listTable" border="1" width="100%">
+			<table id="taskTable" class="listTable" border="0" width="100%">
 				<thead>
 					<tr><th>task</th><th>time</th><th>action</th></tr>
 				</thead>

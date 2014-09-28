@@ -1,24 +1,51 @@
+html {
+    text-align: center;
+    width: 100%;
+    margin:0;
+}
+body {
+    width: 100%;
+    font-family:helvetica,arial,verdana;
+    background-color:#ddd;
+    margin:0;
+}
+.content{
+    width:97%;
+}
+.app_description{
+    margin-left:30px;
+    font-style:italic;
+    font-size:13px;
+}
 .code_location{
 	font-style:italic;
 	font-size:13px;
 }
 .section{
-	border:solid #ccc 1px;
+	
+	margin-top:20px;
 }
 .action_btn{
 	color:#222;
 }
 .text_input{
+    font-size:9px;
 	color:#333;
+	min-width:150px;
 }
 .submit_btn{
 	color:#000;
 	font-weight:bold;
 }
 .listTable{
-	border:solid 1px #ccc;
-	border-collapse:collapse;
+	
 	 
+}
+.listtable th,td{
+    font-size:13px;
+}
+.estimateTable{
+   
 }
 .data_text{
 	width:110px;
@@ -39,25 +66,50 @@
 .page_title{
 	width:140px;
 	min-width:120px;
-	color:#ccc;
+	color:#222;
 	float:left;
+	font-size:13px;
+	font-weight:bold;
+	margin-bottom:25px;
+}
+h3{
+    font-size:13px;
+    
+}
+.listTable th{
+    font-size:13px;
+    
 }
 .sumValue{
 	float:left;
 	width:100%;
+	font-size:13px;
+}
+.sumLabel{
+    min-width:125px;
+    float:left;
+    text-align:right;
+    font-size:13px;
+}
+.sumInput{
+    min-width:125px;
+    float:left;
+    font-size:13px;
 }
 a{
 	text-decoration:none;
 	width:100%;
 	display:inline;
+	color:white;
 }
+
 .listAnchor{
-	 
 	width:100%;
 	display:inline;
 }
 #navigation_container{
 	margin-bottom:30px;
+	background-color:#555;
 }
 .nav_anchor{
 	margin-right:30px;
@@ -78,7 +130,18 @@ a{
 }
 
 
+/*------------------DESKTOP----------------*/
 
+@media screen and (max-width: 5000px) {
+}
+
+/*------------------TABLET----------------*/
+@media screen and (max-width: 1024px) {
+}
+
+/*------------------iPhone----------------*/
+@media screen and (max-width: 480px) {
+}
 
 
 

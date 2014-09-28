@@ -6,7 +6,7 @@
 		</div>
 		 
 		<div id="materialList" style="display:block;" >
-			<table id="materialTable" class="listTable" border="1" width="100%">
+			<table id="materialTable" class="listTable" border="0" width="100%">
 				<thead>
 					<tr><th>material</th><th>cost</th><th>action</th></tr>
 				</thead>
